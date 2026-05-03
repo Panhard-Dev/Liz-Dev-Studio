@@ -8,6 +8,7 @@ const dir = fileURLToPath(new URL("..", import.meta.url))
 process.chdir(dir)
 
 const publicPackageName = "liz-ai-brasil"
+const publicHomepage = "https://liz-ai-brasil.vercel.app"
 
 async function published(name: string, version: string) {
   return (await $`npm view ${name}@${version} version`.nothrow()).exitCode === 0
@@ -46,6 +47,7 @@ await Bun.file(`./dist/${publicPackageName}/package.json`).write(
     {
       name: publicPackageName,
       description: "LIZ AI BRASIL CLI",
+      homepage: publicHomepage,
       bin: {
         [pkg.name]: `./bin/${pkg.name}`,
         [publicPackageName]: `./bin/${pkg.name}`,

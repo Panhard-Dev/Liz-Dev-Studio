@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="LIZ AI BRASIL">
+  <rect width="64" height="64" rx="14" fill="#050308"/>
+  <path d="M12 44h40l-4-25-10 10-6-15-6 15-10-10-4 25Z" fill="#a855f7"/>
+  <path d="M16 48h32" stroke="#e9ddff" stroke-width="4" stroke-linecap="round"/>
+</svg>

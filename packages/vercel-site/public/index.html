@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#8b5cf6" />
+    <meta
+      name="description"
+      content="Instalacao oficial da CLI LIZ AI BRASIL para Windows, Linux e macOS."
+    />
+    <title>LIZ AI BRASIL</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #050308;
+        --panel: rgba(18, 14, 24, 0.82);
+        --panel-strong: rgba(28, 21, 38, 0.92);
+        --text: #f4edff;
+        --muted: #b9a9ca;
+        --purple: #a855f7;
+        --purple-2: #7c3aed;
+        --green: #28f08b;
+        --line: rgba(232, 213, 255, 0.14);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        font-family:
+          "IBM Plex Mono", "Cascadia Mono", "JetBrains Mono", Consolas, monospace;
+        color: var(--text);
+        background:
+          radial-gradient(circle at 20% 20%, rgba(168, 85, 247, 0.24), transparent 32rem),
+          radial-gradient(circle at 80% 5%, rgba(40, 240, 139, 0.12), transparent 24rem),
+          linear-gradient(135deg, #020104 0%, var(--bg) 58%, #11071b 100%);
+        overflow-x: hidden;
+      }
+
+      body::before {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        content: "";
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+        background-size: 42px 42px;
+        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent 80%);
+      }
+
+      main {
+        width: min(1120px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 54px 0;
+      }
+
+      .shell {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1.08fr 0.92fr;
+        gap: 28px;
+        align-items: stretch;
+      }
+
+      .hero,
+      .card {
+        border: 1px solid var(--line);
+        background: var(--panel);
+        box-shadow: 0 24px 90px rgba(0, 0, 0, 0.34);
+        backdrop-filter: blur(18px);
+      }
+
+      .hero {
+        min-height: 620px;
+        padding: 42px;
+        border-radius: 30px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        color: var(--muted);
+        font-size: 14px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .crown {
+        width: 48px;
+        height: 48px;
+        color: var(--purple);
+      }
+
+      h1 {
+        margin: 54px 0 22px;
+        font-size: clamp(56px, 10vw, 120px);
+        line-height: 0.86;
+        letter-spacing: -0.08em;
+        text-transform: uppercase;
+        text-shadow: 5px 5px 0 #35105a;
+      }
+
+      .lead {
+        max-width: 620px;
+        margin: 0;
+        color: var(--muted);
+        font-size: 18px;
+        line-height: 1.8;
+      }
+
+      .command {
+        position: relative;
+        margin-top: 42px;
+        border: 1px solid var(--line);
+        border-left: 4px solid var(--purple);
+        border-radius: 18px;
+        background: #111017;
+        overflow: hidden;
+      }
+
+      .command code {
+        display: block;
+        padding: 24px 150px 24px 24px;
+        color: var(--text);
+        font-size: clamp(16px, 3vw, 22px);
+        white-space: nowrap;
+        overflow-x: auto;
+      }
+
+      .copy {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        height: 42px;
+        border: 1px solid rgba(232, 213, 255, 0.2);
+        border-radius: 12px;
+        padding: 0 16px;
+        color: var(--text);
+        background: linear-gradient(135deg, var(--purple), var(--purple-2));
+        cursor: pointer;
+        font: inherit;
+        font-weight: 700;
+      }
+
+      .status {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 30px;
+      }
+
+      .pill {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 10px 14px;
+        color: var(--muted);
+        background: rgba(255, 255, 255, 0.04);
+        font-size: 13px;
+      }
+
+      .pill strong {
+        color: var(--text);
+      }
+
+      .side {
+        display: grid;
+        gap: 18px;
+      }
+
+      .card {
+        padding: 26px;
+        border-radius: 24px;
+      }
+
+      .card h2 {
+        margin: 0 0 14px;
+        font-size: 20px;
+      }
+
+      .card p,
+      .card li {
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      ul {
+        padding-left: 20px;
+        margin: 0;
+      }
+
+      .models {
+        display: grid;
+        gap: 12px;
+      }
+
+      .model {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 14px 16px;
+        background: var(--panel-strong);
+      }
+
+      .dot {
+        color: var(--green);
+      }
+
+      footer {
+        margin-top: 28px;
+        color: var(--muted);
+        text-align: center;
+        font-size: 13px;
+      }
+
+      @media (max-width: 880px) {
+        main {
+          padding: 22px 0;
+        }
+
+        .shell {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          min-height: auto;
+          padding: 28px;
+        }
+
+        .command code {
+          padding-right: 24px;
+        }
+
+        .copy {
+          position: static;
+          width: calc(100% - 28px);
+          margin: 0 14px 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="shell">
+        <div class="hero">
+          <div class="brand">
+            <svg class="crown" viewBox="0 0 64 64" aria-hidden="true">
+              <path d="M8 45h48l-5-29-13 12-6-18-6 18-13-12-5 29Z" fill="currentColor" />
+              <path d="M13 51h38" stroke="#f4edff" stroke-width="5" stroke-linecap="round" />
+            </svg>
+            CLI oficial
+          </div>
+          <h1>LIZ<br />AI BRASIL</h1>
+          <p class="lead">
+            Instale a CLI oficial da LIZ AI BRASIL via npm e use no Windows, Linux e macOS.
+          </p>
+          <div class="command">
+            <code id="install-command">npm install -g liz-ai-brasil</code>
+            <button class="copy" type="button" data-copy="install-command">Copiar</button>
+          </div>
+          <div class="status" aria-label="compatibilidade">
+            <span class="pill"><strong>Windows</strong> pronto</span>
+            <span class="pill"><strong>Linux</strong> pronto</span>
+            <span class="pill"><strong>macOS</strong> pronto</span>
+          </div>
+        </div>
+
+        <aside class="side" aria-label="informacoes da CLI">
+          <div class="card">
+            <h2>Como abrir</h2>
+            <p>Depois da instalacao global, rode:</p>
+            <div class="command">
+              <code id="run-command">liz</code>
+              <button class="copy" type="button" data-copy="run-command">Copiar</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <h2>Modelos LIZ</h2>
+            <div class="models">
+              <div class="model"><span>Liz 2.3</span><span class="dot">online</span></div>
+              <div class="model"><span>Liz 2.5 PRO</span><span class="dot">online</span></div>
+              <div class="model"><span>Liz 2.6 PRO</span><span class="dot">online</span></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h2>Sem GitHub na instalacao</h2>
+            <p>
+              O comando publico fica no npm. Esta pagina fica como URL oficial para usuarios da LIZ AI BRASIL.
+            </p>
+          </div>
+        </aside>
+      </section>
+      <footer>LIZ AI BRASIL</footer>
+    </main>
+
+    <script>
+      for (const button of document.querySelectorAll("[data-copy]")) {
+        button.addEventListener("click", async () => {
+          const value = document.getElementById(button.dataset.copy).textContent
+          await navigator.clipboard.writeText(value)
+          const label = button.textContent
+          button.textContent = "Copiado"
+          setTimeout(() => {
+            button.textContent = label
+          }, 1200)
+        })
+      }
+    </script>
+  </body>
+</html>
