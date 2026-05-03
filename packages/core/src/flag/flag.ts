@@ -1,0 +1,107 @@
+import { Config } from "effect"
+
+function truthy(key: string) {
+  const value = process.env[key]?.toLowerCase()
+  return value === "true" || value === "1"
+}
+
+function falsy(key: string) {
+  const value = process.env[key]?.toLowerCase()
+  return value === "false" || value === "0"
+}
+
+function number(key: string) {
+  const value = process.env[key]
+  if (!value) return undefined
+  const parsed = Number(value)
+  return Number.isInteger(parsed) && parsed > 0 ? parsed : undefined
+}
+
+const LIZ_EXPERIMENTAL = truthy("LIZ_EXPERIMENTAL")
+const LIZ_DISABLE_CLAUDE_CODE = truthy("LIZ_DISABLE_CLAUDE_CODE")
+const LIZ_DISABLE_CLAUDE_CODE_SKILLS =
+  LIZ_DISABLE_CLAUDE_CODE || truthy("LIZ_DISABLE_CLAUDE_CODE_SKILLS")
+const copy = process.env["LIZ_EXPERIMENTAL_DISABLE_COPY_ON_SELECT"]
+
+export const Flag = {
+  OTEL_EXPORTER_OTLP_ENDPOINT: process.env["OTEL_EXPORTER_OTLP_ENDPOINT"],
+  OTEL_EXPORTER_OTLP_HEADERS: process.env["OTEL_EXPORTER_OTLP_HEADERS"],
+
+  LIZ_AUTO_SHARE: truthy("LIZ_AUTO_SHARE"),
+  LIZ_AUTO_HEAP_SNAPSHOT: truthy("LIZ_AUTO_HEAP_SNAPSHOT"),
+  LIZ_GIT_BASH_PATH: process.env["LIZ_GIT_BASH_PATH"],
+  LIZ_CONFIG: process.env["LIZ_CONFIG"],
+  LIZ_CONFIG_CONTENT: process.env["LIZ_CONFIG_CONTENT"],
+  LIZ_DISABLE_AUTOUPDATE: truthy("LIZ_DISABLE_AUTOUPDATE"),
+  LIZ_ALWAYS_NOTIFY_UPDATE: truthy("LIZ_ALWAYS_NOTIFY_UPDATE"),
+  LIZ_DISABLE_PRUNE: truthy("LIZ_DISABLE_PRUNE"),
+  LIZ_DISABLE_TERMINAL_TITLE: truthy("LIZ_DISABLE_TERMINAL_TITLE"),
+  LIZ_SHOW_TTFD: truthy("LIZ_SHOW_TTFD"),
+  LIZ_PERMISSION: process.env["LIZ_PERMISSION"],
+  LIZ_DISABLE_DEFAULT_PLUGINS: truthy("LIZ_DISABLE_DEFAULT_PLUGINS"),
+  LIZ_DISABLE_LSP_DOWNLOAD: truthy("LIZ_DISABLE_LSP_DOWNLOAD"),
+  LIZ_ENABLE_EXPERIMENTAL_MODELS: truthy("LIZ_ENABLE_EXPERIMENTAL_MODELS"),
+  LIZ_DISABLE_AUTOCOMPACT: truthy("LIZ_DISABLE_AUTOCOMPACT"),
+  LIZ_DISABLE_MODELS_FETCH: truthy("LIZ_DISABLE_MODELS_FETCH"),
+  LIZ_DISABLE_MOUSE: truthy("LIZ_DISABLE_MOUSE"),
+  LIZ_DISABLE_CLAUDE_CODE,
+  LIZ_DISABLE_CLAUDE_CODE_PROMPT: LIZ_DISABLE_CLAUDE_CODE || truthy("LIZ_DISABLE_CLAUDE_CODE_PROMPT"),
+  LIZ_DISABLE_CLAUDE_CODE_SKILLS,
+  LIZ_DISABLE_EXTERNAL_SKILLS: truthy("LIZ_DISABLE_EXTERNAL_SKILLS"),
+  LIZ_FAKE_VCS: process.env["LIZ_FAKE_VCS"],
+  LIZ_SERVER_PASSWORD: process.env["LIZ_SERVER_PASSWORD"],
+  LIZ_SERVER_USERNAME: process.env["LIZ_SERVER_USERNAME"],
+  LIZ_ENABLE_QUESTION_TOOL: truthy("LIZ_ENABLE_QUESTION_TOOL"),
+
+  // Experimental
+  LIZ_EXPERIMENTAL,
+  LIZ_EXPERIMENTAL_FILEWATCHER: Config.boolean("LIZ_EXPERIMENTAL_FILEWATCHER").pipe(
+    Config.withDefault(false),
+  ),
+  LIZ_EXPERIMENTAL_DISABLE_FILEWATCHER: Config.boolean("LIZ_EXPERIMENTAL_DISABLE_FILEWATCHER").pipe(
+    Config.withDefault(false),
+  ),
+  LIZ_EXPERIMENTAL_ICON_DISCOVERY: LIZ_EXPERIMENTAL || truthy("LIZ_EXPERIMENTAL_ICON_DISCOVERY"),
+  LIZ_EXPERIMENTAL_DISABLE_COPY_ON_SELECT:
+    copy === undefined ? process.platform === "win32" : truthy("LIZ_EXPERIMENTAL_DISABLE_COPY_ON_SELECT"),
+  LIZ_ENABLE_EXA: truthy("LIZ_ENABLE_EXA") || LIZ_EXPERIMENTAL || truthy("LIZ_EXPERIMENTAL_EXA"),
+  LIZ_EXPERIMENTAL_BASH_DEFAULT_TIMEOUT_MS: number("LIZ_EXPERIMENTAL_BASH_DEFAULT_TIMEOUT_MS"),
+  LIZ_EXPERIMENTAL_OUTPUT_TOKEN_MAX: number("LIZ_EXPERIMENTAL_OUTPUT_TOKEN_MAX"),
+  LIZ_EXPERIMENTAL_OXFMT: LIZ_EXPERIMENTAL || truthy("LIZ_EXPERIMENTAL_OXFMT"),
+  LIZ_EXPERIMENTAL_LSP_TY: truthy("LIZ_EXPERIMENTAL_LSP_TY"),
+  LIZ_EXPERIMENTAL_LSP_TOOL: LIZ_EXPERIMENTAL || truthy("LIZ_EXPERIMENTAL_LSP_TOOL"),
+  LIZ_EXPERIMENTAL_PLAN_MODE: LIZ_EXPERIMENTAL || truthy("LIZ_EXPERIMENTAL_PLAN_MODE"),
+  LIZ_EXPERIMENTAL_MARKDOWN: !falsy("LIZ_EXPERIMENTAL_MARKDOWN"),
+  LIZ_MODELS_URL: process.env["LIZ_MODELS_URL"],
+  LIZ_MODELS_PATH: process.env["LIZ_MODELS_PATH"],
+  LIZ_DISABLE_EMBEDDED_WEB_UI: truthy("LIZ_DISABLE_EMBEDDED_WEB_UI"),
+  LIZ_DB: process.env["LIZ_DB"],
+  LIZ_DISABLE_CHANNEL_DB: truthy("LIZ_DISABLE_CHANNEL_DB"),
+  LIZ_SKIP_MIGRATIONS: truthy("LIZ_SKIP_MIGRATIONS"),
+  LIZ_STRICT_CONFIG_DEPS: truthy("LIZ_STRICT_CONFIG_DEPS"),
+
+  LIZ_WORKSPACE_ID: process.env["LIZ_WORKSPACE_ID"],
+  LIZ_EXPERIMENTAL_HTTPAPI: truthy("LIZ_EXPERIMENTAL_HTTPAPI"),
+  LIZ_EXPERIMENTAL_WORKSPACES: LIZ_EXPERIMENTAL || truthy("LIZ_EXPERIMENTAL_WORKSPACES"),
+
+  // Evaluated at access time (not module load) because tests, the CLI, and
+  // external tooling set these env vars at runtime.
+  get LIZ_DISABLE_PROJECT_CONFIG() {
+    return truthy("LIZ_DISABLE_PROJECT_CONFIG")
+  },
+  get LIZ_TUI_CONFIG() {
+    return process.env["LIZ_TUI_CONFIG"]
+  },
+  get LIZ_CONFIG_DIR() {
+    return process.env["LIZ_CONFIG_DIR"]
+  },
+  get LIZ_PURE() {
+    return truthy("LIZ_PURE")
+  },
+  get LIZ_PLUGIN_META_FILE() {
+    return process.env["LIZ_PLUGIN_META_FILE"]
+  },
+  get LIZ_CLIENT() {
+    return process.env["LIZ_CLIENT"] ?? "cli"
+  },
+}

@@ -1,0 +1,603 @@
+---
+title: CLI
+description: LIZ AI BRASIL CLI muligheder og kommandoer.
+---
+
+import { Tabs, TabItem } from "@astrojs/starlight/components"
+
+LIZ AI BRASIL CLI starter som standard [TUI](/docs/tui), når den kører uden nogen argumenter.
+
+```bash
+liz
+```
+
+Men den accepterer også kommandoer som dokumenteret på denne side. Dette giver dig mulighed for at interagere med LIZ AI BRASIL programmatisk.
+
+```bash
+liz run "Explain how closures work in JavaScript"
+```
+
+---
+
+### tui
+
+Start LIZ AI BRASIL terminalbrugergrænsefladen.
+
+```bash
+liz [project]
+```
+
+#### Flag
+
+| Flag         | Kort | Beskrivelse                                                                  |
+| ------------ | ---- | ---------------------------------------------------------------------------- |
+| `--continue` | `-c` | Fortsæt sidste session                                                       |
+| `--session`  | `-s` | Sessions-id for at fortsætte                                                 |
+| `--fork`     |      | Forgren sessionen ved fortsættelse (brug med `--continue` eller `--session`) |
+| `--prompt`   |      | Spørg om at bruge                                                            |
+| `--model`    | `-m` | Model til brug i form af provider/model                                      |
+| `--agent`    |      | Agent hos bruge                                                              |
+| `--port`     |      | Port at lytte på                                                             |
+| `--hostname` |      | Værtsnavn at lytte på                                                        |
+
+---
+
+## Kommandoer
+
+LIZ AI BRASIL CLI har også følgende kommandoer.
+
+---
+
+### agent
+
+Administrer agenter i LIZ AI BRASIL.
+
+```bash
+liz agent [command]
+```
+
+---
+
+### attach
+
+Tilslut en terminal til en allerede kørende LIZ AI BRASIL backend-server startet via `serve` eller `web` kommandoer.
+
+```bash
+liz attach [url]
+```
+
+Dette gør det muligt at bruge TUI med en ekstern LIZ AI BRASIL backend. For eksempel:
+
+```bash
+# Start the backend server for web/mobile access
+liz web --port 4096 --hostname 0.0.0.0
+
+# In another terminal, attach the TUI to the running backend
+liz attach http://10.20.30.40:4096
+```
+
+#### Flag
+
+| Flag        | Kort | Beskrivelse                      |
+| ----------- | ---- | -------------------------------- |
+| `--dir`     |      | Arbejdsmappe til at starte TUI i |
+| `--session` | `-s` | Sessions-id for at fortsætte     |
+
+---
+
+#### create
+
+Opret en ny agent med brugerdefineret konfiguration.
+
+```bash
+liz agent create
+```
+
+Denne kommando vil guide dig gennem oprettelse af en ny agent med en brugerdefineret systemprompt og værktøjskonfiguration.
+
+---
+
+#### list
+
+Liste over alle tilgængelige agenter.
+
+```bash
+liz agent list
+```
+
+---
+
+### auth
+
+Kommando til at administrere legitimationsoplysninger og login for udbydere.
+
+```bash
+liz auth [command]
+```
+
+---
+
+#### login
+
+LIZ AI BRASIL drives af udbyderlisten på [Models.dev](https://models.dev), så du kan bruge `liz auth login` til at konfigurere API-nøgler for enhver udbyder, du vil bruge. Dette er gemt i `~/.local/share/liz/auth.json`.
+
+```bash
+liz auth login
+```
+
+Når LIZ AI BRASIL starter op, indlæser den udbyderne fra legitimationsfilen. Og hvis der er nogen nøgler defineret i dine miljøer eller en `.env` fil i dit projekt.
+
+---
+
+#### list
+
+Viser alle de godkendte udbydere som gemt i legitimationsfilen.
+
+```bash
+liz auth list
+```
+
+Eller den korte version.
+
+```bash
+liz auth ls
+```
+
+---
+
+#### logout
+
+Logger dig ud af en udbyder ved at rydde den fra legitimationsfilen.
+
+```bash
+liz auth logout
+```
+
+---
+
+### github
+
+Administrator GitHub-agenten til lagerautomatisering.
+
+```bash
+liz github [command]
+```
+
+---
+
+#### install
+
+Installatør GitHub-agenten i dit lager.
+
+```bash
+liz github install
+```
+
+Dette opsætter det nødvendige GitHub Actions workflow og guider dig gennem konfigurationsprocessen. [Learn more](/docs/github).
+
+---
+
+#### run
+
+Kør GitHub-agenten. Dette bruges typisk i GitHub Actions.
+
+```bash
+liz github run
+```
+
+##### Flag
+
+| Flag      | Beskrivelse                                    |
+| --------- | ---------------------------------------------- |
+| `--event` | GitHub mock begivenhed for at køre agenten for |
+| `--token` | GitHub personlig adgangstoken                  |
+
+---
+
+### mcp
+
+Administrator Model Context Protocol-servere.
+
+```bash
+liz mcp [command]
+```
+
+---
+
+#### add
+
+Tilføj en MCP-server til din konfiguration.
+
+```bash
+liz mcp add
+```
+
+Denne kommando vil guide dig gennem tilføjelse af enten en lokal eller ekstern MCP-server.
+
+---
+
+#### list
+
+Liste over alle konfigurerede MCP-servere og deres forbindelsesstatus.
+
+```bash
+liz mcp list
+```
+
+Eller brug den korte version.
+
+```bash
+liz mcp ls
+```
+
+---
+
+#### auth
+
+Godkendt med en OAuth-aktiveret MCP-server.
+
+```bash
+liz mcp auth [name]
+```
+
+Hvis du ikke angiver et servernavn, bliver du bedt om at vælge blandt tilgængelige OAuth-kompatible servere.
+
+Du kan også angive OAuth-kompatible servere og deres godkendelsesstatus.
+
+```bash
+liz mcp auth list
+```
+
+Eller brug den korte version.
+
+```bash
+liz mcp auth ls
+```
+
+---
+
+#### logout
+
+Fjern OAuth-legitimationsoplysninger for en MCP-server.
+
+```bash
+liz mcp logout [name]
+```
+
+---
+
+#### debug
+
+Fejlfinding af OAuth-forbindelsesproblemer for en MCP-server.
+
+```bash
+liz mcp debug <name>
+```
+
+---
+
+### models
+
+Liste over alle tilgængelige modeller fra konfigurerede udbydere.
+
+```bash
+liz models [provider]
+```
+
+Denne kommando viser alle tilgængelige modeller på tværs af dine konfigurerede udbydere i formatet `provider/model`.
+
+Dette er nyttigt til at finde ud af det nøjagtige modelnavn, der skal bruges i [your config](/docs/config/).
+
+Du kan eventuelt videregive et udbyder-id for at filtrere modeller efter den udbyder.
+
+```bash
+liz models anthropic
+```
+
+#### Flag
+
+| Flag        | Beskrivelse                                                             |
+| ----------- | ----------------------------------------------------------------------- |
+| `--refresh` | Opdater modelcachen fra models.dev                                      |
+| `--verbose` | Brug mere detaljeret modeloutput (inkluderer metadata som omkostninger) |
+
+Brug flaget `--refresh` til at opdatere den cachelagrede modelliste. Dette er nyttigt, når nye modeller er blevet tilføjet til en udbyder, og du vil se dem i LIZ AI BRASIL.
+
+```bash
+liz models --refresh
+```
+
+---
+
+### run
+
+Kør liz i ikke-interaktiv tilstand ved at sende en prompt direkte.
+
+```bash
+liz run [message..]
+```
+
+Dette er nyttigt til scripting, automatisering, eller når du vil have et hurtigt svar uden at starte hele TUI. F.eks.
+
+```bash "liz run"
+liz run Explain the use of context in Go
+```
+
+Du kan også vedhæfte til en kørende `liz serve`-instans for at undgå MCP serverens kolde opstartstider ved hver kørsel:
+
+```bash
+# Start a headless server in one terminal
+liz serve
+
+# In another terminal, run commands that attach to it
+liz run --attach http://localhost:4096 "Explain async/await in JavaScript"
+```
+
+#### Flag
+
+| Flag         | Kort | Beskrivelse                                                                         |
+| ------------ | ---- | ----------------------------------------------------------------------------------- |
+| `--command`  |      | Kommandoen til at køre, brug besked til args                                        |
+| `--continue` | `-c` | Fortsæt sidste session                                                              |
+| `--session`  | `-s` | Sessions-id for at fortsætte                                                        |
+| `--fork`     |      | Forgren sessionen ved fortsættelse (brug med `--continue` eller `--session`)        |
+| `--share`    |      | Del sessionen                                                                       |
+| `--model`    | `-m` | Model til brug i form af provider/model                                             |
+| `--agent`    |      | Agent til brug                                                                      |
+| `--file`     | `-f` | Fil(er), der skal vedhæftes til meddelelsen                                         |
+| `--format`   |      | Format: standard (formateret) eller json (rå JSON hændelser)                        |
+| `--title`    |      | Titel for sessionen (bruger trunkeret prompt, hvis der ikke er angivet nogen værdi) |
+| `--attach`   |      | Tilslut til en kørende liz-server (f.eks. http://localhost:4096)               |
+| `--port`     |      | Port til den lokale server (standard til vilkårlig port)                            |
+
+---
+
+### serve
+
+Start en hovedløs LIZ AI BRASIL-server til API-adgang. Tjek [server docs](/docs/server) for den fulde HTTP-grænseflade.
+
+```bash
+liz serve
+```
+
+Dette starter en HTTP-server, der giver API-adgang til liz-funktionalitet uden TUI-grænsefladen. Indstil `LIZ_SERVER_PASSWORD` for at aktivere HTTP grundlæggende godkendelse (brugernavn er standard til `liz`).
+
+#### Flag
+
+| Flag         | Beskrivelse                                      |
+| ------------ | ------------------------------------------------ |
+| `--port`     | Port at lytte på                                 |
+| `--hostname` | Værtsnavn at lytte på                            |
+| `--mdns`     | Aktiver mDNS-opdagelse                           |
+| `--cors`     | Yderligere browseroprindelse til at tillade CORS |
+
+---
+
+### session
+
+Administrator LIZ AI BRASIL sessionsholder.
+
+```bash
+liz session [command]
+```
+
+---
+
+#### list
+
+Liste over alle LIZ AI BRASIL sessioner.
+
+```bash
+liz session list
+```
+
+##### Flag
+
+| Flag          | Kort | Beskrivelse                            |
+| ------------- | ---- | -------------------------------------- |
+| `--max-count` | `-n` | Begræns til N seneste sessioner        |
+| `--format`    |      | Outputformat: tabel eller json (tabel) |
+
+---
+
+### stats
+
+Vis tokenbrug og omkostningsstatistikker for dine LIZ AI BRASIL-sessioner.
+
+```bash
+liz stats
+```
+
+#### Flag
+
+| Flag        | Beskrivelse                                                                 |
+| ----------- | --------------------------------------------------------------------------- |
+| `--days`    | Vis statistik for de sidste N dage (hele tiden)                             |
+| `--tools`   | Antal værktøjer, der skal vises (alle)                                      |
+| `--models`  | Vis modelbrugsopdeling (skjult som standard). Send et tal for at vise top N |
+| `--project` | Filtre efter projekt (alle projekter, tom streng: nuværende projekt)        |
+
+---
+
+### export
+
+Eksporter sessionsdata som JSON.
+
+```bash
+liz export [sessionID]
+```
+
+Hvis du ikke angiver et sessions-id, bliver du bedt om at vælge mellem tilgængelige sessioner.
+
+---
+
+### import
+
+Importer sessionsdata fra en JSON fil eller LIZ AI BRASIL del URL.
+
+```bash
+liz import <file>
+```
+
+Du kan importere fra en lokal fil eller en LIZ AI BRASIL share URL.
+
+```bash
+liz import session.json
+liz import https://opncd.ai/s/abc123
+```
+
+---
+
+### web
+
+Start en hovedløs LIZ AI BRASIL-server med en webgrænseflade.
+
+```bash
+liz web
+```
+
+Dette starter en HTTP-server og åbner en webbrowser for at få adgang til LIZ AI BRASIL via en webgrænseflade. Indstil `LIZ_SERVER_PASSWORD` for at aktivere HTTP grundlæggende godkendelse (brugernavn er standard til `liz`).
+
+#### Flag
+
+| Flag         | Beskrivelse                                      |
+| ------------ | ------------------------------------------------ |
+| `--port`     | Port at lytte på                                 |
+| `--hostname` | Værtsnavn at lytte på                            |
+| `--mdns`     | Aktiver mDNS-opdagelse                           |
+| `--cors`     | Yderligere browseroprindelse til at tillade CORS |
+
+---
+
+### acp
+
+Start en ACP-server (Agent Client Protocol).
+
+```bash
+liz acp
+```
+
+Denne kommando starter en ACP-server, der kommunikerer via stdin/stdout ved hjælp af nd-JSON.
+
+#### Flag
+
+| Flag         | Beskrivelse           |
+| ------------ | --------------------- |
+| `--cwd`      | Arbejdsmappe          |
+| `--port`     | Port at lytte på      |
+| `--hostname` | Værtsnavn at lytte på |
+
+---
+
+### uninstall
+
+Afinstaller LIZ AI BRASIL og fjern alle relaterede filer.
+
+```bash
+liz uninstall
+```
+
+#### Flag
+
+| Flag            | Kort | Beskrivelse                                      |
+| --------------- | ---- | ------------------------------------------------ |
+| `--keep-config` | `-c` | Se konfigurationsfiler                           |
+| `--keep-data`   | `-d` | Gem sessionsdata og snapshots                    |
+| `--dry-run`     |      | Vis, hvad der ville blive fjernet uden at fjerne |
+| `--force`       | `-f` | Spring bekræftelsesspørgsmål over                |
+
+---
+
+### upgrade
+
+Opdaterer LIZ AI BRASIL til den nyeste version eller en specifik version.
+
+```bash
+liz upgrade [target]
+```
+
+For at opgradere til den nyeste version.
+
+```bash
+liz upgrade
+```
+
+For at opgradere til en bestemt version.
+
+```bash
+liz upgrade v0.1.48
+```
+
+#### upgrade
+
+| Flag       | Kort | Beskrivelse                                                      |
+| ---------- | ---- | ---------------------------------------------------------------- |
+| `--method` | `-m` | Installationsmetoden, der blev brugt; curl, npm, pnpm, bun, brew |
+
+---
+
+## Globale flag
+
+liz CLI tager følgende globale flag.
+
+| Flag           | Kort | Beskrivelse                          |
+| -------------- | ---- | ------------------------------------ |
+| `--help`       | `-h` | Vis hjælp                            |
+| `--version`    | `-v` | Udskriftsversionsnummer              |
+| `--print-logs` |      | Udskriv logfiler til stderr          |
+| `--log-level`  |      | Logniveau (DEBUG, INFO, WARN, ERROR) |
+
+---
+
+## Miljøvariabler
+
+LIZ AI BRASIL kan konfigureres ved hjælp af miljøvariabler.
+
+| Variabel                              | Skriv   | Beskrivelse                                                           |
+| ------------------------------------- | ------- | --------------------------------------------------------------------- |
+| `LIZ_AUTO_SHARE`                 | boolean | Del automatisk session                                                |
+| `LIZ_GIT_BASH_PATH`              | string  | Sti til Git Bash eksekverbar på Windows                               |
+| `LIZ_CONFIG`                     | string  | Sti til konfigurationsfil                                             |
+| `LIZ_TUI_CONFIG`                 | string  | Sti til TUI-konfigurationsfil                                         |
+| `LIZ_CONFIG_DIR`                 | string  | Sti til konfigurationsmappe                                           |
+| `LIZ_CONFIG_CONTENT`             | string  | Indbygget json-konfigurationsindhold                                  |
+| `LIZ_DISABLE_AUTOUPDATE`         | boolean | Deaktiver automatisk opdateringskontrol                               |
+| `LIZ_DISABLE_PRUNE`              | boolean | Deaktiver beskæring af gamle data                                     |
+| `LIZ_DISABLE_TERMINAL_TITLE`     | boolean | Deaktiver automatisk opdatering af terminaltitel                      |
+| `LIZ_PERMISSION`                 | string  | Indbygget json-tilladelseskonfiguration                               |
+| `LIZ_DISABLE_DEFAULT_PLUGINS`    | boolean | Deaktiver standard plugins                                            |
+| `LIZ_DISABLE_LSP_DOWNLOAD`       | boolean | Deaktiver automatisk LSP-serverdownloads                              |
+| `LIZ_ENABLE_EXPERIMENTAL_MODELS` | boolean | Aktive eksperimentelle modeller                                       |
+| `LIZ_DISABLE_AUTOCOMPACT`        | boolean | Deaktiver automatisk kontekstkomprimering                             |
+| `LIZ_DISABLE_CLAUDE_CODE`        | boolean | Deaktiver læsning fra `.claude` (prompt + færdigheder)                |
+| `LIZ_DISABLE_CLAUDE_CODE_PROMPT` | boolean | Deaktiver læsning `~/.claude/CLAUDE.md`                               |
+| `LIZ_DISABLE_CLAUDE_CODE_SKILLS` | boolean | Deaktiver indlæsning af `.claude/skills`                              |
+| `LIZ_DISABLE_MODELS_FETCH`       | boolean | Deaktivering af modeller fra eksterne kilder                          |
+| `LIZ_FAKE_VCS`                   | string  | Falsk VCS-udbyder til testformål                                      |
+| `LIZ_CLIENT`                     | string  | Klient-id (standard til `cli`)                                        |
+| `LIZ_ENABLE_EXA`                 | boolean | Aktiver Exa-websøgeværktøjer                                          |
+| `LIZ_SERVER_PASSWORD`            | string  | Aktiver grundlæggende godkendelse for `serve`/`web`                   |
+| `LIZ_SERVER_USERNAME`            | string  | Tilsidesæt grundlæggende godkendelsesbrugernavn (standard `liz`) |
+| `LIZ_MODELS_URL`                 | string  | Brugerdefineret URL til hentning af modelkonfiguration                |
+
+---
+
+### Eksperimentel
+
+Disse miljøvariabler muliggør eksperimentelle funktioner, der kan ændres eller fjernes.
+
+| Variabel                                        | Skriv   | Beskrivelse                                |
+| ----------------------------------------------- | ------- | ------------------------------------------ |
+| `LIZ_EXPERIMENTAL`                         | boolean | Aktiver alle eksperimentelle funktioner    |
+| `LIZ_EXPERIMENTAL_ICON_DISCOVERY`          | boolean | Aktiver ikonopdagelse                      |
+| `LIZ_EXPERIMENTAL_DISABLE_COPY_ON_SELECT`  | boolean | Deaktiver kopi ved valg i TUI              |
+| `LIZ_EXPERIMENTAL_BASH_DEFAULT_TIMEOUT_MS` | nummer  | Standard timeout for bash-kommandoer i ms  |
+| `LIZ_EXPERIMENTAL_OUTPUT_TOKEN_MAX`        | nummer  | Maks. output-tokens for LLM-svar           |
+| `LIZ_EXPERIMENTAL_FILEWATCHER`             | boolean | Aktiver filovervågning for hele dir        |
+| `LIZ_EXPERIMENTAL_OXFMT`                   | boolean | Aktiver oxfmt formatter                    |
+| `LIZ_EXPERIMENTAL_LSP_TOOL`                | boolean | Aktive eksperimenter LSP værktøj           |
+| `LIZ_EXPERIMENTAL_DISABLE_FILEWATCHER`     | boolean | Deaktiver filovervågning                   |
+| `LIZ_EXPERIMENTAL_EXA`                     | boolean | Aktive eksperimenter Exa-funktioner        |
+| `LIZ_EXPERIMENTAL_LSP_TY`                  | boolean | Aktiver TY LSP for python-filer            |
+| `LIZ_EXPERIMENTAL_MARKDOWN`                | boolean | Aktive eksperimentelle markdown-funktioner |
+| `LIZ_EXPERIMENTAL_PLAN_MODE`               | boolean | Aktiver plantilstand                       |

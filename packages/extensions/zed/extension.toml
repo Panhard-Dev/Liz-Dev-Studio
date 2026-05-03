@@ -1,0 +1,36 @@
+id = "liz"
+name = "LIZ AI BRASIL"
+description = "The open source coding agent."
+version = "1.14.31"
+schema_version = 1
+authors = ["Anomaly"]
+repository = "https://github.com/anomalyco/liz"
+
+[agent_servers.liz]
+name = "LIZ AI BRASIL"
+icon = "./icons/liz.svg"
+
+[agent_servers.liz.targets.darwin-aarch64]
+archive = "https://github.com/anomalyco/liz/releases/download/v1.14.31/liz-darwin-arm64.zip"
+cmd = "./liz"
+args = ["acp"]
+
+[agent_servers.liz.targets.darwin-x86_64]
+archive = "https://github.com/anomalyco/liz/releases/download/v1.14.31/liz-darwin-x64.zip"
+cmd = "./liz"
+args = ["acp"]
+
+[agent_servers.liz.targets.linux-aarch64]
+archive = "https://github.com/anomalyco/liz/releases/download/v1.14.31/liz-linux-arm64.tar.gz"
+cmd = "./liz"
+args = ["acp"]
+
+[agent_servers.liz.targets.linux-x86_64]
+archive = "https://github.com/anomalyco/liz/releases/download/v1.14.31/liz-linux-x64.tar.gz"
+cmd = "./liz"
+args = ["acp"]
+
+[agent_servers.liz.targets.windows-x86_64]
+archive = "https://github.com/anomalyco/liz/releases/download/v1.14.31/liz-windows-x64.zip"
+cmd = "./liz.exe"
+args = ["acp"]
