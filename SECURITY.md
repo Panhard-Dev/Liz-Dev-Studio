@@ -1,7 +1,7 @@
 # Seguranca
 
-Este e um projeto privado da LIZ AI BRASIL.
+A seguranca da LIZ AI BRASIL e tratada com prioridade.
 
-Relatos, verificacoes e tratativas de seguranca devem seguir os canais internos definidos pela empresa.
+Nao publique informacoes sensiveis, credenciais, logs privados, detalhes internos ou procedimentos operacionais em documentos publicos.
 
-Nao publique informacoes sensiveis, detalhes de infraestrutura, credenciais, logs privados ou procedimentos internos em documentos publicos.
+Relatos de seguranca devem seguir os canais oficiais definidos pela LIZ AI BRASIL.

@@ -1,7 +1,7 @@
 # Contribuicao
 
-Este e um projeto privado da LIZ AI BRASIL.
+Este e o projeto oficial da LIZ AI BRASIL.
 
-Contribuicoes, revisoes e alteracoes sao restritas a pessoas autorizadas pela LIZ AI BRASIL.
+A documentacao publica deve permanecer clara, institucional e sem detalhes internos ou sensiveis.
 
-Procedimentos internos devem permanecer em canais internos da empresa e nao devem ser documentados publicamente neste repositorio.
+Contribuicoes devem preservar a identidade da LIZ AI BRASIL, os modelos oficiais da Liz e a estabilidade do produto.

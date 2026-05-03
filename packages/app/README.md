@@ -1,7 +1,7 @@
 # LIZ AI BRASIL
 
-Este diretorio faz parte de um projeto privado da LIZ AI BRASIL.
+Este diretorio faz parte do projeto oficial da LIZ AI BRASIL.
 
-A documentacao publica deste repositorio deve permanecer sem instrucoes internas ou detalhes sensiveis.
+A documentacao publica deve permanecer institucional e nao deve expor detalhes internos, sensiveis ou operacionais.
 
-Uso e alteracoes sao restritos a pessoas autorizadas pela LIZ AI BRASIL.
+Alteracoes devem preservar a identidade, os modelos oficiais e a estabilidade do produto.
