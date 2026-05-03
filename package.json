@@ -111,9 +111,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/anomalyco/liz"
+    "url": "https://github.com/Panhard-Dev/Liz-Dev-Studio"
   },
-  "license": "MIT",
+  "license": "UNLICENSED",
   "prettier": {
     "semi": false,
     "printWidth": 120

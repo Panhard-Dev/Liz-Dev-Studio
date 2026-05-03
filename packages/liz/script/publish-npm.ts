@@ -40,7 +40,6 @@ const version = Object.values(binaries)[0]
 await $`mkdir -p ./dist/${publicPackageName}`
 await $`cp -r ./bin ./dist/${publicPackageName}/bin`
 await $`cp ./script/postinstall.mjs ./dist/${publicPackageName}/postinstall.mjs`
-await Bun.file(`./dist/${publicPackageName}/LICENSE`).write(await Bun.file("../../LICENSE").text())
 
 await Bun.file(`./dist/${publicPackageName}/package.json`).write(
   JSON.stringify(
@@ -55,8 +54,7 @@ await Bun.file(`./dist/${publicPackageName}/package.json`).write(
         postinstall: "bun ./postinstall.mjs || node ./postinstall.mjs",
       },
       version,
-      license: pkg.license,
-      homepage: "https://github.com/anomalyco/liz",
+      license: "UNLICENSED",
       optionalDependencies: binaries,
     },
     null,

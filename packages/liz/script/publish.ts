@@ -30,12 +30,17 @@ for (const filepath of new Bun.Glob("*/package.json").scanSync({ cwd: "./dist" }
   binaries[pkg.name] = pkg.version
 }
 console.log("binaries", binaries)
+
+if (Object.keys(binaries).length === 0) {
+  console.error("No CLI binaries found in packages/liz/dist. Run the CLI build before publishing.")
+  process.exit(1)
+}
+
 const version = Object.values(binaries)[0]
 
 await $`mkdir -p ./dist/${publicPackageName}`
 await $`cp -r ./bin ./dist/${publicPackageName}/bin`
 await $`cp ./script/postinstall.mjs ./dist/${publicPackageName}/postinstall.mjs`
-await Bun.file(`./dist/${publicPackageName}/LICENSE`).write(await Bun.file("../../LICENSE").text())
 
 await Bun.file(`./dist/${publicPackageName}/package.json`).write(
   JSON.stringify(
@@ -50,8 +55,7 @@ await Bun.file(`./dist/${publicPackageName}/package.json`).write(
         postinstall: "bun ./postinstall.mjs || node ./postinstall.mjs",
       },
       version: version,
-      license: pkg.license,
-      homepage: "https://github.com/anomalyco/liz",
+      license: "UNLICENSED",
       optionalDependencies: binaries,
     },
     null,
@@ -65,14 +69,21 @@ const tasks = Object.entries(binaries).map(async ([name]) => {
 await Promise.all(tasks)
 await publish(`./dist/${publicPackageName}`, publicPackageName, version)
 
-const image = "ghcr.io/anomalyco/liz"
+const repo = process.env.GH_REPO ?? "Panhard-Dev/Liz-Dev-Studio"
+const releaseBase = `https://github.com/${repo}/releases/download/v${Script.version}`
+const image = `ghcr.io/${repo.toLowerCase()}`
 const platforms = "linux/amd64,linux/arm64"
 const tags = [`${image}:${version}`, `${image}:${Script.channel}`]
 const tagFlags = tags.flatMap((t) => ["-t", t])
 
 // registries
 if (!Script.preview) {
-  await $`docker buildx build --platform ${platforms} ${tagFlags} --push .`
+  if (process.env.PUBLISH_CONTAINER === "true") {
+    await $`docker buildx build --platform ${platforms} ${tagFlags} --push .`
+  } else {
+    console.log("Skipping container publish. Set PUBLISH_CONTAINER=true to enable it.")
+  }
+
   // Calculate SHA values
   const arm64Sha = await $`sha256sum ./dist/liz-linux-arm64.tar.gz | cut -d' ' -f1`.text().then((x) => x.trim())
   const x64Sha = await $`sha256sum ./dist/liz-linux-x64.tar.gz | cut -d' ' -f1`.text().then((x) => x.trim())
@@ -91,18 +102,18 @@ if (!Script.preview) {
     `_subver=${_subver}`,
     "options=('!debug' '!strip')",
     "pkgrel=1",
-    "pkgdesc='The AI coding agent built for the terminal.'",
-    "url='https://github.com/anomalyco/liz'",
+    "pkgdesc='LIZ AI BRASIL CLI'",
+    `url='https://github.com/${repo}'`,
     "arch=('aarch64' 'x86_64')",
-    "license=('MIT')",
+    "license=('custom')",
     "provides=('liz')",
     "conflicts=('liz')",
     "depends=('ripgrep')",
     "",
-    `source_aarch64=("\${pkgname}_\${pkgver}_aarch64.tar.gz::https://github.com/anomalyco/liz/releases/download/v\${pkgver}\${_subver}/liz-linux-arm64.tar.gz")`,
+    `source_aarch64=("\${pkgname}_\${pkgver}_aarch64.tar.gz::${releaseBase}/liz-linux-arm64.tar.gz")`,
     `sha256sums_aarch64=('${arm64Sha}')`,
 
-    `source_x86_64=("\${pkgname}_\${pkgver}_x86_64.tar.gz::https://github.com/anomalyco/liz/releases/download/v\${pkgver}\${_subver}/liz-linux-x64.tar.gz")`,
+    `source_x86_64=("\${pkgname}_\${pkgver}_x86_64.tar.gz::${releaseBase}/liz-linux-x64.tar.gz")`,
     `sha256sums_x86_64=('${x64Sha}')`,
     "",
     "package() {",
@@ -111,23 +122,27 @@ if (!Script.preview) {
     "",
   ].join("\n")
 
-  for (const [pkg, pkgbuild] of [["liz-bin", binaryPkgbuild]]) {
-    for (let i = 0; i < 30; i++) {
-      try {
-        await $`rm -rf ./dist/aur-${pkg}`
-        await $`git clone ssh://aur@aur.archlinux.org/${pkg}.git ./dist/aur-${pkg}`
-        await $`cd ./dist/aur-${pkg} && git checkout master`
-        await Bun.file(`./dist/aur-${pkg}/PKGBUILD`).write(pkgbuild)
-        await $`cd ./dist/aur-${pkg} && makepkg --printsrcinfo > .SRCINFO`
-        await $`cd ./dist/aur-${pkg} && git add PKGBUILD .SRCINFO`
-        if ((await $`cd ./dist/aur-${pkg} && git diff --cached --quiet`.nothrow()).exitCode === 0) break
-        await $`cd ./dist/aur-${pkg} && git commit -m "Update to v${Script.version}"`
-        await $`cd ./dist/aur-${pkg} && git push`
-        break
-      } catch {
-        continue
+  if (process.env.AUR_KEY) {
+    for (const [pkg, pkgbuild] of [["liz-bin", binaryPkgbuild]]) {
+      for (let i = 0; i < 30; i++) {
+        try {
+          await $`rm -rf ./dist/aur-${pkg}`
+          await $`git clone ssh://aur@aur.archlinux.org/${pkg}.git ./dist/aur-${pkg}`
+          await $`cd ./dist/aur-${pkg} && git checkout master`
+          await Bun.file(`./dist/aur-${pkg}/PKGBUILD`).write(pkgbuild)
+          await $`cd ./dist/aur-${pkg} && makepkg --printsrcinfo > .SRCINFO`
+          await $`cd ./dist/aur-${pkg} && git add PKGBUILD .SRCINFO`
+          if ((await $`cd ./dist/aur-${pkg} && git diff --cached --quiet`.nothrow()).exitCode === 0) break
+          await $`cd ./dist/aur-${pkg} && git commit -m "Update to v${Script.version}"`
+          await $`cd ./dist/aur-${pkg} && git push`
+          break
+        } catch {
+          continue
+        }
       }
     }
+  } else {
+    console.log("Skipping AUR publish because AUR_KEY is not configured.")
   }
 
   // Homebrew formula
@@ -137,15 +152,15 @@ if (!Script.preview) {
     "",
     "# This file was generated by GoReleaser. DO NOT EDIT.",
     "class Liz < Formula",
-    `  desc "The AI coding agent built for the terminal."`,
-    `  homepage "https://github.com/anomalyco/liz"`,
+    `  desc "LIZ AI BRASIL CLI"`,
+    `  homepage "https://github.com/${repo}"`,
     `  version "${Script.version.split("-")[0]}"`,
     "",
     `  depends_on "ripgrep"`,
     "",
     "  on_macos do",
     "    if Hardware::CPU.intel?",
-    `      url "https://github.com/anomalyco/liz/releases/download/v${Script.version}/liz-darwin-x64.zip"`,
+    `      url "${releaseBase}/liz-darwin-x64.zip"`,
     `      sha256 "${macX64Sha}"`,
     "",
     "      def install",
@@ -153,7 +168,7 @@ if (!Script.preview) {
     "      end",
     "    end",
     "    if Hardware::CPU.arm?",
-    `      url "https://github.com/anomalyco/liz/releases/download/v${Script.version}/liz-darwin-arm64.zip"`,
+    `      url "${releaseBase}/liz-darwin-arm64.zip"`,
     `      sha256 "${macArm64Sha}"`,
     "",
     "      def install",
@@ -164,14 +179,14 @@ if (!Script.preview) {
     "",
     "  on_linux do",
     "    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?",
-    `      url "https://github.com/anomalyco/liz/releases/download/v${Script.version}/liz-linux-x64.tar.gz"`,
+    `      url "${releaseBase}/liz-linux-x64.tar.gz"`,
     `      sha256 "${x64Sha}"`,
     "      def install",
     '        bin.install "liz"',
     "      end",
     "    end",
     "    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?",
-    `      url "https://github.com/anomalyco/liz/releases/download/v${Script.version}/liz-linux-arm64.tar.gz"`,
+    `      url "${releaseBase}/liz-linux-arm64.tar.gz"`,
     `      sha256 "${arm64Sha}"`,
     "      def install",
     '        bin.install "liz"',
@@ -184,17 +199,21 @@ if (!Script.preview) {
   ].join("\n")
 
   const token = process.env.GITHUB_TOKEN
-  if (!token) {
+  const tapRepo = process.env.HOMEBREW_TAP_REPO
+  if (tapRepo && !token) {
     console.error("GITHUB_TOKEN is required to update homebrew tap")
     process.exit(1)
   }
-  const tap = `https://x-access-token:${token}@github.com/anomalyco/homebrew-tap.git`
-  await $`rm -rf ./dist/homebrew-tap`
-  await $`git clone ${tap} ./dist/homebrew-tap`
-  await Bun.file("./dist/homebrew-tap/liz.rb").write(homebrewFormula)
-  await $`cd ./dist/homebrew-tap && git add liz.rb`
-  if ((await $`cd ./dist/homebrew-tap && git diff --cached --quiet`.nothrow()).exitCode !== 0) {
-    await $`cd ./dist/homebrew-tap && git commit -m "Update to v${Script.version}"`
-    await $`cd ./dist/homebrew-tap && git push`
+  if (tapRepo) {
+    await $`rm -rf ./dist/homebrew-tap`
+    await $`git clone ${`https://x-access-token:${token}@github.com/${tapRepo}.git`} ./dist/homebrew-tap`
+    await Bun.file("./dist/homebrew-tap/liz.rb").write(homebrewFormula)
+    await $`cd ./dist/homebrew-tap && git add liz.rb`
+    if ((await $`cd ./dist/homebrew-tap && git diff --cached --quiet`.nothrow()).exitCode !== 0) {
+      await $`cd ./dist/homebrew-tap && git commit -m "Update to v${Script.version}"`
+      await $`cd ./dist/homebrew-tap && git push`
+    }
+  } else {
+    console.log("Skipping Homebrew publish because HOMEBREW_TAP_REPO is not configured.")
   }
 }
