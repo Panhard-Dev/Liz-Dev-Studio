@@ -1,9 +1,5 @@
 <p align="center">
-  <picture>
-    <source srcset="assets/liz-ai-brasil-dark.svg" media="(prefers-color-scheme: dark)">
-    <source srcset="assets/liz-ai-brasil-light.svg" media="(prefers-color-scheme: light)">
-    <img src="assets/liz-ai-brasil-light.svg" alt="LIZ AI BRASIL" width="900">
-  </picture>
+  <img src="assets/liz-ai-brasil-cli.svg" alt="LIZ AI BRASIL" width="900">
 </p>
 
 ---
