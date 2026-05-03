@@ -24,7 +24,7 @@ jobs:
           git config --global user.name "github-actions[bot]"
 
       - name: Generate
-        run: ./script/generate.ts
+        run: bun ./script/generate.ts
 
       - name: Commit and push
         run: |
