@@ -14,8 +14,6 @@ jobs:
         include:
           - os: ubuntu-latest
             name: linux-x64
-          - os: windows-latest
-            name: windows-x64
           - os: macos-latest
             name: darwin-arm64
     runs-on: ${{ matrix.os }}
