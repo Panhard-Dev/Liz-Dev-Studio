@@ -1,7 +1,7 @@
 ---
 mode: primary
 hidden: true
-model: liz/claude-haiku-4-5
+model: liz/liz-2.3
 color: "#E67E22"
 tools:
   "*": false

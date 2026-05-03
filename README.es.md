@@ -1,141 +1,156 @@
 <p align="center">
-  <a href="https://liz.ai">
-    <picture>
-      <source srcset="packages/console/app/src/asset/logo-ornate-dark.svg" media="(prefers-color-scheme: dark)">
-      <source srcset="packages/console/app/src/asset/logo-ornate-light.svg" media="(prefers-color-scheme: light)">
-      <img src="packages/console/app/src/asset/logo-ornate-light.svg" alt="LIZ AI BRASIL logo">
-    </picture>
-  </a>
+  <picture>
+    <source srcset="packages/console/app/src/asset/logo-ornate-dark.svg" media="(prefers-color-scheme: dark)">
+    <source srcset="packages/console/app/src/asset/logo-ornate-light.svg" media="(prefers-color-scheme: light)">
+    <img src="packages/console/app/src/asset/logo-ornate-light.svg" alt="LIZ AI BRASIL" width="360">
+  </picture>
 </p>
-<p align="center">El agente de programación con IA de código abierto.</p>
+
+<h1 align="center">LIZ AI BRASIL</h1>
+
 <p align="center">
-  <a href="https://liz.ai/discord"><img alt="Discord" src="https://img.shields.io/discord/1391832426048651334?style=flat-square&label=discord" /></a>
-  <a href="https://www.npmjs.com/package/liz-ai-brasil"><img alt="npm" src="https://img.shields.io/npm/v/liz-ai-brasil?style=flat-square" /></a>
-  <a href="https://github.com/anomalyco/liz/actions/workflows/publish.yml"><img alt="Build status" src="https://img.shields.io/github/actions/workflow/status/anomalyco/liz/publish.yml?style=flat-square&branch=dev" /></a>
+  <strong>Liz Dev Studio</strong><br>
+  CLI e aplicativo Desktop/EXE oficial da LIZ AI BRASIL.
 </p>
 
 <p align="center">
-  <a href="README.md">English</a> |
-  <a href="README.zh.md">简体中文</a> |
-  <a href="README.zht.md">繁體中文</a> |
-  <a href="README.ko.md">한국어</a> |
-  <a href="README.de.md">Deutsch</a> |
-  <a href="README.es.md">Español</a> |
-  <a href="README.fr.md">Français</a> |
-  <a href="README.it.md">Italiano</a> |
-  <a href="README.da.md">Dansk</a> |
-  <a href="README.ja.md">日本語</a> |
-  <a href="README.pl.md">Polski</a> |
-  <a href="README.ru.md">Русский</a> |
-  <a href="README.bs.md">Bosanski</a> |
-  <a href="README.ar.md">العربية</a> |
-  <a href="README.no.md">Norsk</a> |
-  <a href="README.br.md">Português (Brasil)</a> |
-  <a href="README.th.md">ไทย</a> |
-  <a href="README.tr.md">Türkçe</a> |
-  <a href="README.uk.md">Українська</a> |
-  <a href="README.bn.md">বাংলা</a> |
-  <a href="README.gr.md">Ελληνικά</a> |
-  <a href="README.vi.md">Tiếng Việt</a>
+  <a href="https://github.com/Panhard-Dev/Liz-Dev-Studio">Repositorio oficial</a>
 </p>
-
-[![LIZ AI BRASIL Terminal UI](packages/web/src/assets/lander/screenshot.png)](https://liz.ai)
 
 ---
 
-### Instalación
+## Sobre
 
-```bash
-# YOLO
-curl -fsSL https://liz.ai/install | bash
+O Liz Dev Studio e o ambiente oficial da LIZ AI BRASIL para desenvolvimento com IA.
 
-# Gestores de paquetes
-npm i -g liz-ai-brasil@latest        # o bun/pnpm/yarn
-scoop install liz             # Windows
-choco install liz             # Windows
-brew install anomalyco/tap/liz # macOS y Linux (recomendado, siempre al día)
-brew install liz              # macOS y Linux (fórmula oficial de brew, se actualiza menos)
-sudo pacman -S liz            # Arch Linux (Stable)
-paru -S liz-bin               # Arch Linux (Latest from AUR)
-mise use -g liz               # cualquier sistema
-nix run nixpkgs#liz           # o github:anomalyco/liz para la rama dev más reciente
+Este projeto reune:
+
+- CLI oficial da LIZ AI BRASIL
+- Aplicativo Desktop/EXE em Electron
+- Autenticacao da conta LIZ AI BRASIL
+- Persistencia de sessao e token
+- Uso, limites, tokens e planos da conta Liz
+- Modelos oficiais da Liz
+- Sistema de skills
+- Identidade visual preto/roxo da LIZ AI BRASIL
+
+## Modelos Oficiais
+
+A LIZ AI BRASIL trabalha com os modelos oficiais da Liz:
+
+- Liz 2.3
+- Liz 2.5 PRO
+- Liz 2.6 PRO
+
+Esses sao os nomes que devem aparecer para o usuario final dentro do app.
+
+## Integracao Oficial
+
+A integracao oficial dos modelos da LIZ AI BRASIL usa:
+
+```txt
+https://dockfile-liz.onrender.com/
 ```
 
-> [!TIP]
-> Elimina versiones anteriores a 0.1.x antes de instalar.
+Essa URL faz parte do fluxo oficial da Liz e deve ser preservada.
 
-### App de escritorio (BETA)
+## Instalar A CLI
 
-LIZ AI BRASIL también está disponible como aplicación de escritorio. Descárgala directamente desde la [página de releases](https://github.com/anomalyco/liz/releases) o desde [liz.ai/download](https://liz.ai/download).
+A CLI publica preparada por este projeto e:
 
-| Plataforma            | Descarga                              |
-| --------------------- | ------------------------------------- |
-| macOS (Apple Silicon) | `liz-desktop-darwin-aarch64.dmg` |
-| macOS (Intel)         | `liz-desktop-darwin-x64.dmg`     |
-| Windows               | `liz-desktop-windows-x64.exe`    |
-| Linux                 | `.deb`, `.rpm`, o AppImage            |
-
-```bash
-# macOS (Homebrew)
-brew install --cask liz-desktop
-# Windows (Scoop)
-scoop bucket add extras; scoop install extras/liz-desktop
+```txt
+liz-ai-brasil
 ```
 
-#### Directorio de instalación
-
-El script de instalación respeta el siguiente orden de prioridad para la ruta de instalación:
-
-1. `$LIZ_INSTALL_DIR` - Directorio de instalación personalizado
-2. `$XDG_BIN_DIR` - Ruta compatible con la especificación XDG Base Directory
-3. `$HOME/bin` - Directorio binario estándar del usuario (si existe o se puede crear)
-4. `$HOME/.liz/bin` - Alternativa por defecto
+Quando o pacote npm estiver publicado, instale com:
 
 ```bash
-# Ejemplos
-LIZ_INSTALL_DIR=/usr/local/bin curl -fsSL https://liz.ai/install | bash
-XDG_BIN_DIR=$HOME/.local/bin curl -fsSL https://liz.ai/install | bash
+npm install -g liz-ai-brasil
 ```
 
-### Agents
+Comandos disponiveis:
 
-LIZ AI BRASIL incluye dos agents integrados que puedes alternar con la tecla `Tab`.
+```bash
+liz --version
+liz-ai-brasil --version
+```
 
-- **build** - Por defecto, agent con acceso completo para trabajo de desarrollo
-- **plan** - Agent de solo lectura para análisis y exploración de código
-  - Niega ediciones de archivos por defecto
-  - Pide permiso antes de ejecutar comandos bash
-  - Ideal para explorar codebases desconocidas o planificar cambios
+## Rodar Localmente
 
-Además, incluye un subagent **general** para búsquedas complejas y tareas de varios pasos.
-Se usa internamente y se puede invocar con `@general` en los mensajes.
+Instalar dependencias:
 
-Más información sobre [agents](https://liz.ai/docs/agents).
+```bash
+bun install
+```
 
-### Documentación
+Rodar a CLI:
 
-Para más información sobre cómo configurar LIZ AI BRASIL, [**ve a nuestra documentación**](https://liz.ai/docs).
+```bash
+bun run --cwd packages/liz dev
+```
 
-### Contribuir
+Rodar o Desktop Electron:
 
-Si te interesa contribuir a LIZ AI BRASIL, lee nuestras [docs de contribución](./CONTRIBUTING.md) antes de enviar un pull request.
+```bash
+bun run dev:desktop
+```
 
-### Construyendo sobre LIZ AI BRASIL
+## Gerar EXE Windows
 
-Si estás trabajando en un proyecto relacionado con LIZ AI BRASIL y usas "liz" como parte del nombre; por ejemplo, "liz-dashboard" u "liz-mobile", agrega una nota en tu README para aclarar que no está construido por el equipo de LIZ AI BRASIL y que no está afiliado con nosotros de ninguna manera.
+```powershell
+cd packages/desktop-electron
+$env:LIZ_CHANNEL="dev"
+bun run build
+bun run package:win
+```
 
-### FAQ
+O instalador sera gerado em:
 
-#### ¿En qué se diferencia de Claude Code?
+```txt
+packages/desktop-electron/dist/Liz Dev Studio Setup.exe
+```
 
-Es muy similar a Claude Code en cuanto a capacidades. Estas son las diferencias clave:
+## Gerar Linux
 
-- 100% open source
-- No está acoplado a ningún proveedor. Aunque recomendamos los modelos que ofrecemos a través de [LIZ AI BRASIL Zen](https://liz.ai/zen); LIZ AI BRASIL se puede usar con Claude, OpenAI, Google o incluso modelos locales. A medida que evolucionan los modelos, las brechas se cerrarán y los precios bajarán, por lo que ser agnóstico al proveedor es importante.
-- Soporte LSP listo para usar
-- Un enfoque en la TUI. LIZ AI BRASIL está construido por usuarios de neovim y los creadores de [terminal.shop](https://terminal.shop); vamos a empujar los límites de lo que es posible en la terminal.
-- Arquitectura cliente/servidor. Esto, por ejemplo, permite ejecutar LIZ AI BRASIL en tu computadora mientras lo controlas de forma remota desde una app móvil. Esto significa que el frontend TUI es solo uno de los posibles clientes.
+```bash
+cd packages/desktop-electron
+LIZ_CHANNEL=prod bun run package:linux
+```
+
+A configuracao do Electron Builder pode gerar AppImage, deb e rpm.
+
+## Publicar A CLI No npm
+
+```bash
+cd packages/liz
+bun run build
+bun run publish:npm
+```
+
+Pacote preparado:
+
+```txt
+liz-ai-brasil
+```
+
+## Cuidados Do Projeto
+
+- Nao quebrar a CLI para corrigir o Desktop.
+- Nao remover modelos oficiais da Liz.
+- Nao trocar a URL oficial dos modelos sem necessidade tecnica real.
+- Nao alterar roteamento, provider ou sessao fora do escopo necessario.
+- Preservar autenticacao, usage, tokens, planos e skills da LIZ AI BRASIL.
+- Preservar a identidade visual preto/roxo da LIZ AI BRASIL.
+
+## Repositorio
+
+```txt
+https://github.com/Panhard-Dev/Liz-Dev-Studio
+```
 
 ---
 
-**Únete a nuestra comunidad** [Discord](https://discord.gg/liz) | [X.com](https://x.com/liz)
+<p align="center">
+  <strong>LIZ AI BRASIL</strong><br>
+  Liz Dev Studio
+</p>

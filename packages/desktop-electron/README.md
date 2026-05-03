@@ -1,32 +1,18 @@
-# LIZ AI BRASIL Desktop
+# LIZ AI BRASIL - Desktop Electron
 
-Native LIZ AI BRASIL desktop app, built with Tauri v2.
+Aplicativo Desktop/EXE oficial da LIZ AI BRASIL, empacotado como Liz Dev Studio.
 
-## Development
+Este diretorio faz parte do projeto oficial da LIZ AI BRASIL / Liz Dev Studio.
 
-From the repo root:
+## Regras Obrigatorias
 
-```bash
-bun install
-bun run --cwd packages/desktop tauri dev
-```
+- Preservar a URL oficial dos modelos: https://dockfile-liz.onrender.com/
+- Preservar a CLI e o Desktop/EXE.
+- Preservar os modelos oficiais Liz 2.3, Liz 2.5 PRO e Liz 2.6 PRO.
+- Preservar autenticacao, usage, tokens, planos e skills da LIZ AI BRASIL.
+- Nao remover funcionalidades importantes.
+- Nao alterar a logica principal sem necessidade tecnica real.
 
-This starts the Vite dev server on http://localhost:1420 and opens the native window.
+## Repositorio
 
-If you only want the web dev server (no native shell):
-
-```bash
-bun run --cwd packages/desktop dev
-```
-
-## Build
-
-To create a production `dist/` and build the native app bundle:
-
-```bash
-bun run --cwd packages/desktop tauri build
-```
-
-## Prerequisites
-
-Running the desktop app requires additional Tauri dependencies (Rust toolchain, platform-specific libraries). See the [Tauri prerequisites](https://v2.tauri.app/start/prerequisites/) for setup instructions.
+https://github.com/Panhard-Dev/Liz-Dev-Studio

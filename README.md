@@ -2,14 +2,15 @@
   <picture>
     <source srcset="packages/console/app/src/asset/logo-ornate-dark.svg" media="(prefers-color-scheme: dark)">
     <source srcset="packages/console/app/src/asset/logo-ornate-light.svg" media="(prefers-color-scheme: light)">
-    <img src="packages/console/app/src/asset/logo-ornate-light.svg" alt="Liz AI Brasil" width="360">
+    <img src="packages/console/app/src/asset/logo-ornate-light.svg" alt="LIZ AI BRASIL" width="360">
   </picture>
 </p>
 
-<h1 align="center">Liz Dev Studio</h1>
+<h1 align="center">LIZ AI BRASIL</h1>
 
 <p align="center">
-  App oficial da <strong>LIZ AI BRASIL</strong> para desenvolvimento com IA, com CLI e Desktop/EXE Electron no mesmo projeto.
+  <strong>Liz Dev Studio</strong><br>
+  CLI e aplicativo Desktop/EXE oficial da LIZ AI BRASIL.
 </p>
 
 <p align="center">
@@ -18,50 +19,56 @@
 
 ---
 
-## LIZ AI BRASIL
+## Sobre
 
-Liz Dev Studio e o projeto oficial da LIZ AI BRASIL para usar a Liz no terminal e no aplicativo desktop.
+O Liz Dev Studio e o ambiente oficial da LIZ AI BRASIL para desenvolvimento com IA.
 
-O foco deste repositorio e manter a experiencia da Liz estavel em:
+Este projeto reune:
 
-- CLI da LIZ AI BRASIL
-- Desktop Electron/EXE da LIZ AI BRASIL
-- autenticacao da conta LIZ AI BRASIL
-- sessao/token persistente
-- uso, tokens e planos da conta Liz
-- modelos oficiais da Liz
-- sistema de skills
-- identidade visual preto/roxo da Liz
+- CLI oficial da LIZ AI BRASIL
+- Aplicativo Desktop/EXE em Electron
+- Autenticacao da conta LIZ AI BRASIL
+- Persistencia de sessao e token
+- Uso, limites, tokens e planos da conta Liz
+- Modelos oficiais da Liz
+- Sistema de skills
+- Identidade visual preto/roxo da LIZ AI BRASIL
 
-## Modelos Oficiais Da Liz
+## Modelos Oficiais
 
-A interface da LIZ AI BRASIL deve mostrar os modelos oficiais:
+A LIZ AI BRASIL trabalha com os modelos oficiais da Liz:
 
 - Liz 2.3
 - Liz 2.5 PRO
 - Liz 2.6 PRO
 
-O usuario nao deve ver texto dizendo que a Liz e um pacote de modelos externos. A marca, a interface e a comunicacao devem ser da LIZ AI BRASIL.
+Esses sao os nomes que devem aparecer para o usuario final dentro do app.
 
-## URL Oficial Dos Modelos
+## Integracao Oficial
 
-A URL oficial da integracao de modelos da Liz e:
+A integracao oficial dos modelos da LIZ AI BRASIL usa:
 
 ```txt
 https://dockfile-liz.onrender.com/
 ```
 
-Essa integracao deve ser preservada. Nao remover, nao trocar e nao quebrar sem necessidade tecnica real.
+Essa URL faz parte do fluxo oficial da Liz e deve ser preservada.
 
 ## Instalar A CLI
 
-Quando o pacote npm estiver publicado:
+A CLI publica preparada por este projeto e:
+
+```txt
+liz-ai-brasil
+```
+
+Quando o pacote npm estiver publicado, instale com:
 
 ```bash
 npm install -g liz-ai-brasil
 ```
 
-Depois:
+Comandos disponiveis:
 
 ```bash
 liz --version
@@ -70,19 +77,19 @@ liz-ai-brasil --version
 
 ## Rodar Localmente
 
-Na raiz do projeto:
+Instalar dependencias:
 
 ```bash
 bun install
 ```
 
-CLI:
+Rodar a CLI:
 
 ```bash
 bun run --cwd packages/liz dev
 ```
 
-Desktop Electron:
+Rodar o Desktop Electron:
 
 ```bash
 bun run dev:desktop
@@ -90,14 +97,14 @@ bun run dev:desktop
 
 ## Gerar EXE Windows
 
-```bash
+```powershell
 cd packages/desktop-electron
 $env:LIZ_CHANNEL="dev"
 bun run build
 bun run package:win
 ```
 
-O instalador gerado fica em:
+O instalador sera gerado em:
 
 ```txt
 packages/desktop-electron/dist/Liz Dev Studio Setup.exe
@@ -110,11 +117,9 @@ cd packages/desktop-electron
 LIZ_CHANNEL=prod bun run package:linux
 ```
 
-O Electron Builder pode gerar AppImage, deb e rpm conforme a configuracao do projeto.
+A configuracao do Electron Builder pode gerar AppImage, deb e rpm.
 
-## Publicar No npm
-
-A publicacao npm da CLI usa:
+## Publicar A CLI No npm
 
 ```bash
 cd packages/liz
@@ -122,24 +127,22 @@ bun run build
 bun run publish:npm
 ```
 
-O pacote publico preparado por este projeto e:
+Pacote preparado:
 
 ```txt
 liz-ai-brasil
 ```
 
-## Regras Importantes Do Projeto
+## Cuidados Do Projeto
 
 - Nao quebrar a CLI para corrigir o Desktop.
-- Nao remover modelos existentes sem necessidade real.
-- Nao trocar a URL oficial dos modelos sem justificativa tecnica.
-- Nao alterar roteamento/provider fora do escopo da correcao.
+- Nao remover modelos oficiais da Liz.
+- Nao trocar a URL oficial dos modelos sem necessidade tecnica real.
+- Nao alterar roteamento, provider ou sessao fora do escopo necessario.
 - Preservar autenticacao, usage, tokens, planos e skills da LIZ AI BRASIL.
-- Preservar a identidade visual preto/roxo da Liz.
+- Preservar a identidade visual preto/roxo da LIZ AI BRASIL.
 
 ## Repositorio
-
-Repositorio oficial publicado:
 
 ```txt
 https://github.com/Panhard-Dev/Liz-Dev-Studio
@@ -147,4 +150,7 @@ https://github.com/Panhard-Dev/Liz-Dev-Studio
 
 ---
 
-LIZ AI BRASIL
+<p align="center">
+  <strong>LIZ AI BRASIL</strong><br>
+  Liz Dev Studio
+</p>

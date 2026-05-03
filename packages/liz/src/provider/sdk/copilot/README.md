@@ -1,5 +1,18 @@
-This is a temporary package used primarily for GitHub Copilot compatibility.
+# LIZ AI BRASIL - Copilot SDK
 
-These DO NOT apply for openai-compatible providers or majority of providers supporting completions/responses apis. THIS IS ONLY FOR GITHUB COPILOT!!!
+Notas internas do SDK de provedor usado pelo projeto, preservando compatibilidade sem mudar o fluxo oficial da Liz.
 
-Avoid making edits to these files
+Este diretorio faz parte do projeto oficial da LIZ AI BRASIL / Liz Dev Studio.
+
+## Regras Obrigatorias
+
+- Preservar a URL oficial dos modelos: https://dockfile-liz.onrender.com/
+- Preservar a CLI e o Desktop/EXE.
+- Preservar os modelos oficiais Liz 2.3, Liz 2.5 PRO e Liz 2.6 PRO.
+- Preservar autenticacao, usage, tokens, planos e skills da LIZ AI BRASIL.
+- Nao remover funcionalidades importantes.
+- Nao alterar a logica principal sem necessidade tecnica real.
+
+## Repositorio
+
+https://github.com/Panhard-Dev/Liz-Dev-Studio

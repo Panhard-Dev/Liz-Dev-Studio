@@ -52,7 +52,7 @@ This means the package split should start from an extraction path, not from gree
 
 ## Structural reference
 
-Use `anomalyco/opentunnel` as the structural reference for `packages/server`.
+Use the existing tunnel/server package structure as the structural reference for `packages/server`.
 
 The important pattern there is:
 

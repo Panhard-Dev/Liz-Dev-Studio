@@ -2,7 +2,7 @@
 
 ## Sources
 
-- PR #15835: https://github.com/anomalyco/liz/pull/15835
+- PR #15835: https://github.com/Panhard-Dev/Liz-Dev-Studio/pull/15835
 
 ## Do Not Translate (Locale Additions)
 

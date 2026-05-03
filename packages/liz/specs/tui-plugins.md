@@ -18,7 +18,7 @@ Example:
 
 ```json
 {
-  "$schema": "https://liz.ai/tui.json",
+  "$schema": "https://github.com/Panhard-Dev/Liz-Dev-Studio/tui.json",
   "theme": "smoke-theme",
   "plugin": ["@acme/liz-plugin@1.2.3", ["./plugins/demo.tsx", { "label": "demo" }]],
   "plugin_enabled": {

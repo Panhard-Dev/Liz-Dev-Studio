@@ -2,8 +2,8 @@
 
 ## Sources
 
-- PR #10809: https://github.com/anomalyco/liz/pull/10809
-- PR #11496: https://github.com/anomalyco/liz/pull/11496
+- PR #10809: https://github.com/Panhard-Dev/Liz-Dev-Studio/pull/10809
+- PR #11496: https://github.com/Panhard-Dev/Liz-Dev-Studio/pull/11496
 
 ## Do Not Translate (Locale Additions)
 

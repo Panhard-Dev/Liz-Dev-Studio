@@ -4,7 +4,7 @@
 
 ## Local Dev
 
-- `liz dev web` proxies `https://app.liz.ai`, so local UI/CSS changes will not show there.
+- `liz dev web` uses the configured remote app proxy; for local UI/CSS validation use the Desktop/Electron or local app build flow.
 - For local UI changes, run the backend and app dev servers separately.
 - Backend (from `packages/liz`): `bun run --conditions=browser ./src/index.ts serve --port 4096`
 - App (from `packages/app`): `bun dev -- --port 4444`

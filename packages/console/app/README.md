@@ -1,32 +1,18 @@
-# SolidStart
+# LIZ AI BRASIL - Console
 
-Everything you need to build a Solid project, powered by [`solid-start`](https://start.solidjs.com);
+Interface console/web usada pelo ambiente Liz Dev Studio.
 
-## Creating a project
+Este diretorio faz parte do projeto oficial da LIZ AI BRASIL / Liz Dev Studio.
 
-```bash
-# create a new project in the current directory
-npm init solid@latest
+## Regras Obrigatorias
 
-# create a new project in my-app
-npm init solid@latest my-app
-```
+- Preservar a URL oficial dos modelos: https://dockfile-liz.onrender.com/
+- Preservar a CLI e o Desktop/EXE.
+- Preservar os modelos oficiais Liz 2.3, Liz 2.5 PRO e Liz 2.6 PRO.
+- Preservar autenticacao, usage, tokens, planos e skills da LIZ AI BRASIL.
+- Nao remover funcionalidades importantes.
+- Nao alterar a logica principal sem necessidade tecnica real.
 
-## Developing
+## Repositorio
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-Solid apps are built with _presets_, which optimise your project for deployment to different environments.
-
-By default, `npm run build` will generate a Node app that you can run with `npm start`. To use a different preset, add it to the `devDependencies` in `package.json` and specify in your `app.config.js`.
-
-## This project was created with the [Solid CLI](https://github.com/solidjs-community/solid-cli)
+https://github.com/Panhard-Dev/Liz-Dev-Studio

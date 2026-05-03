@@ -1,5 +1,5 @@
 ---
-model: liz/gpt-5.4
+model: liz/liz-2.6-pro
 ---
 
 Create `UPCOMING_CHANGELOG.md` from the structured changelog input below.

@@ -1,44 +1,18 @@
-# Mintlify Starter Kit
+# LIZ AI BRASIL - Docs
 
-Use the starter kit to get your docs deployed and ready to customize.
+Documentacao do projeto oficial LIZ AI BRASIL.
 
-Click the green **Use this template** button at the top of this repo to copy the Mintlify starter kit. The starter kit contains examples with
+Este diretorio faz parte do projeto oficial da LIZ AI BRASIL / Liz Dev Studio.
 
-- Guide pages
-- Navigation
-- Customizations
-- API reference pages
-- Use of popular components
+## Regras Obrigatorias
 
-**[Follow the full quickstart guide](https://starter.mintlify.com/quickstart)**
+- Preservar a URL oficial dos modelos: https://dockfile-liz.onrender.com/
+- Preservar a CLI e o Desktop/EXE.
+- Preservar os modelos oficiais Liz 2.3, Liz 2.5 PRO e Liz 2.6 PRO.
+- Preservar autenticacao, usage, tokens, planos e skills da LIZ AI BRASIL.
+- Nao remover funcionalidades importantes.
+- Nao alterar a logica principal sem necessidade tecnica real.
 
-## Development
+## Repositorio
 
-Install the [Mintlify CLI](https://www.npmjs.com/package/mint) to preview your documentation changes locally. To install, use the following command:
-
-```
-npm i -g mint
-```
-
-Run the following command at the root of your documentation, where your `docs.json` is located:
-
-```
-mint dev
-```
-
-View your local preview at `http://localhost:3000`.
-
-## Publishing changes
-
-Install our GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app) to propagate changes from your repo to your deployment. Changes are deployed to production automatically after pushing to the default branch.
-
-## Need help?
-
-### Troubleshooting
-
-- If your dev environment isn't running: Run `mint update` to ensure you have the most recent version of the CLI.
-- If a page loads as a 404: Make sure you are running in a folder with a valid `docs.json`.
-
-### Resources
-
-- [Mintlify documentation](https://mintlify.com/docs)
+https://github.com/Panhard-Dev/Liz-Dev-Studio

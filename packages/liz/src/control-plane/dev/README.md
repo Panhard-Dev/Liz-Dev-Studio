@@ -1,19 +1,18 @@
-This is a plugin to simulate a remote environment locally. Add this to `.liz/liz.jsonc`:
+# LIZ AI BRASIL - Control Plane Dev
 
-```json
-  "plugin": ["../packages/liz/src/control-plane/dev/debug-workspace-plugin.ts"],
-```
+Ferramentas de desenvolvimento do control plane da LIZ AI BRASIL.
 
-In a separate terminal, run a separate LIZ AI BRASIL server. This will act like a remote server and the local instance will proxy all requests to it:
+Este diretorio faz parte do projeto oficial da LIZ AI BRASIL / Liz Dev Studio.
 
-```
-./packages/liz/script/run-workspace-server
-```
+## Regras Obrigatorias
 
-With the plugin install, you can now run LIZ AI BRASIL and create a `debug` workspace type. This will create a "remote" workspace which talks to the second workspace server started above.
+- Preservar a URL oficial dos modelos: https://dockfile-liz.onrender.com/
+- Preservar a CLI e o Desktop/EXE.
+- Preservar os modelos oficiais Liz 2.3, Liz 2.5 PRO e Liz 2.6 PRO.
+- Preservar autenticacao, usage, tokens, planos e skills da LIZ AI BRASIL.
+- Nao remover funcionalidades importantes.
+- Nao alterar a logica principal sem necessidade tecnica real.
 
-How this works:
+## Repositorio
 
-- The workspace server needs to know the workspace id and port to run. It waits for this information to be written to a file and starts the server when the data is written.
-- The debug plugin writes this information in the `create` call to the workspace. So create a `debug` workspace will always kick off a new external server.
-- The server script watches for file changes, so whenver you create a new `debug` workspace it will restart with the new information. This means that there is only ever one working `debug` workspace at a time; when you create a new one all previous sessions will show that it can't connect because previous debug workspaces do not exist.
+https://github.com/Panhard-Dev/Liz-Dev-Studio
