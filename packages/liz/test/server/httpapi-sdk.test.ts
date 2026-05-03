@@ -521,7 +521,7 @@ describe("HttpApi SDK", () => {
   )
 
   parity("matches generated SDK prompt no-reply routes across backends", (backend) =>
-    withStandardProject(backend, ({ sdk }) =>
+    withProject(backend, { config: providerConfig("http://localhost"), setup: writeStandardFiles }, ({ sdk }) =>
       Effect.gen(function* () {
         const session = yield* capture(() => sdk.session.create({ title: "prompt" }))
         const sessionID = String(record(session.data).id)

@@ -63,10 +63,10 @@ async function markPluginDependenciesReady(dir: string) {
   )
 }
 
-function paid(providers: Awaited<ReturnType<typeof list>>) {
+function lizModels(providers: Awaited<ReturnType<typeof list>>) {
   const item = providers[ProviderID.make("liz")]
-  expect(item).toBeDefined()
-  return Object.values(item.models).filter((model) => model.cost.input > 0).length
+  if (!item) return 0
+  return Object.values(item.models).filter((model) => ModelsDev.isLizPlaceholderModel(model.id)).length
 }
 
 test("provider loaded from env variable", async () => {
@@ -2604,7 +2604,7 @@ test("plugin config enabled and disabled providers are honored", async () => {
   })
 })
 
-test("liz loader keeps paid models when config apiKey is present", async () => {
+test("liz loader exposes models when config apiKey is present", async () => {
   await using base = await tmpdir({
     init: async (dir) => {
       await Bun.write(
@@ -2618,7 +2618,7 @@ test("liz loader keeps paid models when config apiKey is present", async () => {
 
   const none = await Instance.provide({
     directory: base.path,
-    fn: async () => paid(await list()),
+    fn: async () => lizModels(await list()),
   })
 
   await using keyed = await tmpdir({
@@ -2641,14 +2641,14 @@ test("liz loader keeps paid models when config apiKey is present", async () => {
 
   const keyedCount = await Instance.provide({
     directory: keyed.path,
-    fn: async () => paid(await list()),
+    fn: async () => lizModels(await list()),
   })
 
   expect(none).toBe(0)
   expect(keyedCount).toBeGreaterThan(0)
 })
 
-test("liz loader keeps paid models when auth exists", async () => {
+test("liz loader exposes models when auth exists", async () => {
   await using base = await tmpdir({
     init: async (dir) => {
       await Bun.write(
@@ -2662,7 +2662,7 @@ test("liz loader keeps paid models when auth exists", async () => {
 
   const none = await Instance.provide({
     directory: base.path,
-    fn: async () => paid(await list()),
+    fn: async () => lizModels(await list()),
   })
 
   await using keyed = await tmpdir({
@@ -2696,7 +2696,7 @@ test("liz loader keeps paid models when auth exists", async () => {
 
     const keyedCount = await Instance.provide({
       directory: keyed.path,
-      fn: async () => paid(await list()),
+      fn: async () => lizModels(await list()),
     })
 
     expect(none).toBe(0)
