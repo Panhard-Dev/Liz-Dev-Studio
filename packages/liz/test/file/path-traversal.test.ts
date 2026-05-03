@@ -29,6 +29,9 @@ describe("Filesystem.contains", () => {
     expect(Filesystem.contains("/project", "/etc/passwd")).toBe(false)
     expect(Filesystem.contains("/project", "/tmp/file")).toBe(false)
     expect(Filesystem.contains("/home/user/project", "/home/user/other")).toBe(false)
+    if (process.platform === "win32") {
+      expect(Filesystem.contains("D:\\project", "C:\\Windows\\win.ini")).toBe(false)
+    }
   })
 
   test("handles prefix collision edge cases", () => {
