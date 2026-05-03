@@ -1,20 +1,7 @@
-# Seguranca Da LIZ AI BRASIL
+# Seguranca
 
-A seguranca da LIZ AI BRASIL e prioridade do projeto oficial Liz Dev Studio.
+Este e um projeto privado da LIZ AI BRASIL.
 
-## Reportar Vulnerabilidades
+Relatos, verificacoes e tratativas de seguranca devem seguir os canais internos definidos pela empresa.
 
-Abra um aviso privado de seguranca no repositorio oficial ou entre em contato com a equipe responsavel pelo projeto.
-
-Repositorio oficial:
-
-```txt
-https://github.com/Panhard-Dev/Liz-Dev-Studio
-```
-
-## Regras De Preservacao
-
-- Nao exponha tokens, sessoes ou chaves de API.
-- Nao altere a integracao oficial dos modelos sem necessidade tecnica real.
-- Nao remova validacoes de autenticacao, usage, tokens ou planos.
-- Nao quebre a CLI nem o Desktop/EXE ao corrigir autenticacao.
+Nao publique informacoes sensiveis, detalhes de infraestrutura, credenciais, logs privados ou procedimentos internos em documentos publicos.
