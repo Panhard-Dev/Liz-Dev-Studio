@@ -126,10 +126,7 @@ describe("tool.assertExternalDirectory", () => {
       await using tmp = await tmpdir({ git: true })
 
       const target = path.join(outerTmp.path, "outside.txt")
-      const alt = target
-        .replace(/^[A-Za-z]:/, "")
-        .replaceAll("\\", "/")
-        .toLowerCase()
+      const alt = target.replaceAll("\\", "/").toLowerCase()
 
       await Instance.provide({
         directory: tmp.path,
