@@ -15,6 +15,6 @@ https://github.com/Panhard-Dev/Liz-Dev-Studio
 ## Regras De Preservacao
 
 - Nao exponha tokens, sessoes ou chaves de API.
-- Nao altere a URL oficial dos modelos sem necessidade tecnica real: https://dockfile-liz.onrender.com/
+- Nao altere a integracao oficial dos modelos sem necessidade tecnica real.
 - Nao remova validacoes de autenticacao, usage, tokens ou planos.
 - Nao quebre a CLI nem o Desktop/EXE ao corrigir autenticacao.

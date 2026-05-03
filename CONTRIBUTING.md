@@ -4,7 +4,7 @@ Este repositorio e o projeto oficial da LIZ AI BRASIL / Liz Dev Studio.
 
 ## Antes De Alterar
 
-- Preserve a URL oficial dos modelos: https://dockfile-liz.onrender.com/
+- Preserve a integracao oficial dos modelos da Liz.
 - Preserve os modelos Liz 2.3, Liz 2.5 PRO e Liz 2.6 PRO.
 - Nao quebre a CLI para corrigir o Desktop/EXE.
 - Nao quebre o Desktop/EXE para corrigir a CLI.

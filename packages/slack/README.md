@@ -6,7 +6,7 @@ Este diretorio faz parte do projeto oficial da LIZ AI BRASIL / Liz Dev Studio.
 
 ## Regras Obrigatorias
 
-- Preservar a URL oficial dos modelos: https://dockfile-liz.onrender.com/
+- Preservar a integracao oficial dos modelos da Liz.
 - Preservar a CLI e o Desktop/EXE.
 - Preservar os modelos oficiais Liz 2.3, Liz 2.5 PRO e Liz 2.6 PRO.
 - Preservar autenticacao, usage, tokens, planos e skills da LIZ AI BRASIL.

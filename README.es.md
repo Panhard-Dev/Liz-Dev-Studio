@@ -46,13 +46,9 @@ Esses sao os nomes que devem aparecer para o usuario final dentro do app.
 
 ## Integracao Oficial
 
-A integracao oficial dos modelos da LIZ AI BRASIL usa:
+A integracao oficial dos modelos da LIZ AI BRASIL e usada internamente pelo app e pela CLI.
 
-```txt
-https://dockfile-liz.onrender.com/
-```
-
-Essa URL faz parte do fluxo oficial da Liz e deve ser preservada.
+Essa integracao faz parte do fluxo oficial da Liz e deve ser preservada sem expor detalhes internos.
 
 ## Instalar A CLI
 
@@ -137,7 +133,7 @@ liz-ai-brasil
 
 - Nao quebrar a CLI para corrigir o Desktop.
 - Nao remover modelos oficiais da Liz.
-- Nao trocar a URL oficial dos modelos sem necessidade tecnica real.
+- Nao trocar a integracao oficial dos modelos sem necessidade tecnica real.
 - Nao alterar roteamento, provider ou sessao fora do escopo necessario.
 - Preservar autenticacao, usage, tokens, planos e skills da LIZ AI BRASIL.
 - Preservar a identidade visual preto/roxo da LIZ AI BRASIL.
