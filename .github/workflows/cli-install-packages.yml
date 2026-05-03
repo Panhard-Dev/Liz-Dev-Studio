@@ -1,0 +1,54 @@
+name: cli-install-packages
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            name: linux-x64
+          - os: windows-latest
+            name: windows-x64
+          - os: macos-latest
+            name: darwin-arm64
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: ./.github/actions/setup-bun
+
+      - run: bun run build --single --skip-embed-web-ui
+        working-directory: packages/liz
+
+      - run: bun ./script/pack-github-npm.ts
+        working-directory: packages/liz
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: liz-ai-brasil-${{ matrix.name }}
+          path: packages/liz/dist/npm-github/assets/*.tgz
+
+  release:
+    needs: package
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: assets
+          merge-multiple: true
+
+      - name: Publish install packages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view cli-dev --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1 || \
+            gh release create cli-dev --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" --title "LIZ AI BRASIL CLI dev install" --notes "Pacotes instalaveis via npm pelo GitHub Release." --prerelease
+
+          gh release upload cli-dev assets/*.tgz --repo "$GITHUB_REPOSITORY" --clobber
