@@ -23,9 +23,12 @@ if (envPath) {
 
 const scriptPath = fs.realpathSync(__filename)
 const scriptDir = path.dirname(scriptPath)
-const cached = path.join(scriptDir, ".liz")
-if (fs.existsSync(cached)) {
-  run(cached)
+const cachedNames = os.platform() === "win32" ? [".liz.exe", ".liz"] : [".liz"]
+for (const name of cachedNames) {
+  const cached = path.join(scriptDir, name)
+  if (fs.existsSync(cached)) {
+    run(cached)
+  }
 }
 
 const platformMap = {
