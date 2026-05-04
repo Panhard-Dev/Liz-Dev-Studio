@@ -18,6 +18,13 @@
       ]
     }
   ],
+  "redirects": [
+    {
+      "source": "/npm/liz-ai-brasil.tgz",
+      "destination": "https://github.com/Panhard-Dev/Liz-Dev-Studio/releases/download/cli-dev/liz-ai-brasil-0.0.0-dev-202605040039.tgz",
+      "permanent": false
+    }
+  ],
   "rewrites": [
     {
       "source": "/install",
