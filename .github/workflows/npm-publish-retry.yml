@@ -35,7 +35,80 @@ jobs:
           LIZ_VERSION: ${{ inputs.version }}
           LIZ_CHANNEL: ${{ inputs.channel }}
 
-      - name: Publish missing npm packages
+      - name: Publish public CLI package first
+        run: |
+          if npm view liz-ai-brasil@${{ inputs.version }} version >/dev/null 2>&1; then
+            echo "liz-ai-brasil@${{ inputs.version }} already published"
+            exit 0
+          fi
+
+          node <<'NODE'
+          const fs = require("fs/promises")
+          const path = require("path")
+
+          ;(async () => {
+            const publicPackageName = "liz-ai-brasil"
+            const publicDir = path.join("packages", "liz", "dist", publicPackageName)
+            const distDir = path.join("packages", "liz", "dist")
+            const optionalDependencies = {}
+
+            await fs.rm(publicDir, { recursive: true, force: true })
+            await fs.mkdir(path.join(publicDir, "bin"), { recursive: true })
+            await fs.cp(path.join("packages", "liz", "bin"), path.join(publicDir, "bin"), { recursive: true, force: true })
+            await fs.cp(path.join("packages", "liz", "script", "postinstall.mjs"), path.join(publicDir, "postinstall.mjs"))
+            await fs.cp(
+              path.join(distDir, "liz-windows-x64", "bin", "liz.exe"),
+              path.join(publicDir, "bin", ".liz.exe"),
+            )
+
+            for (const entry of await fs.readdir(distDir, { withFileTypes: true })) {
+              if (!entry.isDirectory()) continue
+              if (entry.name === publicPackageName) continue
+              if (entry.name === "liz-windows-x64") continue
+              if (entry.name === "liz-windows-x64-baseline") continue
+              const pkg = JSON.parse(await fs.readFile(path.join(distDir, entry.name, "package.json"), "utf8"))
+              optionalDependencies[pkg.name] = pkg.version
+            }
+
+            await fs.writeFile(
+              path.join(publicDir, "package.json"),
+              JSON.stringify(
+                {
+                  name: publicPackageName,
+                  description: "LIZ AI BRASIL CLI",
+                  homepage: "https://liz-ai-brasil.vercel.app",
+                  bin: {
+                    liz: "./bin/liz",
+                    [publicPackageName]: "./bin/liz",
+                  },
+                  scripts: {
+                    postinstall: "bun ./postinstall.mjs || node ./postinstall.mjs",
+                  },
+                  version: process.env.LIZ_VERSION,
+                  license: "UNLICENSED",
+                  optionalDependencies,
+                },
+                null,
+                2,
+              ),
+            )
+          })().catch((error) => {
+            console.error(error)
+            process.exit(1)
+          })
+          NODE
+
+          cd packages/liz/dist/liz-ai-brasil
+          rm -f *.tgz
+          bun pm pack
+          npm publish *.tgz --access public --tag latest
+        env:
+          LIZ_VERSION: ${{ inputs.version }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: false
+
+      - name: Publish remaining npm packages
+        continue-on-error: true
         run: bun run publish:npm
         working-directory: packages/liz
         env:
