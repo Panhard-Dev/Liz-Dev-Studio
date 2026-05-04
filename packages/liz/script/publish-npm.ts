@@ -3,6 +3,7 @@ import { $ } from "bun"
 import pkg from "../package.json"
 import { Script } from "@liz-ai-brasil/script"
 import { fileURLToPath } from "url"
+import { cp, mkdir, rm } from "fs/promises"
 
 const dir = fileURLToPath(new URL("..", import.meta.url))
 process.chdir(dir)
@@ -20,14 +21,21 @@ async function publish(dir: string, name: string, version: string) {
     console.log(`already published ${name}@${version}`)
     return
   }
+  await Promise.all(Array.from(new Bun.Glob("*.tgz").scanSync({ cwd: dir })).map((file) => rm(`${dir}/${file}`)))
   await $`bun pm pack`.cwd(dir)
-  await $`npm publish *.tgz --access public --tag ${Script.channel}`.cwd(dir)
+  const tarball = Array.from(new Bun.Glob("*.tgz").scanSync({ cwd: dir }))[0]
+  if (!tarball) {
+    console.error(`No npm tarball created for ${name}@${version}`)
+    process.exit(1)
+  }
+  await $`npm publish ${tarball} --access public --tag ${Script.channel}`.cwd(dir)
 }
 
 const binaries: Record<string, string> = {}
 
 for (const filepath of new Bun.Glob("*/package.json").scanSync({ cwd: "./dist" })) {
   const distPackage = await Bun.file(`./dist/${filepath}`).json()
+  if (distPackage.name === publicPackageName) continue
   binaries[distPackage.name] = distPackage.version
 }
 
@@ -38,9 +46,9 @@ if (Object.keys(binaries).length === 0) {
 
 const version = Object.values(binaries)[0]
 
-await $`mkdir -p ./dist/${publicPackageName}`
-await $`cp -r ./bin ./dist/${publicPackageName}/bin`
-await $`cp ./script/postinstall.mjs ./dist/${publicPackageName}/postinstall.mjs`
+await mkdir(`./dist/${publicPackageName}`, { recursive: true })
+await cp("./bin", `./dist/${publicPackageName}/bin`, { recursive: true, force: true })
+await cp("./script/postinstall.mjs", `./dist/${publicPackageName}/postinstall.mjs`)
 
 await Bun.file(`./dist/${publicPackageName}/package.json`).write(
   JSON.stringify(
@@ -64,5 +72,5 @@ await Bun.file(`./dist/${publicPackageName}/package.json`).write(
   ),
 )
 
-await Promise.all(Object.entries(binaries).map(([name]) => publish(`./dist/${name}`, name, binaries[name])))
+for (const [name, version] of Object.entries(binaries)) await publish(`./dist/${name}`, name, version)
 await publish(`./dist/${publicPackageName}`, publicPackageName, version)
