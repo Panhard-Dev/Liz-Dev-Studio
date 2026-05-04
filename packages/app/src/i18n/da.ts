@@ -98,7 +98,7 @@ export const dict = {
   "dialog.provider.group.popular": "Populære",
   "dialog.provider.group.other": "Andre",
   "dialog.provider.tag.recommended": "Anbefalet",
-  "dialog.provider.liz.note": "Udvalgte modeller inklusive Claude, GPT, Gemini og flere",
+  "dialog.provider.liz.note": "Modelos oficiais Liz 2.3, Liz 2.5 PRO e Liz 2.6 PRO",
   "dialog.provider.liz.tagline": "Pålidelige optimerede modeller",
   "dialog.provider.lizGo.tagline": "Billigt abonnement for alle",
   "dialog.provider.anthropic.note": "Direkte adgang til Claude-modeller, inklusive Pro og Max",
@@ -134,8 +134,7 @@ export const dict = {
   "provider.connect.apiKey.required": "API-nøgle er påkrævet",
   "provider.connect.lizZen.line1":
     "LIZ AI BRASIL Zen giver dig adgang til et udvalg af pålidelige optimerede modeller til kodningsagenter.",
-  "provider.connect.lizZen.line2":
-    "Med en enkelt API-nøgle får du adgang til modeller som Claude, GPT, Gemini, GLM og flere.",
+  "provider.connect.lizZen.line2": "Com uma chave da LIZ, use Liz 2.3, Liz 2.5 PRO e Liz 2.6 PRO.",
   "provider.connect.lizZen.visit.prefix": "Besøg ",
   "provider.connect.lizZen.visit.link": "liz.ai/zen",
   "provider.connect.lizZen.visit.suffix": " for at hente din API-nøgle.",

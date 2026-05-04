@@ -122,8 +122,7 @@ export const dict = {
   "provider.connect.apiKey.required": "A chave de API é obrigatória",
   "provider.connect.lizZen.line1":
     "LIZ AI BRASIL Zen oferece acesso a um conjunto selecionado de modelos confiáveis otimizados para agentes de código.",
-  "provider.connect.lizZen.line2":
-    "Com uma unica chave de API voce tera acesso aos modelos Liz 2.3, Liz 2.5 PRO e Liz 2.6 PRO.",
+  "provider.connect.lizZen.line2": "Com uma chave da LIZ, use Liz 2.3, Liz 2.5 PRO e Liz 2.6 PRO.",
   "provider.connect.lizZen.visit.prefix": "Visite ",
   "provider.connect.lizZen.visit.link": "liz.ai/zen",
   "provider.connect.lizZen.visit.suffix": " para obter sua chave de API.",

@@ -90,7 +90,7 @@ export const dict = {
   "dialog.provider.group.popular": "인기",
   "dialog.provider.group.other": "기타",
   "dialog.provider.tag.recommended": "추천",
-  "dialog.provider.liz.note": "Claude, GPT, Gemini 등을 포함한 엄선된 모델",
+  "dialog.provider.liz.note": "Modelos oficiais Liz 2.3, Liz 2.5 PRO e Liz 2.6 PRO",
   "dialog.provider.liz.tagline": "신뢰할 수 있는 최적화 모델",
   "dialog.provider.lizGo.tagline": "모두를 위한 저렴한 구독",
   "dialog.provider.anthropic.note": "Claude Pro/Max 또는 API 키로 연결",
@@ -122,7 +122,7 @@ export const dict = {
   "provider.connect.apiKey.required": "API 키가 필요합니다",
   "provider.connect.lizZen.line1":
     "LIZ AI BRASIL Zen은 코딩 에이전트를 위해 최적화된 신뢰할 수 있는 엄선된 모델에 대한 액세스를 제공합니다.",
-  "provider.connect.lizZen.line2": "단일 API 키로 Claude, GPT, Gemini, GLM 등 다양한 모델에 액세스할 수 있습니다.",
+  "provider.connect.lizZen.line2":  "Com uma chave da LIZ, use Liz 2.3, Liz 2.5 PRO e Liz 2.6 PRO.",
   "provider.connect.lizZen.visit.prefix": "다음 ",
   "provider.connect.lizZen.visit.link": "liz.ai/zen",
   "provider.connect.lizZen.visit.suffix": "을 방문하여 API 키를 받으세요.",

@@ -69,6 +69,39 @@ function lizModels(providers: Awaited<ReturnType<typeof list>>) {
   return Object.values(item.models).filter((model) => ModelsDev.isLizPlaceholderModel(model.id)).length
 }
 
+test("liz placeholder models keep public names and expected upstream mapping", async () => {
+  expect(ModelsDev.lizModelApiID("liz-2.3")).toBe("kilocode/z-ai/glm-4.7")
+  expect(ModelsDev.lizModelApiID("liz-2.5-pro")).toBe("codex/gpt-5.2")
+  expect(ModelsDev.lizModelApiID("liz-2.6-pro")).toBe("codex/gpt-5.3-codex")
+
+  await using tmp = await tmpdir({
+    init: async (dir) => {
+      await Bun.write(
+        path.join(dir, "liz.json"),
+        JSON.stringify({
+          $schema: "https://liz.ai/config.json",
+          provider: {
+            liz: {
+              options: {
+                apiKey: "test-key",
+              },
+            },
+          },
+        }),
+      )
+    },
+  })
+  await Instance.provide({
+    directory: tmp.path,
+    fn: async () => {
+      const model = await getModel(ProviderID.make("liz"), ModelID.make("liz-2.3"))
+      expect(model.id).toBe(ModelID.make("liz-2.3"))
+      expect(model.name).toBe("Liz 2.3")
+      expect(model.api.id).toBe("kilocode/z-ai/glm-4.7")
+    },
+  })
+})
+
 test("provider loaded from env variable", async () => {
   await using tmp = await tmpdir({
     init: async (dir) => {

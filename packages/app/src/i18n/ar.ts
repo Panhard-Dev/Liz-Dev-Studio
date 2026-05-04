@@ -90,7 +90,7 @@ export const dict = {
   "dialog.provider.group.popular": "شائع",
   "dialog.provider.group.other": "آخر",
   "dialog.provider.tag.recommended": "موصى به",
-  "dialog.provider.liz.note": "نماذج مختارة تتضمن Claude و GPT و Gemini والمزيد",
+  "dialog.provider.liz.note": "Modelos oficiais Liz 2.3, Liz 2.5 PRO e Liz 2.6 PRO",
   "dialog.provider.liz.tagline": "نماذج موثوقة ومحسنة",
   "dialog.provider.lizGo.tagline": "اشتراك منخفض التكلفة للجميع",
   "dialog.provider.anthropic.note": "اتصل باستخدام Claude Pro/Max أو مفتاح API",
@@ -122,8 +122,7 @@ export const dict = {
   "provider.connect.apiKey.required": "مفتاح API مطلوب",
   "provider.connect.lizZen.line1":
     "يمنحك LIZ AI BRASIL Zen الوصول إلى مجموعة مختارة من النماذج الموثوقة والمحسنة لوكلاء البرمجة.",
-  "provider.connect.lizZen.line2":
-    "باستخدام مفتاح API واحد، ستحصل على إمكانية الوصول إلى نماذج مثل Claude و GPT و Gemini و GLM والمزيد.",
+  "provider.connect.lizZen.line2": "Com uma chave da LIZ, use Liz 2.3, Liz 2.5 PRO e Liz 2.6 PRO.",
   "provider.connect.lizZen.visit.prefix": "قم بزيارة ",
   "provider.connect.lizZen.visit.link": "liz.ai/zen",
   "provider.connect.lizZen.visit.suffix": " للحصول على مفتاح API الخاص بك.",

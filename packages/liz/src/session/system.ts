@@ -32,6 +32,16 @@ export function provider(model: Provider.Model) {
   return [PROMPT_DEFAULT]
 }
 
+function publicModelName(model: Provider.Model) {
+  if (model.providerID === "liz") return model.name
+  return model.api.id
+}
+
+function publicModelID(model: Provider.Model) {
+  if (model.providerID === "liz") return `${model.providerID}/${model.id}`
+  return `${model.providerID}/${model.api.id}`
+}
+
 export interface Interface {
   readonly environment: (model: Provider.Model) => Effect.Effect<string[]>
   readonly skills: (agent: Agent.Info) => Effect.Effect<string | undefined>
@@ -49,7 +59,7 @@ export const layer = Layer.effect(
         const ctx = yield* InstanceState.context
         return [
           [
-            `You are powered by the model named ${model.api.id}. The exact model ID is ${model.providerID}/${model.api.id}`,
+            `You are powered by the model named ${publicModelName(model)}. The exact model ID is ${publicModelID(model)}`,
             `Here is some useful information about the environment you are running in:`,
             `<env>`,
             `  Working directory: ${ctx.directory}`,

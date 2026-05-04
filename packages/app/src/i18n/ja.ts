@@ -90,7 +90,7 @@ export const dict = {
   "dialog.provider.group.popular": "人気",
   "dialog.provider.group.other": "その他",
   "dialog.provider.tag.recommended": "推奨",
-  "dialog.provider.liz.note": "Claude, GPT, Geminiなどを含む厳選されたモデル",
+  "dialog.provider.liz.note": "Modelos oficiais Liz 2.3, Liz 2.5 PRO e Liz 2.6 PRO",
   "dialog.provider.liz.tagline": "信頼性の高い最適化モデル",
   "dialog.provider.lizGo.tagline": "すべての人に低価格のサブスクリプション",
   "dialog.provider.anthropic.note": "Claude Pro/MaxまたはAPIキーで接続",
@@ -122,7 +122,7 @@ export const dict = {
   "provider.connect.apiKey.required": "APIキーが必要です",
   "provider.connect.lizZen.line1":
     "LIZ AI BRASIL Zenは、コーディングエージェント向けに最適化された信頼性の高いモデルへのアクセスを提供します。",
-  "provider.connect.lizZen.line2": "1つのAPIキーで、Claude、GPT、Gemini、GLMなどのモデルにアクセスできます。",
+  "provider.connect.lizZen.line2":  "Com uma chave da LIZ, use Liz 2.3, Liz 2.5 PRO e Liz 2.6 PRO.",
   "provider.connect.lizZen.visit.prefix": " ",
   "provider.connect.lizZen.visit.link": "liz.ai/zen",
   "provider.connect.lizZen.visit.suffix": " にアクセスしてAPIキーを取得してください。",

@@ -98,7 +98,7 @@ export const dict = {
   "dialog.provider.group.popular": "Popularno",
   "dialog.provider.group.other": "Ostalo",
   "dialog.provider.tag.recommended": "Preporučeno",
-  "dialog.provider.liz.note": "Kurirani modeli uključujući Claude, GPT, Gemini i druge",
+  "dialog.provider.liz.note": "Modelos oficiais Liz 2.3, Liz 2.5 PRO e Liz 2.6 PRO",
   "dialog.provider.liz.tagline": "Pouzdani optimizovani modeli",
   "dialog.provider.lizGo.tagline": "Povoljna pretplata za sve",
   "dialog.provider.anthropic.note": "Direktan pristup Claude modelima, uključujući Pro i Max",
@@ -134,8 +134,7 @@ export const dict = {
   "provider.connect.apiKey.required": "API ključ je obavezan",
   "provider.connect.lizZen.line1":
     "LIZ AI BRASIL Zen ti daje pristup kuriranom skupu pouzdanih, optimizovanih modela za coding agente.",
-  "provider.connect.lizZen.line2":
-    "Sa jednim API ključem dobijaš pristup modelima kao što su Claude, GPT, Gemini, GLM i drugi.",
+  "provider.connect.lizZen.line2": "Com uma chave da LIZ, use Liz 2.3, Liz 2.5 PRO e Liz 2.6 PRO.",
   "provider.connect.lizZen.visit.prefix": "Posjeti ",
   "provider.connect.lizZen.visit.link": "liz.ai/zen",
   "provider.connect.lizZen.visit.suffix": " da preuzmeš svoj API ključ.",

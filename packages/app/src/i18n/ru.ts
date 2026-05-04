@@ -98,7 +98,7 @@ export const dict = {
   "dialog.provider.group.popular": "Популярные",
   "dialog.provider.group.other": "Другие",
   "dialog.provider.tag.recommended": "Рекомендуемые",
-  "dialog.provider.liz.note": "Отобранные модели, включая Claude, GPT, Gemini и другие",
+  "dialog.provider.liz.note": "Modelos oficiais Liz 2.3, Liz 2.5 PRO e Liz 2.6 PRO",
   "dialog.provider.liz.tagline": "Надежные оптимизированные модели",
   "dialog.provider.lizGo.tagline": "Доступная подписка для всех",
   "dialog.provider.anthropic.note": "Прямой доступ к моделям Claude, включая Pro и Max",
@@ -134,8 +134,7 @@ export const dict = {
   "provider.connect.apiKey.required": "API ключ обязателен",
   "provider.connect.lizZen.line1":
     "LIZ AI BRASIL Zen даёт вам доступ к отобранным надёжным оптимизированным моделям для агентов программирования.",
-  "provider.connect.lizZen.line2":
-    "С одним API ключом вы получите доступ к таким моделям как Claude, GPT, Gemini, GLM и другим.",
+  "provider.connect.lizZen.line2": "Com uma chave da LIZ, use Liz 2.3, Liz 2.5 PRO e Liz 2.6 PRO.",
   "provider.connect.lizZen.visit.prefix": "Посетите ",
   "provider.connect.lizZen.visit.link": "liz.ai/zen",
   "provider.connect.lizZen.visit.suffix": " чтобы получить ваш API ключ.",
