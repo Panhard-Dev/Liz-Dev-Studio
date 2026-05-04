@@ -222,7 +222,8 @@ export const SessionRoutes = lazy(() =>
       "/",
       describeRoute({
         summary: "Create session",
-        description: "Create a new LIZ AI BRASIL session for interacting with AI assistants and managing conversations.",
+        description:
+          "Create a new LIZ AI BRASIL session for interacting with AI assistants and managing conversations.",
         operationId: "session.create",
         responses: {
           ...errors(400),

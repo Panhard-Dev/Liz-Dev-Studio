@@ -360,11 +360,7 @@ export const layer = Layer.effect(
 )
 
 export const defaultLayer = Layer.suspend(() =>
-  layer.pipe(
-    Layer.provide(Bus.layer),
-    Layer.provide(Plugin.defaultLayer),
-    Layer.provide(Config.defaultLayer),
-  ),
+  layer.pipe(Layer.provide(Bus.layer), Layer.provide(Plugin.defaultLayer), Layer.provide(Config.defaultLayer)),
 )
 
 export * as Pty from "."

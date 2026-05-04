@@ -72,7 +72,8 @@ export const InstanceRoutes = (upgrade: UpgradeWebSocket): Hono => {
       "/path",
       describeRoute({
         summary: "Get paths",
-        description: "Retrieve the current working directory and related path information for the LIZ AI BRASIL instance.",
+        description:
+          "Retrieve the current working directory and related path information for the LIZ AI BRASIL instance.",
         operationId: "path.get",
         responses: {
           200: {

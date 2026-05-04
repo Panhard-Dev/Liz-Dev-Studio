@@ -68,5 +68,8 @@ for (const file of packages) {
     console.error("npm pack did not return a tarball name.")
     process.exit(1)
   }
-  await fs.rename(path.join(assets, packed), path.join(assets, `liz-ai-brasil-${distPackage.name.replace("liz-", "")}.tgz`))
+  await fs.rename(
+    path.join(assets, packed),
+    path.join(assets, `liz-ai-brasil-${distPackage.name.replace("liz-", "")}.tgz`),
+  )
 }

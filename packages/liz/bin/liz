@@ -83,10 +83,16 @@ const names = (() => {
       }
     })()
     if (musl) {
-      if (arch === "x64") return baseline ? [`${base}-baseline-musl`, `${base}-musl`, `${base}-baseline`, base] : [`${base}-musl`, `${base}-baseline-musl`, base, `${base}-baseline`]
+      if (arch === "x64")
+        return baseline
+          ? [`${base}-baseline-musl`, `${base}-musl`, `${base}-baseline`, base]
+          : [`${base}-musl`, `${base}-baseline-musl`, base, `${base}-baseline`]
       return [`${base}-musl`, base]
     }
-    if (arch === "x64") return baseline ? [`${base}-baseline`, base, `${base}-baseline-musl`, `${base}-musl`] : [base, `${base}-baseline`, `${base}-musl`, `${base}-baseline-musl`]
+    if (arch === "x64")
+      return baseline
+        ? [`${base}-baseline`, base, `${base}-baseline-musl`, `${base}-musl`]
+        : [base, `${base}-baseline`, `${base}-musl`, `${base}-baseline-musl`]
     return [base, `${base}-musl`]
   }
   if (arch === "x64") return baseline ? [`${base}-baseline`, base] : [base, `${base}-baseline`]

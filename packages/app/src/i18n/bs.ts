@@ -473,7 +473,8 @@ export const dict = {
   "error.chain.didYouMean": "Da li si mislio: {{suggestions}}",
   "error.chain.modelNotFound": "Model nije pronađen: {{provider}}/{{model}}",
   "error.chain.checkConfig": "Provjeri konfiguraciju (liz.json) provider/model names",
-  "error.chain.mcpFailed": 'MCP server "{{name}}" nije uspio. Napomena: LIZ AI BRASIL još ne podržava MCP autentifikaciju.',
+  "error.chain.mcpFailed":
+    'MCP server "{{name}}" nije uspio. Napomena: LIZ AI BRASIL još ne podržava MCP autentifikaciju.',
   "error.chain.providerAuthFailed": "Autentifikacija provajdera nije uspjela ({{provider}}): {{message}}",
   "error.chain.providerInitFailed":
     'Neuspjelo inicijalizovanje provajdera "{{provider}}". Provjeri kredencijale i konfiguraciju.',
@@ -635,7 +636,8 @@ export const dict = {
   "settings.general.row.appearance.title": "Izgled",
   "settings.general.row.appearance.description": "Prilagodi kako LIZ AI BRASIL izgleda na tvom uređaju",
   "settings.general.row.colorScheme.title": "Šema boja",
-  "settings.general.row.colorScheme.description": "Odaberi da li LIZ AI BRASIL prati sistemsku, svijetlu ili tamnu temu",
+  "settings.general.row.colorScheme.description":
+    "Odaberi da li LIZ AI BRASIL prati sistemsku, svijetlu ili tamnu temu",
   "settings.general.row.theme.title": "Tema",
   "settings.general.row.theme.description": "Prilagodi temu LIZ AI BRASIL-a.",
   "settings.general.row.font.title": "Font za kod",

@@ -15,12 +15,7 @@ import type { EventSource } from "./context/sdk"
 import { win32DisableProcessedInput, win32InstallCtrlCGuard } from "./win32"
 import { writeHeapSnapshot } from "v8"
 import { TuiConfig } from "./config/tui"
-import {
-  LIZ_PROCESS_ROLE,
-  LIZ_RUN_ID,
-  ensureRunID,
-  sanitizedProcessEnv,
-} from "@liz-ai-brasil/core/util/liz-process"
+import { LIZ_PROCESS_ROLE, LIZ_RUN_ID, ensureRunID, sanitizedProcessEnv } from "@liz-ai-brasil/core/util/liz-process"
 import { validateSession } from "./validate-session"
 
 declare global {

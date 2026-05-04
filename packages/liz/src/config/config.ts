@@ -298,9 +298,7 @@ export interface Interface {
 export class Service extends Context.Service<Service, Interface>()("@liz/Config") {}
 
 function globalConfigFile() {
-  const candidates = ["liz.jsonc", "liz.json", "config.json"].map((file) =>
-    path.join(Global.Path.config, file),
-  )
+  const candidates = ["liz.jsonc", "liz.json", "config.json"].map((file) => path.join(Global.Path.config, file))
   for (const file of candidates) {
     if (existsSync(file)) return file
   }

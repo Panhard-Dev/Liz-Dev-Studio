@@ -1,7 +1,12 @@
 import type { APIEvent } from "@solidjs/start/server"
 import { and, Database, eq, isNull, lt, or, sql } from "@liz-ai-brasil/console-core/drizzle/index.js"
 import { KeyTable } from "@liz-ai-brasil/console-core/schema/key.sql.js"
-import { BillingTable, LiteTable, SubscriptionTable, UsageTable } from "@liz-ai-brasil/console-core/schema/billing.sql.js"
+import {
+  BillingTable,
+  LiteTable,
+  SubscriptionTable,
+  UsageTable,
+} from "@liz-ai-brasil/console-core/schema/billing.sql.js"
 import { centsToMicroCents } from "@liz-ai-brasil/console-core/util/price.js"
 import { getMonthlyBounds, getWeekBounds } from "@liz-ai-brasil/console-core/util/date.js"
 import { Identifier } from "@liz-ai-brasil/console-core/identifier.js"

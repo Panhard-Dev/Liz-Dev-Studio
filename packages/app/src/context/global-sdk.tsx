@@ -237,7 +237,8 @@ export const { use: useGlobalSDK, provider: GlobalSDKProvider } = createSimpleCo
       const s = server.current
       if (!s) throw new Error(language.t("error.globalSDK.serverNotAvailable"))
       const headers = new Headers(init?.headers)
-      if (s.http.password) headers.set("Authorization", `Basic ${btoa(`${s.http.username ?? "liz"}:${s.http.password}`)}`)
+      if (s.http.password)
+        headers.set("Authorization", `Basic ${btoa(`${s.http.username ?? "liz"}:${s.http.password}`)}`)
       return (platform.fetch ?? fetch)(
         input.startsWith("http") ? input : `${s.http.url}${input.startsWith("/") ? input : `/${input}`}`,
         {

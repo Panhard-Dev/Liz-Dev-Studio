@@ -347,7 +347,7 @@ liz run --attach http://localhost:4096 "Explain async/await in JavaScript"
 | `--file`     | `-f`  | File da allegare al messaggio                                            |
 | `--format`   |       | Formato: default (formattato) o json (eventi JSON grezzi)                |
 | `--title`    |       | Titolo sessione (usa prompt troncato se non viene fornito un valore)     |
-| `--attach`   |       | Attach a un server liz in esecuzione (es. http://localhost:4096)    |
+| `--attach`   |       | Attach a un server liz in esecuzione (es. http://localhost:4096)         |
 | `--port`     |       | Porta per il server locale (di default una porta casuale)                |
 
 ---
@@ -553,8 +553,8 @@ La CLI di liz accetta i seguenti flag globali.
 
 LIZ AI BRASIL può essere configurato tramite variabili d'ambiente.
 
-| Variabile                             | Tipo    | Descrizione                                                 |
-| ------------------------------------- | ------- | ----------------------------------------------------------- |
+| Variabile                        | Tipo    | Descrizione                                                 |
+| -------------------------------- | ------- | ----------------------------------------------------------- |
 | `LIZ_AUTO_SHARE`                 | boolean | Condivide automaticamente le sessioni                       |
 | `LIZ_GIT_BASH_PATH`              | string  | Percorso all'eseguibile Git Bash su Windows                 |
 | `LIZ_CONFIG`                     | string  | Percorso al file di configurazione                          |
@@ -577,7 +577,7 @@ LIZ AI BRASIL può essere configurato tramite variabili d'ambiente.
 | `LIZ_CLIENT`                     | string  | Identificatore client (default `cli`)                       |
 | `LIZ_ENABLE_EXA`                 | boolean | Abilita gli strumenti di web search Exa                     |
 | `LIZ_SERVER_PASSWORD`            | string  | Abilita basic auth per `serve`/`web`                        |
-| `LIZ_SERVER_USERNAME`            | string  | Sovrascrive lo username basic auth (default `liz`)     |
+| `LIZ_SERVER_USERNAME`            | string  | Sovrascrive lo username basic auth (default `liz`)          |
 | `LIZ_MODELS_URL`                 | string  | URL personalizzato per recuperare la configurazione modelli |
 
 ---
@@ -586,8 +586,8 @@ LIZ AI BRASIL può essere configurato tramite variabili d'ambiente.
 
 Queste variabili d'ambiente abilitano funzionalità sperimentali che potrebbero cambiare o essere rimosse.
 
-| Variabile                                       | Tipo    | Descrizione                                |
-| ----------------------------------------------- | ------- | ------------------------------------------ |
+| Variabile                                  | Tipo    | Descrizione                                |
+| ------------------------------------------ | ------- | ------------------------------------------ |
 | `LIZ_EXPERIMENTAL`                         | boolean | Abilita tutte le funzionalità sperimentali |
 | `LIZ_EXPERIMENTAL_ICON_DISCOVERY`          | boolean | Abilita icon discovery                     |
 | `LIZ_EXPERIMENTAL_DISABLE_COPY_ON_SELECT`  | boolean | Disabilita copy on select nella TUI        |

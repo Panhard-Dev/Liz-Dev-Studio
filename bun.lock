@@ -625,6 +625,9 @@
         "vite-plugin-solid": "catalog:",
       },
     },
+    "packages/vercel-site": {
+      "name": "@liz-ai-brasil/vercel-site",
+    },
     "packages/web": {
       "name": "@liz-ai-brasil/web",
       "version": "1.14.31",
@@ -1432,6 +1435,8 @@
     "@liz-ai-brasil/storybook": ["@liz-ai-brasil/storybook@workspace:packages/storybook"],
 
     "@liz-ai-brasil/ui": ["@liz-ai-brasil/ui@workspace:packages/ui"],
+
+    "@liz-ai-brasil/vercel-site": ["@liz-ai-brasil/vercel-site@workspace:packages/vercel-site"],
 
     "@liz-ai-brasil/web": ["@liz-ai-brasil/web@workspace:packages/web"],
 

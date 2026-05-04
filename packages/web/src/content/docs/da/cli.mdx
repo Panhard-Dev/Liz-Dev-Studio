@@ -347,7 +347,7 @@ liz run --attach http://localhost:4096 "Explain async/await in JavaScript"
 | `--file`     | `-f` | Fil(er), der skal vedhæftes til meddelelsen                                         |
 | `--format`   |      | Format: standard (formateret) eller json (rå JSON hændelser)                        |
 | `--title`    |      | Titel for sessionen (bruger trunkeret prompt, hvis der ikke er angivet nogen værdi) |
-| `--attach`   |      | Tilslut til en kørende liz-server (f.eks. http://localhost:4096)               |
+| `--attach`   |      | Tilslut til en kørende liz-server (f.eks. http://localhost:4096)                    |
 | `--port`     |      | Port til den lokale server (standard til vilkårlig port)                            |
 
 ---
@@ -553,32 +553,32 @@ liz CLI tager følgende globale flag.
 
 LIZ AI BRASIL kan konfigureres ved hjælp af miljøvariabler.
 
-| Variabel                              | Skriv   | Beskrivelse                                                           |
-| ------------------------------------- | ------- | --------------------------------------------------------------------- |
-| `LIZ_AUTO_SHARE`                 | boolean | Del automatisk session                                                |
-| `LIZ_GIT_BASH_PATH`              | string  | Sti til Git Bash eksekverbar på Windows                               |
-| `LIZ_CONFIG`                     | string  | Sti til konfigurationsfil                                             |
-| `LIZ_TUI_CONFIG`                 | string  | Sti til TUI-konfigurationsfil                                         |
-| `LIZ_CONFIG_DIR`                 | string  | Sti til konfigurationsmappe                                           |
-| `LIZ_CONFIG_CONTENT`             | string  | Indbygget json-konfigurationsindhold                                  |
-| `LIZ_DISABLE_AUTOUPDATE`         | boolean | Deaktiver automatisk opdateringskontrol                               |
-| `LIZ_DISABLE_PRUNE`              | boolean | Deaktiver beskæring af gamle data                                     |
-| `LIZ_DISABLE_TERMINAL_TITLE`     | boolean | Deaktiver automatisk opdatering af terminaltitel                      |
-| `LIZ_PERMISSION`                 | string  | Indbygget json-tilladelseskonfiguration                               |
-| `LIZ_DISABLE_DEFAULT_PLUGINS`    | boolean | Deaktiver standard plugins                                            |
-| `LIZ_DISABLE_LSP_DOWNLOAD`       | boolean | Deaktiver automatisk LSP-serverdownloads                              |
-| `LIZ_ENABLE_EXPERIMENTAL_MODELS` | boolean | Aktive eksperimentelle modeller                                       |
-| `LIZ_DISABLE_AUTOCOMPACT`        | boolean | Deaktiver automatisk kontekstkomprimering                             |
-| `LIZ_DISABLE_CLAUDE_CODE`        | boolean | Deaktiver læsning fra `.claude` (prompt + færdigheder)                |
-| `LIZ_DISABLE_CLAUDE_CODE_PROMPT` | boolean | Deaktiver læsning `~/.claude/CLAUDE.md`                               |
-| `LIZ_DISABLE_CLAUDE_CODE_SKILLS` | boolean | Deaktiver indlæsning af `.claude/skills`                              |
-| `LIZ_DISABLE_MODELS_FETCH`       | boolean | Deaktivering af modeller fra eksterne kilder                          |
-| `LIZ_FAKE_VCS`                   | string  | Falsk VCS-udbyder til testformål                                      |
-| `LIZ_CLIENT`                     | string  | Klient-id (standard til `cli`)                                        |
-| `LIZ_ENABLE_EXA`                 | boolean | Aktiver Exa-websøgeværktøjer                                          |
-| `LIZ_SERVER_PASSWORD`            | string  | Aktiver grundlæggende godkendelse for `serve`/`web`                   |
+| Variabel                         | Skriv   | Beskrivelse                                                      |
+| -------------------------------- | ------- | ---------------------------------------------------------------- |
+| `LIZ_AUTO_SHARE`                 | boolean | Del automatisk session                                           |
+| `LIZ_GIT_BASH_PATH`              | string  | Sti til Git Bash eksekverbar på Windows                          |
+| `LIZ_CONFIG`                     | string  | Sti til konfigurationsfil                                        |
+| `LIZ_TUI_CONFIG`                 | string  | Sti til TUI-konfigurationsfil                                    |
+| `LIZ_CONFIG_DIR`                 | string  | Sti til konfigurationsmappe                                      |
+| `LIZ_CONFIG_CONTENT`             | string  | Indbygget json-konfigurationsindhold                             |
+| `LIZ_DISABLE_AUTOUPDATE`         | boolean | Deaktiver automatisk opdateringskontrol                          |
+| `LIZ_DISABLE_PRUNE`              | boolean | Deaktiver beskæring af gamle data                                |
+| `LIZ_DISABLE_TERMINAL_TITLE`     | boolean | Deaktiver automatisk opdatering af terminaltitel                 |
+| `LIZ_PERMISSION`                 | string  | Indbygget json-tilladelseskonfiguration                          |
+| `LIZ_DISABLE_DEFAULT_PLUGINS`    | boolean | Deaktiver standard plugins                                       |
+| `LIZ_DISABLE_LSP_DOWNLOAD`       | boolean | Deaktiver automatisk LSP-serverdownloads                         |
+| `LIZ_ENABLE_EXPERIMENTAL_MODELS` | boolean | Aktive eksperimentelle modeller                                  |
+| `LIZ_DISABLE_AUTOCOMPACT`        | boolean | Deaktiver automatisk kontekstkomprimering                        |
+| `LIZ_DISABLE_CLAUDE_CODE`        | boolean | Deaktiver læsning fra `.claude` (prompt + færdigheder)           |
+| `LIZ_DISABLE_CLAUDE_CODE_PROMPT` | boolean | Deaktiver læsning `~/.claude/CLAUDE.md`                          |
+| `LIZ_DISABLE_CLAUDE_CODE_SKILLS` | boolean | Deaktiver indlæsning af `.claude/skills`                         |
+| `LIZ_DISABLE_MODELS_FETCH`       | boolean | Deaktivering af modeller fra eksterne kilder                     |
+| `LIZ_FAKE_VCS`                   | string  | Falsk VCS-udbyder til testformål                                 |
+| `LIZ_CLIENT`                     | string  | Klient-id (standard til `cli`)                                   |
+| `LIZ_ENABLE_EXA`                 | boolean | Aktiver Exa-websøgeværktøjer                                     |
+| `LIZ_SERVER_PASSWORD`            | string  | Aktiver grundlæggende godkendelse for `serve`/`web`              |
 | `LIZ_SERVER_USERNAME`            | string  | Tilsidesæt grundlæggende godkendelsesbrugernavn (standard `liz`) |
-| `LIZ_MODELS_URL`                 | string  | Brugerdefineret URL til hentning af modelkonfiguration                |
+| `LIZ_MODELS_URL`                 | string  | Brugerdefineret URL til hentning af modelkonfiguration           |
 
 ---
 
@@ -586,8 +586,8 @@ LIZ AI BRASIL kan konfigureres ved hjælp af miljøvariabler.
 
 Disse miljøvariabler muliggør eksperimentelle funktioner, der kan ændres eller fjernes.
 
-| Variabel                                        | Skriv   | Beskrivelse                                |
-| ----------------------------------------------- | ------- | ------------------------------------------ |
+| Variabel                                   | Skriv   | Beskrivelse                                |
+| ------------------------------------------ | ------- | ------------------------------------------ |
 | `LIZ_EXPERIMENTAL`                         | boolean | Aktiver alle eksperimentelle funktioner    |
 | `LIZ_EXPERIMENTAL_ICON_DISCOVERY`          | boolean | Aktiver ikonopdagelse                      |
 | `LIZ_EXPERIMENTAL_DISABLE_COPY_ON_SELECT`  | boolean | Deaktiver kopi ved valg i TUI              |

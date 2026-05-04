@@ -65,7 +65,11 @@ render(() => {
         <Font />
         <div class="flex flex-col items-center gap-8">
           <div class="flex items-center gap-7 select-none">
-            <img src={crownUrl} alt="" class="w-24 h-auto [image-rendering:pixelated] drop-shadow-[0_0_22px_rgba(188,63,255,0.55)]" />
+            <img
+              src={crownUrl}
+              alt=""
+              class="w-24 h-auto [image-rendering:pixelated] drop-shadow-[0_0_22px_rgba(188,63,255,0.55)]"
+            />
             <span class="text-[44px] leading-none font-bold tracking-normal text-[#e8e0ff] drop-shadow-[0_0_18px_rgba(168,85,247,0.22)]">
               Liz AI Brasil
             </span>

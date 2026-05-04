@@ -123,12 +123,9 @@ describe("HttpApi UI fallback", () => {
     let proxiedUrl: string | undefined
 
     const response = await uiApp({
-      client: httpClient(
-        new Response("<html>liz</html>", { headers: { "content-type": "text/html" } }),
-        (request) => {
-          proxiedUrl = request.url
-        },
-      ),
+      client: httpClient(new Response("<html>liz</html>", { headers: { "content-type": "text/html" } }), (request) => {
+        proxiedUrl = request.url
+      }),
     }).request("/")
 
     expect(response.status).toBe(200)

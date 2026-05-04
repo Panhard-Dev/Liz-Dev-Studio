@@ -335,20 +335,20 @@ liz run --attach http://localhost:4096 "Explain async/await in JavaScript"
 
 #### Flagi
 
-| Flaga        | Skrót | Opis                                                                    |
-| ------------ | ----- | ----------------------------------------------------------------------- |
-| `--command`  |       | Polecenie do uruchomienia, reszta to argumenty                          |
-| `--continue` | `-c`  | Kontynuuj ostatnią sesję                                                |
-| `--session`  | `-s`  | Identyfikator sesji do kontynuowania                                    |
-| `--fork`     |       | Sklonuj sesję podczas kontynuacji (użyj z `--continue` lub `--session`) |
-| `--share`    |       | Udostępnij sesję po zakończeniu                                         |
-| `--model`    | `-m`  | Model do użycia w formacie dostawca/model                               |
-| `--agent`    |       | Agent do użycia                                                         |
-| `--file`     | `-f`  | Pliki do załączenia do wiadomości                                       |
-| `--format`   |       | Format wyjściowy: `default` (sformatowany) lub `json` (surowy JSON)     |
-| `--title`    |       | Tytuł sesji (jeśli nie podano, zostanie wygenerowany z promptu)         |
-| `--attach`   |       | Dołącz do działającego serwera LIZ AI BRASIL (np. http://localhost:4096)     |
-| `--port`     |       | Port dla serwera lokalnego (domyślnie losowy)                           |
+| Flaga        | Skrót | Opis                                                                     |
+| ------------ | ----- | ------------------------------------------------------------------------ |
+| `--command`  |       | Polecenie do uruchomienia, reszta to argumenty                           |
+| `--continue` | `-c`  | Kontynuuj ostatnią sesję                                                 |
+| `--session`  | `-s`  | Identyfikator sesji do kontynuowania                                     |
+| `--fork`     |       | Sklonuj sesję podczas kontynuacji (użyj z `--continue` lub `--session`)  |
+| `--share`    |       | Udostępnij sesję po zakończeniu                                          |
+| `--model`    | `-m`  | Model do użycia w formacie dostawca/model                                |
+| `--agent`    |       | Agent do użycia                                                          |
+| `--file`     | `-f`  | Pliki do załączenia do wiadomości                                        |
+| `--format`   |       | Format wyjściowy: `default` (sformatowany) lub `json` (surowy JSON)      |
+| `--title`    |       | Tytuł sesji (jeśli nie podano, zostanie wygenerowany z promptu)          |
+| `--attach`   |       | Dołącz do działającego serwera LIZ AI BRASIL (np. http://localhost:4096) |
+| `--port`     |       | Port dla serwera lokalnego (domyślnie losowy)                            |
 
 ---
 
@@ -553,8 +553,8 @@ Interfejs CLI LIZ AI BRASIL przyjmuje następujące flagi globalne dla każdego 
 
 LIZ AI BRASIL można skonfigurować za pomocą zmiennych środowiskowych.
 
-| Zmienna                               | Typ     | Opis                                                       |
-| ------------------------------------- | ------- | ---------------------------------------------------------- |
+| Zmienna                          | Typ     | Opis                                                       |
+| -------------------------------- | ------- | ---------------------------------------------------------- |
 | `LIZ_AUTO_SHARE`                 | boolean | Automatycznie udostępniaj sesje                            |
 | `LIZ_GIT_BASH_PATH`              | string  | Ścieżka do pliku wykonywalnego Git Bash w systemie Windows |
 | `LIZ_CONFIG`                     | string  | Ścieżka do pliku konfiguracyjnego                          |
@@ -577,7 +577,7 @@ LIZ AI BRASIL można skonfigurować za pomocą zmiennych środowiskowych.
 | `LIZ_CLIENT`                     | string  | Identyfikator klienta (domyślnie `cli`)                    |
 | `LIZ_ENABLE_EXA`                 | boolean | Włącz narzędzie wyszukiwania internetowego Exa             |
 | `LIZ_SERVER_PASSWORD`            | string  | Włącz uwierzytelnianie podstawowe dla `serve`/`web`        |
-| `LIZ_SERVER_USERNAME`            | string  | Nazwa użytkownika do autoryzacji (domyślnie `liz`)    |
+| `LIZ_SERVER_USERNAME`            | string  | Nazwa użytkownika do autoryzacji (domyślnie `liz`)         |
 | `LIZ_MODELS_URL`                 | string  | Niestandardowy adres URL do pobierania konfiguracji modeli |
 
 ---
@@ -586,8 +586,8 @@ LIZ AI BRASIL można skonfigurować za pomocą zmiennych środowiskowych.
 
 Te zmienne włączają funkcje eksperymentalne, które mogą ulec zmianie lub zostać usunięte.
 
-| Zmienna                                         | Typ     | Opis                                         |
-| ----------------------------------------------- | ------- | -------------------------------------------- |
+| Zmienna                                    | Typ     | Opis                                         |
+| ------------------------------------------ | ------- | -------------------------------------------- |
 | `LIZ_EXPERIMENTAL`                         | boolean | Włącz wszystkie funkcje eksperymentalne      |
 | `LIZ_EXPERIMENTAL_ICON_DISCOVERY`          | boolean | Włącz wykrywanie ikon                        |
 | `LIZ_EXPERIMENTAL_DISABLE_COPY_ON_SELECT`  | boolean | Wyłącz kopiowanie przy zaznaczaniu w TUI     |

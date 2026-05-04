@@ -335,20 +335,20 @@ liz run --attach http://localhost:4096 "Explain async/await in JavaScript"
 
 #### Options
 
-| Option       | Court | Description                                                                                    |
-| ------------ | ----- | ---------------------------------------------------------------------------------------------- |
-| `--command`  |       | La commande à exécuter, utilisez le message pour les arguments                                 |
-| `--continue` | `-c`  | Continuer la dernière session                                                                  |
-| `--session`  | `-s`  | ID de session pour continuer                                                                   |
-| `--fork`     |       | Forker la session en continuant (à utiliser avec `--continue` ou `--session`)                  |
-| `--share`    |       | Partager la session                                                                            |
-| `--model`    | `-m`  | Modèle à utiliser sous forme de fournisseur/modèle                                             |
-| `--agent`    |       | Agent à utiliser                                                                               |
-| `--file`     | `-f`  | Fichier(s) à joindre au message                                                                |
-| `--format`   |       | Format : par défaut (formaté) ou json (événements JSON bruts)                                  |
-| `--title`    |       | Titre de la session (utilise un prompt tronqué si aucune valeur n'est fournie)                 |
+| Option       | Court | Description                                                                               |
+| ------------ | ----- | ----------------------------------------------------------------------------------------- |
+| `--command`  |       | La commande à exécuter, utilisez le message pour les arguments                            |
+| `--continue` | `-c`  | Continuer la dernière session                                                             |
+| `--session`  | `-s`  | ID de session pour continuer                                                              |
+| `--fork`     |       | Forker la session en continuant (à utiliser avec `--continue` ou `--session`)             |
+| `--share`    |       | Partager la session                                                                       |
+| `--model`    | `-m`  | Modèle à utiliser sous forme de fournisseur/modèle                                        |
+| `--agent`    |       | Agent à utiliser                                                                          |
+| `--file`     | `-f`  | Fichier(s) à joindre au message                                                           |
+| `--format`   |       | Format : par défaut (formaté) ou json (événements JSON bruts)                             |
+| `--title`    |       | Titre de la session (utilise un prompt tronqué si aucune valeur n'est fournie)            |
 | `--attach`   |       | Connectez-vous à un serveur liz en cours d'exécution (par exemple, http://localhost:4096) |
-| `--port`     |       | Port du serveur local (port aléatoire par défaut)                                              |
+| `--port`     |       | Port du serveur local (port aléatoire par défaut)                                         |
 
 ---
 
@@ -553,32 +553,32 @@ La CLI liz prend les flags globaux suivants.
 
 LIZ AI BRASIL peut être configuré à l'aide de variables d'environnement.
 
-| Variables                             | Type    | Description                                                                       |
-| ------------------------------------- | ------- | --------------------------------------------------------------------------------- |
-| `LIZ_AUTO_SHARE`                 | booléen | Partager automatiquement des sessions                                             |
-| `LIZ_GIT_BASH_PATH`              | chaîne  | Chemin vers l'exécutable Git Bash sur Windows                                     |
-| `LIZ_CONFIG`                     | chaîne  | Chemin d'accès au fichier de configuration                                        |
-| `LIZ_TUI_CONFIG`                 | chaîne  | Chemin d'accès au fichier de configuration TUI                                    |
-| `LIZ_CONFIG_DIR`                 | chaîne  | Chemin d'accès au répertoire de configuration                                     |
-| `LIZ_CONFIG_CONTENT`             | chaîne  | Contenu de configuration JSON en ligne                                            |
-| `LIZ_DISABLE_AUTOUPDATE`         | booléen | Désactiver les vérifications automatiques des mises à jour                        |
-| `LIZ_DISABLE_PRUNE`              | booléen | Désactiver le nettoyage des anciennes données                                     |
-| `LIZ_DISABLE_TERMINAL_TITLE`     | booléen | Désactiver les mises à jour automatiques des titres du terminal                   |
-| `LIZ_PERMISSION`                 | chaîne  | Configuration des autorisations JSON intégrées                                    |
-| `LIZ_DISABLE_DEFAULT_PLUGINS`    | booléen | Désactiver les plugins par défaut                                                 |
-| `LIZ_DISABLE_LSP_DOWNLOAD`       | booléen | Désactiver les téléchargements automatiques du serveur LSP                        |
-| `LIZ_ENABLE_EXPERIMENTAL_MODELS` | booléen | Activer les modèles expérimentaux                                                 |
-| `LIZ_DISABLE_AUTOCOMPACT`        | booléen | Désactiver le compactage automatique du contexte                                  |
-| `LIZ_DISABLE_CLAUDE_CODE`        | booléen | Désactiver la lecture de `.claude` (prompt + compétences)                         |
-| `LIZ_DISABLE_CLAUDE_CODE_PROMPT` | booléen | Désactiver la lecture `~/.claude/CLAUDE.md`                                       |
-| `LIZ_DISABLE_CLAUDE_CODE_SKILLS` | booléen | Désactiver le chargement de `.claude/skills`                                      |
-| `LIZ_DISABLE_MODELS_FETCH`       | booléen | Désactiver la récupération de modèles à partir de sources distantes               |
-| `LIZ_FAKE_VCS`                   | chaîne  | Faux fournisseur VCS à des fins de test                                           |
-| `LIZ_CLIENT`                     | chaîne  | Identifiant du client (par défaut `cli`)                                          |
-| `LIZ_ENABLE_EXA`                 | booléen | Activer les outils de recherche Web Exa                                           |
-| `LIZ_SERVER_PASSWORD`            | chaîne  | Activer l'authentification de base pour `serve`/`web`                             |
+| Variables                        | Type    | Description                                                                  |
+| -------------------------------- | ------- | ---------------------------------------------------------------------------- |
+| `LIZ_AUTO_SHARE`                 | booléen | Partager automatiquement des sessions                                        |
+| `LIZ_GIT_BASH_PATH`              | chaîne  | Chemin vers l'exécutable Git Bash sur Windows                                |
+| `LIZ_CONFIG`                     | chaîne  | Chemin d'accès au fichier de configuration                                   |
+| `LIZ_TUI_CONFIG`                 | chaîne  | Chemin d'accès au fichier de configuration TUI                               |
+| `LIZ_CONFIG_DIR`                 | chaîne  | Chemin d'accès au répertoire de configuration                                |
+| `LIZ_CONFIG_CONTENT`             | chaîne  | Contenu de configuration JSON en ligne                                       |
+| `LIZ_DISABLE_AUTOUPDATE`         | booléen | Désactiver les vérifications automatiques des mises à jour                   |
+| `LIZ_DISABLE_PRUNE`              | booléen | Désactiver le nettoyage des anciennes données                                |
+| `LIZ_DISABLE_TERMINAL_TITLE`     | booléen | Désactiver les mises à jour automatiques des titres du terminal              |
+| `LIZ_PERMISSION`                 | chaîne  | Configuration des autorisations JSON intégrées                               |
+| `LIZ_DISABLE_DEFAULT_PLUGINS`    | booléen | Désactiver les plugins par défaut                                            |
+| `LIZ_DISABLE_LSP_DOWNLOAD`       | booléen | Désactiver les téléchargements automatiques du serveur LSP                   |
+| `LIZ_ENABLE_EXPERIMENTAL_MODELS` | booléen | Activer les modèles expérimentaux                                            |
+| `LIZ_DISABLE_AUTOCOMPACT`        | booléen | Désactiver le compactage automatique du contexte                             |
+| `LIZ_DISABLE_CLAUDE_CODE`        | booléen | Désactiver la lecture de `.claude` (prompt + compétences)                    |
+| `LIZ_DISABLE_CLAUDE_CODE_PROMPT` | booléen | Désactiver la lecture `~/.claude/CLAUDE.md`                                  |
+| `LIZ_DISABLE_CLAUDE_CODE_SKILLS` | booléen | Désactiver le chargement de `.claude/skills`                                 |
+| `LIZ_DISABLE_MODELS_FETCH`       | booléen | Désactiver la récupération de modèles à partir de sources distantes          |
+| `LIZ_FAKE_VCS`                   | chaîne  | Faux fournisseur VCS à des fins de test                                      |
+| `LIZ_CLIENT`                     | chaîne  | Identifiant du client (par défaut `cli`)                                     |
+| `LIZ_ENABLE_EXA`                 | booléen | Activer les outils de recherche Web Exa                                      |
+| `LIZ_SERVER_PASSWORD`            | chaîne  | Activer l'authentification de base pour `serve`/`web`                        |
 | `LIZ_SERVER_USERNAME`            | chaîne  | Remplacer le nom d'utilisateur d'authentification de base (par défaut `liz`) |
-| `LIZ_MODELS_URL`                 | chaîne  | URL personnalisé pour récupérer la configuration des modèles                      |
+| `LIZ_MODELS_URL`                 | chaîne  | URL personnalisé pour récupérer la configuration des modèles                 |
 
 ---
 
@@ -586,8 +586,8 @@ LIZ AI BRASIL peut être configuré à l'aide de variables d'environnement.
 
 Ces variables d'environnement activent des fonctionnalités expérimentales qui peuvent être modifiées ou supprimées.
 
-| Variables                                       | Type    | Description                                                     |
-| ----------------------------------------------- | ------- | --------------------------------------------------------------- |
+| Variables                                  | Type    | Description                                                     |
+| ------------------------------------------ | ------- | --------------------------------------------------------------- |
 | `LIZ_EXPERIMENTAL`                         | booléen | Activer toutes les fonctionnalités expérimentales               |
 | `LIZ_EXPERIMENTAL_ICON_DISCOVERY`          | booléen | Activer la découverte d'icônes                                  |
 | `LIZ_EXPERIMENTAL_DISABLE_COPY_ON_SELECT`  | booléen | Désactiver la copie lors de la sélection dans TUI               |

@@ -262,7 +262,11 @@ export default function Layout(props: ParentProps) {
 
   createEffect(
     on(
-      () => providers.connected().map((provider) => provider.id).join(","),
+      () =>
+        providers
+          .connected()
+          .map((provider) => provider.id)
+          .join(","),
       () => {
         void refetchLizAccount()
       },

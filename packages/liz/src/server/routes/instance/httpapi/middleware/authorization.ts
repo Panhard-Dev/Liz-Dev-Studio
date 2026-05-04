@@ -6,16 +6,13 @@ import { HttpApiError, HttpApiMiddleware, HttpApiSecurity } from "effect/unstabl
 const AUTH_TOKEN_QUERY = "auth_token"
 const UNAUTHORIZED = 401
 
-export class Authorization extends HttpApiMiddleware.Service<Authorization>()(
-  "@liz/ExperimentalHttpApiAuthorization",
-  {
-    error: HttpApiError.UnauthorizedNoContent,
-    security: {
-      basic: HttpApiSecurity.basic,
-      authToken: HttpApiSecurity.apiKey({ in: "query", key: AUTH_TOKEN_QUERY }),
-    },
+export class Authorization extends HttpApiMiddleware.Service<Authorization>()("@liz/ExperimentalHttpApiAuthorization", {
+  error: HttpApiError.UnauthorizedNoContent,
+  security: {
+    basic: HttpApiSecurity.basic,
+    authToken: HttpApiSecurity.apiKey({ in: "query", key: AUTH_TOKEN_QUERY }),
   },
-) {}
+}) {}
 
 export class ServerAuthConfig extends ConfigService.Service<ServerAuthConfig>()(
   "@liz/ExperimentalHttpApiServerAuthConfig",

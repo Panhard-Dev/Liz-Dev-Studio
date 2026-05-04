@@ -347,7 +347,7 @@ liz run --attach http://localhost:4096 "Explain async/await in JavaScript"
 | `--file`     | `-f` | Datei(en) zum Anhängen an die Nachricht                                                             |
 | `--format`   |      | Format: default (formatiert) oder json (rohe JSON-Ereignisse)                                       |
 | `--title`    |      | Titel für die Sitzung (verwendet eine verkürzte Eingabeaufforderung, wenn kein Wert angegeben wird) |
-| `--attach`   |      | An einen laufenden LIZ AI BRASIL-Server anschließen (z.B. http://localhost:4096)                         |
+| `--attach`   |      | An einen laufenden LIZ AI BRASIL-Server anschließen (z.B. http://localhost:4096)                    |
 | `--port`     |      | Port für den lokalen Server (standardmäßig zufälliger Port)                                         |
 
 ---
@@ -553,31 +553,31 @@ Der LIZ AI BRASIL CLI akzeptiert die folgenden globalen Flags.
 
 LIZ AI BRASIL kann mithilfe von Umgebungsvariablen konfiguriert werden.
 
-| Variable                              | Typ             | Beschreibung                                                                     |
-| ------------------------------------- | --------------- | -------------------------------------------------------------------------------- |
-| `LIZ_AUTO_SHARE`                 | boolescher Wert | Sitzungen automatisch teilen                                                     |
-| `LIZ_GIT_BASH_PATH`              | Zeichenfolge    | Pfad zur ausführbaren Git Bash-Datei unter Windows                               |
-| `LIZ_CONFIG`                     | Zeichenfolge    | Pfad zur Konfigurationsdatei                                                     |
-| `LIZ_CONFIG_DIR`                 | Zeichenfolge    | Pfad zum Konfigurationsverzeichnis                                               |
-| `LIZ_CONFIG_CONTENT`             | Zeichenfolge    | Inline-JSON-Konfigurationsinhalt                                                 |
-| `LIZ_DISABLE_AUTOUPDATE`         | boolescher Wert | Automatische Update-Prüfungen deaktivieren                                       |
-| `LIZ_DISABLE_PRUNE`              | boolescher Wert | Bereinigung alter Daten deaktivieren                                             |
-| `LIZ_DISABLE_TERMINAL_TITLE`     | boolescher Wert | Deaktivieren Sie die automatische Aktualisierung von Terminaltiteln              |
-| `LIZ_PERMISSION`                 | Zeichenfolge    | Inline-JSON-Berechtigungskonfiguration                                           |
-| `LIZ_DISABLE_DEFAULT_PLUGINS`    | boolescher Wert | Standard-Plugins deaktivieren                                                    |
-| `LIZ_DISABLE_LSP_DOWNLOAD`       | boolescher Wert | Automatische LSP-Server-Downloads deaktivieren                                   |
-| `LIZ_ENABLE_EXPERIMENTAL_MODELS` | boolescher Wert | Experimentelle Modelle aktivieren                                                |
-| `LIZ_DISABLE_AUTOCOMPACT`        | boolescher Wert | Automatische Kontextkomprimierung deaktivieren                                   |
-| `LIZ_DISABLE_CLAUDE_CODE`        | boolescher Wert | Deaktivieren Sie das Lesen von `.claude` (Prompt + Skills)                       |
-| `LIZ_DISABLE_CLAUDE_CODE_PROMPT` | boolescher Wert | Deaktivieren Sie das Lesen von `~/.claude/CLAUDE.md`                             |
-| `LIZ_DISABLE_CLAUDE_CODE_SKILLS` | boolescher Wert | Deaktivieren Sie das Laden von `.claude/skills`                                  |
-| `LIZ_DISABLE_MODELS_FETCH`       | boolescher Wert | Deaktivieren Sie das Abrufen von Modellen aus Remote-Quellen                     |
-| `LIZ_FAKE_VCS`                   | Zeichenfolge    | Gefälschter VCS-Anbieter zu Testzwecken                                          |
-| `LIZ_CLIENT`                     | Zeichenfolge    | Client-ID (standardmäßig `cli`)                                                  |
-| `LIZ_ENABLE_EXA`                 | boolescher Wert | Exa-Websuchtools aktivieren                                                      |
-| `LIZ_SERVER_PASSWORD`            | Zeichenfolge    | Aktivieren Sie die Basisauthentifizierung für `serve`/`web`                      |
+| Variable                         | Typ             | Beschreibung                                                                |
+| -------------------------------- | --------------- | --------------------------------------------------------------------------- |
+| `LIZ_AUTO_SHARE`                 | boolescher Wert | Sitzungen automatisch teilen                                                |
+| `LIZ_GIT_BASH_PATH`              | Zeichenfolge    | Pfad zur ausführbaren Git Bash-Datei unter Windows                          |
+| `LIZ_CONFIG`                     | Zeichenfolge    | Pfad zur Konfigurationsdatei                                                |
+| `LIZ_CONFIG_DIR`                 | Zeichenfolge    | Pfad zum Konfigurationsverzeichnis                                          |
+| `LIZ_CONFIG_CONTENT`             | Zeichenfolge    | Inline-JSON-Konfigurationsinhalt                                            |
+| `LIZ_DISABLE_AUTOUPDATE`         | boolescher Wert | Automatische Update-Prüfungen deaktivieren                                  |
+| `LIZ_DISABLE_PRUNE`              | boolescher Wert | Bereinigung alter Daten deaktivieren                                        |
+| `LIZ_DISABLE_TERMINAL_TITLE`     | boolescher Wert | Deaktivieren Sie die automatische Aktualisierung von Terminaltiteln         |
+| `LIZ_PERMISSION`                 | Zeichenfolge    | Inline-JSON-Berechtigungskonfiguration                                      |
+| `LIZ_DISABLE_DEFAULT_PLUGINS`    | boolescher Wert | Standard-Plugins deaktivieren                                               |
+| `LIZ_DISABLE_LSP_DOWNLOAD`       | boolescher Wert | Automatische LSP-Server-Downloads deaktivieren                              |
+| `LIZ_ENABLE_EXPERIMENTAL_MODELS` | boolescher Wert | Experimentelle Modelle aktivieren                                           |
+| `LIZ_DISABLE_AUTOCOMPACT`        | boolescher Wert | Automatische Kontextkomprimierung deaktivieren                              |
+| `LIZ_DISABLE_CLAUDE_CODE`        | boolescher Wert | Deaktivieren Sie das Lesen von `.claude` (Prompt + Skills)                  |
+| `LIZ_DISABLE_CLAUDE_CODE_PROMPT` | boolescher Wert | Deaktivieren Sie das Lesen von `~/.claude/CLAUDE.md`                        |
+| `LIZ_DISABLE_CLAUDE_CODE_SKILLS` | boolescher Wert | Deaktivieren Sie das Laden von `.claude/skills`                             |
+| `LIZ_DISABLE_MODELS_FETCH`       | boolescher Wert | Deaktivieren Sie das Abrufen von Modellen aus Remote-Quellen                |
+| `LIZ_FAKE_VCS`                   | Zeichenfolge    | Gefälschter VCS-Anbieter zu Testzwecken                                     |
+| `LIZ_CLIENT`                     | Zeichenfolge    | Client-ID (standardmäßig `cli`)                                             |
+| `LIZ_ENABLE_EXA`                 | boolescher Wert | Exa-Websuchtools aktivieren                                                 |
+| `LIZ_SERVER_PASSWORD`            | Zeichenfolge    | Aktivieren Sie die Basisauthentifizierung für `serve`/`web`                 |
 | `LIZ_SERVER_USERNAME`            | Zeichenfolge    | Benutzernamen für die Basisauthentifizierung überschreiben (Standard `liz`) |
-| `LIZ_MODELS_URL`                 | Zeichenfolge    | Benutzerdefinierte URL zum Abrufen der Modellkonfiguration                       |
+| `LIZ_MODELS_URL`                 | Zeichenfolge    | Benutzerdefinierte URL zum Abrufen der Modellkonfiguration                  |
 
 ---
 
@@ -585,8 +585,8 @@ LIZ AI BRASIL kann mithilfe von Umgebungsvariablen konfiguriert werden.
 
 Diese Umgebungsvariablen ermöglichen experimentelle Funktionen, die sich ändern oder entfernt werden können.
 
-| Variable                                        | Typ             | Beschreibung                                            |
-| ----------------------------------------------- | --------------- | ------------------------------------------------------- |
+| Variable                                   | Typ             | Beschreibung                                            |
+| ------------------------------------------ | --------------- | ------------------------------------------------------- |
 | `LIZ_EXPERIMENTAL`                         | boolescher Wert | Alle experimentellen Funktionen aktivieren              |
 | `LIZ_EXPERIMENTAL_ICON_DISCOVERY`          | boolescher Wert | Symbolerkennung aktivieren                              |
 | `LIZ_EXPERIMENTAL_DISABLE_COPY_ON_SELECT`  | boolescher Wert | Kopieren bei Auswahl in TUI deaktivieren                |

@@ -12,11 +12,7 @@ import { TuiPluginRuntime } from "@/cli/cmd/tui/plugin/runtime"
 
 let once = false
 const placeholder = {
-  normal: [
-    "Analise este projeto com a LIZ",
-    "Crie uma automacao IA para devs",
-    "Encontre bugs e proponha correcoes",
-  ],
+  normal: ["Analise este projeto com a LIZ", "Crie uma automacao IA para devs", "Encontre bugs e proponha correcoes"],
   shell: ["ls -la", "git status", "pwd"],
 }
 

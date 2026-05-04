@@ -347,7 +347,7 @@ liz run --attach http://localhost:4096 "Explain async/await in JavaScript"
 | `--file`     | `-f` | Mesaja eklenecek dosya(lar)                                                       |
 | `--format`   |      | Biçim: varsayılan (biçimlendirilmiş) veya json (ham JSON olayları)                |
 | `--title`    |      | Oturumun başlığı (değer sağlanmazsa kısaltılmış bilgi istemi kullanılır)          |
-| `--attach`   |      | Çalışan bir liz sunucusuna ekleyin (ör. http://localhost:4096)               |
+| `--attach`   |      | Çalışan bir liz sunucusuna ekleyin (ör. http://localhost:4096)                    |
 | `--port`     |      | Yerel sunucunun bağlantı noktası (varsayılan olarak rastgele bağlantı noktasıdır) |
 
 ---
@@ -553,32 +553,32 @@ liz CLI aşağıdaki global bayrakları destekler.
 
 liz ortam değişkenleri kullanılarak yapılandırılabilir.
 
-| Değişken                              | Tip     | Açıklama                                                                    |
-| ------------------------------------- | ------- | --------------------------------------------------------------------------- |
-| `LIZ_AUTO_SHARE`                 | boolean | Oturumları otomatik olarak paylaş                                           |
-| `LIZ_GIT_BASH_PATH`              | string  | Windows'ta yürütülebilir Git Bash'in Yolu                                   |
-| `LIZ_CONFIG`                     | string  | Yapılandırma dosyasının yolu                                                |
-| `LIZ_TUI_CONFIG`                 | string  | TUI yapılandırma dosyasının yolu                                            |
-| `LIZ_CONFIG_DIR`                 | string  | Yapılandırma dizinine giden yol                                             |
-| `LIZ_CONFIG_CONTENT`             | string  | Satır içi JSON config içeriği                                               |
-| `LIZ_DISABLE_AUTOUPDATE`         | boolean | Otomatik güncelleme kontrollerini devre dışı bırak                          |
-| `LIZ_DISABLE_PRUNE`              | boolean | Eski verilerin temizlenmesini devre dışı bırak                              |
-| `LIZ_DISABLE_TERMINAL_TITLE`     | boolean | Otomatik terminal başlığı güncellemelerini devre dışı bırakın               |
-| `LIZ_PERMISSION`                 | string  | Satır içi JSON izin config'i                                                |
-| `LIZ_DISABLE_DEFAULT_PLUGINS`    | boolean | Varsayılan eklentileri devre dışı bırakın                                   |
-| `LIZ_DISABLE_LSP_DOWNLOAD`       | boolean | Otomatik LSP sunucu indirmelerini devre dışı bırakın                        |
-| `LIZ_ENABLE_EXPERIMENTAL_MODELS` | boolean | Deneysel modelleri etkinleştir                                              |
-| `LIZ_DISABLE_AUTOCOMPACT`        | boolean | Otomatik context sıkıştırmayı devre dışı bırak                              |
-| `LIZ_DISABLE_CLAUDE_CODE`        | boolean | `.claude`'den okumayı devre dışı bırak (istem + beceriler)                  |
-| `LIZ_DISABLE_CLAUDE_CODE_PROMPT` | boolean | `~/.claude/CLAUDE.md` dosyasını okumayı devre dışı bırak                    |
-| `LIZ_DISABLE_CLAUDE_CODE_SKILLS` | boolean | `.claude/skills` yüklemesini devre dışı bırak                               |
-| `LIZ_DISABLE_MODELS_FETCH`       | boolean | Uzak kaynaklardan model getirmeyi devre dışı bırakın                        |
-| `LIZ_FAKE_VCS`                   | string  | Test amaçlı sahte VCS sağlayıcısı                                           |
-| `LIZ_CLIENT`                     | string  | Client kimliği (varsayılan: `cli`)                                          |
-| `LIZ_ENABLE_EXA`                 | boolean | Exa web arama araçlarını etkinleştir                                        |
-| `LIZ_SERVER_PASSWORD`            | string  | `serve`/`web` için temel kimlik doğrulamayı etkinleştirin                   |
+| Değişken                         | Tip     | Açıklama                                                               |
+| -------------------------------- | ------- | ---------------------------------------------------------------------- |
+| `LIZ_AUTO_SHARE`                 | boolean | Oturumları otomatik olarak paylaş                                      |
+| `LIZ_GIT_BASH_PATH`              | string  | Windows'ta yürütülebilir Git Bash'in Yolu                              |
+| `LIZ_CONFIG`                     | string  | Yapılandırma dosyasının yolu                                           |
+| `LIZ_TUI_CONFIG`                 | string  | TUI yapılandırma dosyasının yolu                                       |
+| `LIZ_CONFIG_DIR`                 | string  | Yapılandırma dizinine giden yol                                        |
+| `LIZ_CONFIG_CONTENT`             | string  | Satır içi JSON config içeriği                                          |
+| `LIZ_DISABLE_AUTOUPDATE`         | boolean | Otomatik güncelleme kontrollerini devre dışı bırak                     |
+| `LIZ_DISABLE_PRUNE`              | boolean | Eski verilerin temizlenmesini devre dışı bırak                         |
+| `LIZ_DISABLE_TERMINAL_TITLE`     | boolean | Otomatik terminal başlığı güncellemelerini devre dışı bırakın          |
+| `LIZ_PERMISSION`                 | string  | Satır içi JSON izin config'i                                           |
+| `LIZ_DISABLE_DEFAULT_PLUGINS`    | boolean | Varsayılan eklentileri devre dışı bırakın                              |
+| `LIZ_DISABLE_LSP_DOWNLOAD`       | boolean | Otomatik LSP sunucu indirmelerini devre dışı bırakın                   |
+| `LIZ_ENABLE_EXPERIMENTAL_MODELS` | boolean | Deneysel modelleri etkinleştir                                         |
+| `LIZ_DISABLE_AUTOCOMPACT`        | boolean | Otomatik context sıkıştırmayı devre dışı bırak                         |
+| `LIZ_DISABLE_CLAUDE_CODE`        | boolean | `.claude`'den okumayı devre dışı bırak (istem + beceriler)             |
+| `LIZ_DISABLE_CLAUDE_CODE_PROMPT` | boolean | `~/.claude/CLAUDE.md` dosyasını okumayı devre dışı bırak               |
+| `LIZ_DISABLE_CLAUDE_CODE_SKILLS` | boolean | `.claude/skills` yüklemesini devre dışı bırak                          |
+| `LIZ_DISABLE_MODELS_FETCH`       | boolean | Uzak kaynaklardan model getirmeyi devre dışı bırakın                   |
+| `LIZ_FAKE_VCS`                   | string  | Test amaçlı sahte VCS sağlayıcısı                                      |
+| `LIZ_CLIENT`                     | string  | Client kimliği (varsayılan: `cli`)                                     |
+| `LIZ_ENABLE_EXA`                 | boolean | Exa web arama araçlarını etkinleştir                                   |
+| `LIZ_SERVER_PASSWORD`            | string  | `serve`/`web` için temel kimlik doğrulamayı etkinleştirin              |
 | `LIZ_SERVER_USERNAME`            | string  | Temel kimlik doğrulama kullanıcı adını geçersiz kıl (varsayılan `liz`) |
-| `LIZ_MODELS_URL`                 | string  | Model yapılandırmasını almak için özel URL                                  |
+| `LIZ_MODELS_URL`                 | string  | Model yapılandırmasını almak için özel URL                             |
 
 ---
 
@@ -586,8 +586,8 @@ liz ortam değişkenleri kullanılarak yapılandırılabilir.
 
 Bu ortam değişkenleri değişebilecek veya kaldırılabilecek deneysel özellikleri etkinleştirir.
 
-| Değişken                                        | Tip     | Tanım                                                   |
-| ----------------------------------------------- | ------- | ------------------------------------------------------- |
+| Değişken                                   | Tip     | Tanım                                                   |
+| ------------------------------------------ | ------- | ------------------------------------------------------- |
 | `LIZ_EXPERIMENTAL`                         | boolean | Tüm deneysel özellikleri etkinleştir                    |
 | `LIZ_EXPERIMENTAL_ICON_DISCOVERY`          | boolean | Simge bulmayı etkinleştir                               |
 | `LIZ_EXPERIMENTAL_DISABLE_COPY_ON_SELECT`  | boolean | TUI'da seçim yapıldığında kopyalamayı devre dışı bırak  |

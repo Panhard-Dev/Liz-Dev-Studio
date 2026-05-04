@@ -55,9 +55,7 @@ export function SessionSidePanel(props: {
   const isDesktop = createMediaQuery("(min-width: 768px)")
   const shown = createMemo(
     () =>
-      platform.platform !== "desktop" ||
-      import.meta.env.VITE_LIZ_CHANNEL !== "beta" ||
-      settings.general.showFileTree(),
+      platform.platform !== "desktop" || import.meta.env.VITE_LIZ_CHANNEL !== "beta" || settings.general.showFileTree(),
   )
 
   const reviewOpen = createMemo(() => isDesktop() && view().reviewPanel.opened())

@@ -143,7 +143,8 @@ export const dict = {
   "provider.connect.lizZen.visit.suffix": " 取得你的 API 金鑰。",
   "provider.connect.oauth.code.visit.prefix": "造訪 ",
   "provider.connect.oauth.code.visit.link": "此連結",
-  "provider.connect.oauth.code.visit.suffix": " 取得授權碼，以連線你的帳戶並在 LIZ AI BRASIL 中使用 {{provider}} 模型。",
+  "provider.connect.oauth.code.visit.suffix":
+    " 取得授權碼，以連線你的帳戶並在 LIZ AI BRASIL 中使用 {{provider}} 模型。",
   "provider.connect.oauth.code.label": "{{method}} 授權碼",
   "provider.connect.oauth.code.placeholder": "授權碼",
   "provider.connect.oauth.code.required": "授權碼為必填",

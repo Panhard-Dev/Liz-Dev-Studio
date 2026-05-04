@@ -20,8 +20,7 @@ export const dict = {
   "desktop.updater.installFailed.message": "업데이트를 설치하지 못했습니다",
 
   "desktop.cli.installed.title": "CLI 설치됨",
-  "desktop.cli.installed.message":
-    "CLI가 {{path}}에 설치되었습니다\n\n터미널을 다시 시작하여 'liz' 명령을 사용하세요.",
+  "desktop.cli.installed.message": "CLI가 {{path}}에 설치되었습니다\n\n터미널을 다시 시작하여 'liz' 명령을 사용하세요.",
   "desktop.cli.failed.title": "설치 실패",
   "desktop.cli.failed.message": "CLI 설치 실패: {{error}}",
 

@@ -664,7 +664,8 @@ export const dict = {
   "settings.general.notifications.errors.title": "Erros",
   "settings.general.notifications.errors.description": "Mostrar notificaÃ§Ã£o do sistema quando ocorrer um erro",
   "settings.general.sounds.agent.title": "Agente",
-  "settings.general.sounds.agent.description": "Reproduzir som quando o agente estiver completo ou precisar de atenÃ§Ã£o",
+  "settings.general.sounds.agent.description":
+    "Reproduzir som quando o agente estiver completo ou precisar de atenÃ§Ã£o",
   "settings.general.sounds.permissions.title": "PermissÃµes",
   "settings.general.sounds.permissions.description": "Reproduzir som quando uma permissÃ£o for necessÃ¡ria",
   "settings.general.sounds.errors.title": "Erros",

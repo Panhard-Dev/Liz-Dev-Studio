@@ -208,7 +208,8 @@ export const dict = {
   "zen.faq.a4.p1.afterPricing": "し、マークアップはありません。つまり、モデル提供元の請求額をそのまま支払います。",
   "zen.faq.a4.p2.beforeAccount": "総コストは利用量に依存し、月次の支出上限を",
   "zen.faq.a4.p2.accountLink": "アカウント",
-  "zen.faq.a4.p3": "コストを賄うために、LIZ AI BRASILは$20の残高チャージあたり$1.23の小さな決済手数料のみを追加します。",
+  "zen.faq.a4.p3":
+    "コストを賄うために、LIZ AI BRASILは$20の残高チャージあたり$1.23の小さな決済手数料のみを追加します。",
   "zen.faq.q5": "データとプライバシーは？",
   "zen.faq.a5.beforeExceptions":
     "Zenのモデルはすべて米国でホストされています。プロバイダーはゼロ保持ポリシーを守り、データをモデル学習に使用しません（",

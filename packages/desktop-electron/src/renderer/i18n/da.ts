@@ -21,8 +21,7 @@ export const dict = {
   "desktop.updater.installFailed.message": "Kunne ikke installere opdateringen",
 
   "desktop.cli.installed.title": "CLI installeret",
-  "desktop.cli.installed.message":
-    "CLI installeret i {{path}}\n\nGenstart din terminal for at bruge 'liz'-kommandoen.",
+  "desktop.cli.installed.message": "CLI installeret i {{path}}\n\nGenstart din terminal for at bruge 'liz'-kommandoen.",
   "desktop.cli.failed.title": "Installation mislykkedes",
   "desktop.cli.failed.message": "Kunne ikke installere CLI: {{error}}",
 }

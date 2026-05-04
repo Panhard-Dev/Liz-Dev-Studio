@@ -115,7 +115,8 @@ export const dict = {
   "home.install.ariaLabel": "Installeringsalternativer",
 
   "home.what.title": "Hva er LIZ AI BRASIL?",
-  "home.what.body": "LIZ AI BRASIL er en åpen kildekode-agent som hjelper deg å skrive kode i terminal, IDE eller desktop.",
+  "home.what.body":
+    "LIZ AI BRASIL er en åpen kildekode-agent som hjelper deg å skrive kode i terminal, IDE eller desktop.",
   "home.what.lsp.title": "LSP aktivert",
   "home.what.lsp.body": "Laster automatisk de riktige LSP-ene for LLM-en",
   "home.what.multiSession.title": "Multi-sesjon",
@@ -235,7 +236,8 @@ export const dict = {
   "zen.problem.item2": "Samarbeider med leverandører for å sikre at de blir levert riktig",
   "zen.problem.item3": "Benchmarker alle modell-leverandør-kombinasjoner vi anbefaler",
   "zen.how.title": "Hvordan Zen fungerer",
-  "zen.how.body": "Selv om vi foreslår at du bruker Zen med LIZ AI BRASIL, kan du bruke Zen med hvilken som helst agent.",
+  "zen.how.body":
+    "Selv om vi foreslår at du bruker Zen med LIZ AI BRASIL, kan du bruke Zen med hvilken som helst agent.",
   "zen.how.step1.title": "Registrer deg og legg til $20 saldo",
   "zen.how.step1.beforeLink": "følg",
   "zen.how.step1.link": "oppsettsinstruksjonene",
@@ -623,7 +625,8 @@ export const dict = {
   "workspace.black.subscription.useBalance": "Bruk din tilgjengelige saldo etter å ha nådd bruksgrensene",
   "workspace.black.waitlist.title": "Venteliste",
   "workspace.black.waitlist.joined": "Du står på venteliste for LIZ AI BRASIL Black-planen til ${{plan}} per måned.",
-  "workspace.black.waitlist.ready": "Vi er klare til å melde deg på LIZ AI BRASIL Black-planen til ${{plan}} per måned.",
+  "workspace.black.waitlist.ready":
+    "Vi er klare til å melde deg på LIZ AI BRASIL Black-planen til ${{plan}} per måned.",
   "workspace.black.waitlist.leave": "Forlat venteliste",
   "workspace.black.waitlist.leaving": "Forlater...",
   "workspace.black.waitlist.left": "Forlot",

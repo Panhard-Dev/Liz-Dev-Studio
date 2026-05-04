@@ -19,8 +19,7 @@ function number(key: string) {
 
 const LIZ_EXPERIMENTAL = truthy("LIZ_EXPERIMENTAL")
 const LIZ_DISABLE_CLAUDE_CODE = truthy("LIZ_DISABLE_CLAUDE_CODE")
-const LIZ_DISABLE_CLAUDE_CODE_SKILLS =
-  LIZ_DISABLE_CLAUDE_CODE || truthy("LIZ_DISABLE_CLAUDE_CODE_SKILLS")
+const LIZ_DISABLE_CLAUDE_CODE_SKILLS = LIZ_DISABLE_CLAUDE_CODE || truthy("LIZ_DISABLE_CLAUDE_CODE_SKILLS")
 const copy = process.env["LIZ_EXPERIMENTAL_DISABLE_COPY_ON_SELECT"]
 
 export const Flag = {
@@ -55,9 +54,7 @@ export const Flag = {
 
   // Experimental
   LIZ_EXPERIMENTAL,
-  LIZ_EXPERIMENTAL_FILEWATCHER: Config.boolean("LIZ_EXPERIMENTAL_FILEWATCHER").pipe(
-    Config.withDefault(false),
-  ),
+  LIZ_EXPERIMENTAL_FILEWATCHER: Config.boolean("LIZ_EXPERIMENTAL_FILEWATCHER").pipe(Config.withDefault(false)),
   LIZ_EXPERIMENTAL_DISABLE_FILEWATCHER: Config.boolean("LIZ_EXPERIMENTAL_DISABLE_FILEWATCHER").pipe(
     Config.withDefault(false),
   ),

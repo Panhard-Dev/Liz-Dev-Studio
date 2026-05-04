@@ -474,7 +474,8 @@ export const dict = {
   "error.chain.didYouMean": "Mente du: {{suggestions}}",
   "error.chain.modelNotFound": "Modell ikke funnet: {{provider}}/{{model}}",
   "error.chain.checkConfig": "Sjekk leverandør-/modellnavnene i konfigurasjonen din (liz.json)",
-  "error.chain.mcpFailed": 'MCP-server "{{name}}" mislyktes. Merk at LIZ AI BRASIL ikke støtter MCP-autentisering ennå.',
+  "error.chain.mcpFailed":
+    'MCP-server "{{name}}" mislyktes. Merk at LIZ AI BRASIL ikke støtter MCP-autentisering ennå.',
   "error.chain.providerAuthFailed": "Leverandørautentisering mislyktes ({{provider}}): {{message}}",
   "error.chain.providerInitFailed":
     'Kunne ikke initialisere leverandør "{{provider}}". Sjekk legitimasjon og konfigurasjon.',

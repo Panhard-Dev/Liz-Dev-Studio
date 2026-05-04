@@ -868,9 +868,7 @@ export function Logo(props: { shape?: LogoShape; ink?: RGBA; idle?: boolean } = 
       <For each={ctx.shape.left}>
         {(line, index) => (
           <box flexDirection="row" gap={1}>
-            <box flexDirection="row">
-              {renderLine(line, index(), brandInk, true, 0, frame(), dusk(), idleState())}
-            </box>
+            <box flexDirection="row">{renderLine(line, index(), brandInk, true, 0, frame(), dusk(), idleState())}</box>
             <box flexDirection="row">
               {renderLine(
                 ctx.shape.right[index()],

@@ -473,7 +473,8 @@ export const dict = {
   "error.chain.didYouMean": "¿Quisiste decir: {{suggestions}}",
   "error.chain.modelNotFound": "Modelo no encontrado: {{provider}}/{{model}}",
   "error.chain.checkConfig": "Comprueba los nombres de proveedor/modelo en tu configuración (liz.json)",
-  "error.chain.mcpFailed": 'El servidor MCP "{{name}}" falló. Nota, LIZ AI BRASIL no soporta autenticación MCP todavía.',
+  "error.chain.mcpFailed":
+    'El servidor MCP "{{name}}" falló. Nota, LIZ AI BRASIL no soporta autenticación MCP todavía.',
   "error.chain.providerAuthFailed": "Autenticación de proveedor fallida ({{provider}}): {{message}}",
   "error.chain.providerInitFailed":
     'Fallo al inicializar proveedor "{{provider}}". Comprueba credenciales y configuración.',

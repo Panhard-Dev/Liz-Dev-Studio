@@ -254,7 +254,8 @@ export const { use: useTheme, provider: ThemeProvider } = createSimpleContext({
 
       const rawTheme = read(STORAGE_KEYS.THEME_ID)
       const savedTheme = normalize(rawTheme ?? props.defaultTheme) ?? "oc-2"
-      const savedScheme = (read(STORAGE_KEYS.COLOR_SCHEME) as ColorScheme | null) ?? props.defaultColorScheme ?? "system"
+      const savedScheme =
+        (read(STORAGE_KEYS.COLOR_SCHEME) as ColorScheme | null) ?? props.defaultColorScheme ?? "system"
       if (rawTheme && rawTheme !== savedTheme) {
         write(STORAGE_KEYS.THEME_ID, savedTheme)
         clear()

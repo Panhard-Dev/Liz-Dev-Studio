@@ -109,10 +109,10 @@ LIZ AI BRASIL can be triggered by the following GitHub events:
 | ----------------------------- | -------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
 | `issue_comment`               | Comment on an issue or PR              | Mention `/liz` or `/oc` in your comment. LIZ AI BRASIL reads context and can create branches, open PRs, or reply. |
 | `pull_request_review_comment` | Comment on specific code lines in a PR | Mention `/liz` or `/oc` while reviewing code. LIZ AI BRASIL receives file path, line numbers, and diff context.   |
-| `issues`                      | Issue opened or edited                 | Automatically trigger LIZ AI BRASIL when issues are created or modified. Requires `prompt` input.                      |
-| `pull_request`                | PR opened or updated                   | Automatically trigger LIZ AI BRASIL when PRs are opened, synchronized, or reopened. Useful for automated reviews.      |
-| `schedule`                    | Cron-based schedule                    | Run LIZ AI BRASIL on a schedule. Requires `prompt` input. Output goes to logs and PRs (no issue to comment on).        |
-| `workflow_dispatch`           | Manual trigger from GitHub UI          | Trigger LIZ AI BRASIL on demand via Actions tab. Requires `prompt` input. Output goes to logs and PRs.                 |
+| `issues`                      | Issue opened or edited                 | Automatically trigger LIZ AI BRASIL when issues are created or modified. Requires `prompt` input.                 |
+| `pull_request`                | PR opened or updated                   | Automatically trigger LIZ AI BRASIL when PRs are opened, synchronized, or reopened. Useful for automated reviews. |
+| `schedule`                    | Cron-based schedule                    | Run LIZ AI BRASIL on a schedule. Requires `prompt` input. Output goes to logs and PRs (no issue to comment on).   |
+| `workflow_dispatch`           | Manual trigger from GitHub UI          | Trigger LIZ AI BRASIL on demand via Actions tab. Requires `prompt` input. Output goes to logs and PRs.            |
 
 ### Schedule Example
 

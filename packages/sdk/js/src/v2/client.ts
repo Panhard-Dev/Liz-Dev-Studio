@@ -80,7 +80,9 @@ export function createLizClient(config?: Config & { directory?: string; experime
   client.interceptors.response.use((response) => {
     const contentType = response.headers.get("content-type")
     if (contentType === "text/html")
-      throw new Error("Request is not supported by this version of LIZ AI BRASIL Server (Server responded with text/html)")
+      throw new Error(
+        "Request is not supported by this version of LIZ AI BRASIL Server (Server responded with text/html)",
+      )
 
     return response
   })

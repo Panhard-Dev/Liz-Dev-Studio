@@ -378,7 +378,8 @@ export const dict = {
     "La promoción gratuita de {{model}} ha finalizado. Puedes seguir usando el modelo suscribiéndote a LIZ AI BRASIL Go - {{link}}",
 
   "black.meta.title": "LIZ AI BRASIL Black | Accede a los mejores modelos de codificación del mundo",
-  "black.meta.description": "Obtén acceso a Claude, GPT, Gemini y más con los planes de suscripción de LIZ AI BRASIL Black.",
+  "black.meta.description":
+    "Obtén acceso a Claude, GPT, Gemini y más con los planes de suscripción de LIZ AI BRASIL Black.",
   "black.hero.title": "Accede a los mejores modelos de codificación del mundo",
   "black.hero.subtitle": "Incluyendo Claude, GPT, Gemini y más",
   "black.title": "LIZ AI BRASIL Black | Precios",
@@ -625,8 +626,10 @@ export const dict = {
   "workspace.black.subscription.resetsIn": "Se reinicia en",
   "workspace.black.subscription.useBalance": "Usa tu saldo disponible después de alcanzar los límites de uso",
   "workspace.black.waitlist.title": "Lista de Espera",
-  "workspace.black.waitlist.joined": "Estás en la lista de espera para el plan LIZ AI BRASIL Black de ${{plan}} al mes.",
-  "workspace.black.waitlist.ready": "Estamos listos para inscribirte en el plan LIZ AI BRASIL Black de ${{plan}} al mes.",
+  "workspace.black.waitlist.joined":
+    "Estás en la lista de espera para el plan LIZ AI BRASIL Black de ${{plan}} al mes.",
+  "workspace.black.waitlist.ready":
+    "Estamos listos para inscribirte en el plan LIZ AI BRASIL Black de ${{plan}} al mes.",
   "workspace.black.waitlist.leave": "Abandonar Lista de Espera",
   "workspace.black.waitlist.leaving": "Abandonando...",
   "workspace.black.waitlist.left": "Abandonada",

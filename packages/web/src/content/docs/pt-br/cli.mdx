@@ -335,20 +335,20 @@ liz run --attach http://localhost:4096 "Explique async/await em JavaScript"
 
 #### Opções
 
-| Flag         | Curto | Descrição                                                                     |
-| ------------ | ----- | ----------------------------------------------------------------------------- |
-| `--command`  |       | O comando a ser executado, use mensagem para argumentos                       |
-| `--continue` | `-c`  | Continue a última sessão                                                      |
-| `--session`  | `-s`  | ID da sessão para continuar                                                   |
-| `--fork`     |       | Criar um fork da sessão ao continuar (use com `--continue` ou `--session`)    |
-| `--share`    |       | Compartilhe a sessão                                                          |
-| `--model`    | `-m`  | Modelo a ser usado na forma de provider/model                                 |
-| `--agent`    |       | Agente a ser usado                                                            |
-| `--file`     | `-f`  | Arquivo(s) a serem anexados à mensagem                                        |
-| `--format`   |       | Formato: padrão (formatado) ou json (eventos JSON brutos)                     |
-| `--title`    |       | Título para a sessão (usa o prompt truncado se nenhum valor for fornecido)    |
-| `--attach`   |       | Anexe a um servidor liz em execução (por exemplo, http://localhost:4096) |
-| `--port`     |       | Porta para o servidor local (padrão para porta aleatória)                     |
+| Flag         | Curto | Descrição                                                                  |
+| ------------ | ----- | -------------------------------------------------------------------------- |
+| `--command`  |       | O comando a ser executado, use mensagem para argumentos                    |
+| `--continue` | `-c`  | Continue a última sessão                                                   |
+| `--session`  | `-s`  | ID da sessão para continuar                                                |
+| `--fork`     |       | Criar um fork da sessão ao continuar (use com `--continue` ou `--session`) |
+| `--share`    |       | Compartilhe a sessão                                                       |
+| `--model`    | `-m`  | Modelo a ser usado na forma de provider/model                              |
+| `--agent`    |       | Agente a ser usado                                                         |
+| `--file`     | `-f`  | Arquivo(s) a serem anexados à mensagem                                     |
+| `--format`   |       | Formato: padrão (formatado) ou json (eventos JSON brutos)                  |
+| `--title`    |       | Título para a sessão (usa o prompt truncado se nenhum valor for fornecido) |
+| `--attach`   |       | Anexe a um servidor liz em execução (por exemplo, http://localhost:4096)   |
+| `--port`     |       | Porta para o servidor local (padrão para porta aleatória)                  |
 
 ---
 
@@ -553,31 +553,31 @@ A CLI do liz aceita as seguintes flags globais.
 
 O liz pode ser configurado usando variáveis de ambiente.
 
-| Variável                              | Tipo    | Descrição                                                             |
-| ------------------------------------- | ------- | --------------------------------------------------------------------- |
-| `LIZ_AUTO_SHARE`                 | boolean | Compartilhar sessões automaticamente                                  |
-| `LIZ_GIT_BASH_PATH`              | string  | Caminho para o executável do Git Bash no Windows                      |
-| `LIZ_CONFIG`                     | string  | Caminho para o arquivo de configuração                                |
-| `LIZ_CONFIG_DIR`                 | string  | Caminho para o diretório de configuração                              |
-| `LIZ_CONFIG_CONTENT`             | string  | Conteúdo de configuração json inline                                  |
-| `LIZ_DISABLE_AUTOUPDATE`         | boolean | Desabilitar verificações de atualização automática                    |
-| `LIZ_DISABLE_PRUNE`              | boolean | Desabilitar a poda de dados antigos                                   |
-| `LIZ_DISABLE_TERMINAL_TITLE`     | boolean | Desabilitar atualizações automáticas do título do terminal            |
-| `LIZ_PERMISSION`                 | string  | Configuração de permissões json inline                                |
-| `LIZ_DISABLE_DEFAULT_PLUGINS`    | boolean | Desabilitar plugins padrão                                            |
-| `LIZ_DISABLE_LSP_DOWNLOAD`       | boolean | Desabilitar downloads automáticos do servidor LSP                     |
-| `LIZ_ENABLE_EXPERIMENTAL_MODELS` | boolean | Habilitar modelos experimentais                                       |
-| `LIZ_DISABLE_AUTOCOMPACT`        | boolean | Desabilitar compactação automática de contexto                        |
-| `LIZ_DISABLE_CLAUDE_CODE`        | boolean | Desabilitar leitura de `.claude` (prompt + habilidades)               |
-| `LIZ_DISABLE_CLAUDE_CODE_PROMPT` | boolean | Desabilitar leitura de `~/.claude/CLAUDE.md`                          |
-| `LIZ_DISABLE_CLAUDE_CODE_SKILLS` | boolean | Desabilitar carregamento de `.claude/skills`                          |
-| `LIZ_DISABLE_MODELS_FETCH`       | boolean | Desabilitar busca de modelos de fontes remotas                        |
-| `LIZ_FAKE_VCS`                   | string  | Provedor VCS falso para fins de teste                                 |
-| `LIZ_CLIENT`                     | string  | Identificador do cliente (padrão é `cli`)                             |
-| `LIZ_ENABLE_EXA`                 | boolean | Habilitar ferramentas de busca web Exa                                |
-| `LIZ_SERVER_PASSWORD`            | string  | Habilitar autenticação básica para `serve`/`web`                      |
+| Variável                         | Tipo    | Descrição                                                        |
+| -------------------------------- | ------- | ---------------------------------------------------------------- |
+| `LIZ_AUTO_SHARE`                 | boolean | Compartilhar sessões automaticamente                             |
+| `LIZ_GIT_BASH_PATH`              | string  | Caminho para o executável do Git Bash no Windows                 |
+| `LIZ_CONFIG`                     | string  | Caminho para o arquivo de configuração                           |
+| `LIZ_CONFIG_DIR`                 | string  | Caminho para o diretório de configuração                         |
+| `LIZ_CONFIG_CONTENT`             | string  | Conteúdo de configuração json inline                             |
+| `LIZ_DISABLE_AUTOUPDATE`         | boolean | Desabilitar verificações de atualização automática               |
+| `LIZ_DISABLE_PRUNE`              | boolean | Desabilitar a poda de dados antigos                              |
+| `LIZ_DISABLE_TERMINAL_TITLE`     | boolean | Desabilitar atualizações automáticas do título do terminal       |
+| `LIZ_PERMISSION`                 | string  | Configuração de permissões json inline                           |
+| `LIZ_DISABLE_DEFAULT_PLUGINS`    | boolean | Desabilitar plugins padrão                                       |
+| `LIZ_DISABLE_LSP_DOWNLOAD`       | boolean | Desabilitar downloads automáticos do servidor LSP                |
+| `LIZ_ENABLE_EXPERIMENTAL_MODELS` | boolean | Habilitar modelos experimentais                                  |
+| `LIZ_DISABLE_AUTOCOMPACT`        | boolean | Desabilitar compactação automática de contexto                   |
+| `LIZ_DISABLE_CLAUDE_CODE`        | boolean | Desabilitar leitura de `.claude` (prompt + habilidades)          |
+| `LIZ_DISABLE_CLAUDE_CODE_PROMPT` | boolean | Desabilitar leitura de `~/.claude/CLAUDE.md`                     |
+| `LIZ_DISABLE_CLAUDE_CODE_SKILLS` | boolean | Desabilitar carregamento de `.claude/skills`                     |
+| `LIZ_DISABLE_MODELS_FETCH`       | boolean | Desabilitar busca de modelos de fontes remotas                   |
+| `LIZ_FAKE_VCS`                   | string  | Provedor VCS falso para fins de teste                            |
+| `LIZ_CLIENT`                     | string  | Identificador do cliente (padrão é `cli`)                        |
+| `LIZ_ENABLE_EXA`                 | boolean | Habilitar ferramentas de busca web Exa                           |
+| `LIZ_SERVER_PASSWORD`            | string  | Habilitar autenticação básica para `serve`/`web`                 |
 | `LIZ_SERVER_USERNAME`            | string  | Substituir nome de usuário de autenticação básica (padrão `liz`) |
-| `LIZ_MODELS_URL`                 | string  | URL personalizada para buscar configuração de modelos                 |
+| `LIZ_MODELS_URL`                 | string  | URL personalizada para buscar configuração de modelos            |
 
 ---
 
@@ -585,8 +585,8 @@ O liz pode ser configurado usando variáveis de ambiente.
 
 Essas variáveis de ambiente habilitam recursos experimentais que podem mudar ou ser removidos.
 
-| Variável                                        | Tipo    | Descrição                                                 |
-| ----------------------------------------------- | ------- | --------------------------------------------------------- |
+| Variável                                   | Tipo    | Descrição                                                 |
+| ------------------------------------------ | ------- | --------------------------------------------------------- |
 | `LIZ_EXPERIMENTAL`                         | boolean | Habilitar todos os recursos experimentais                 |
 | `LIZ_EXPERIMENTAL_ICON_DISCOVERY`          | boolean | Habilitar descoberta de ícones                            |
 | `LIZ_EXPERIMENTAL_DISABLE_COPY_ON_SELECT`  | boolean | Desabilitar cópia ao selecionar no TUI                    |

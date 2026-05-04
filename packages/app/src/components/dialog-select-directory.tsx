@@ -205,7 +205,9 @@ function useDirectorySearch(args: {
 
   const listRoots = async () => {
     const candidates = roots()
-    const checks = await Promise.all(candidates.map(async (candidate) => ((await rootExists(candidate)) ? candidate : undefined)))
+    const checks = await Promise.all(
+      candidates.map(async (candidate) => ((await rootExists(candidate)) ? candidate : undefined)),
+    )
     return checks.filter((item): item is string => !!item)
   }
 

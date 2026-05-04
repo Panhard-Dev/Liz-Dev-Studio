@@ -181,8 +181,7 @@ export const layer: Layer.Layer<
         }
 
         yield* config.get()
-        const questionEnabled =
-          ["app", "cli", "desktop"].includes(Flag.LIZ_CLIENT) || Flag.LIZ_ENABLE_QUESTION_TOOL
+        const questionEnabled = ["app", "cli", "desktop"].includes(Flag.LIZ_CLIENT) || Flag.LIZ_ENABLE_QUESTION_TOOL
 
         const tool = yield* Effect.all({
           invalid: Tool.init(invalid),
