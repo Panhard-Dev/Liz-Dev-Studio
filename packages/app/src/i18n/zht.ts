@@ -137,7 +137,7 @@ export const dict = {
   "provider.connect.apiKey.placeholder": "API 金鑰",
   "provider.connect.apiKey.required": "API 金鑰為必填",
   "provider.connect.lizZen.line1": "LIZ AI BRASIL Zen 為你提供一組精選的可靠最佳化模型，用於程式碼代理程式。",
-  "provider.connect.lizZen.line2":  "Com uma chave da LIZ, use Liz 2.3, Liz 2.5 PRO e Liz 2.6 PRO.",
+  "provider.connect.lizZen.line2": "Com uma chave da LIZ, use Liz 2.3, Liz 2.5 PRO e Liz 2.6 PRO.",
   "provider.connect.lizZen.visit.prefix": "造訪 ",
   "provider.connect.lizZen.visit.link": "liz.ai/zen",
   "provider.connect.lizZen.visit.suffix": " 取得你的 API 金鑰。",

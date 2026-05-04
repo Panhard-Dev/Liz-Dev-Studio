@@ -122,7 +122,7 @@ export const dict = {
   "provider.connect.apiKey.required": "API 키가 필요합니다",
   "provider.connect.lizZen.line1":
     "LIZ AI BRASIL Zen은 코딩 에이전트를 위해 최적화된 신뢰할 수 있는 엄선된 모델에 대한 액세스를 제공합니다.",
-  "provider.connect.lizZen.line2":  "Com uma chave da LIZ, use Liz 2.3, Liz 2.5 PRO e Liz 2.6 PRO.",
+  "provider.connect.lizZen.line2": "Com uma chave da LIZ, use Liz 2.3, Liz 2.5 PRO e Liz 2.6 PRO.",
   "provider.connect.lizZen.visit.prefix": "다음 ",
   "provider.connect.lizZen.visit.link": "liz.ai/zen",
   "provider.connect.lizZen.visit.suffix": "을 방문하여 API 키를 받으세요.",

@@ -159,7 +159,7 @@ export const dict = {
   "provider.connect.apiKey.placeholder": "API 密钥",
   "provider.connect.apiKey.required": "API 密钥为必填项",
   "provider.connect.lizZen.line1": "LIZ AI BRASIL Zen 为你提供一组精选的可靠优化模型，用于代码智能体。",
-  "provider.connect.lizZen.line2":  "Com uma chave da LIZ, use Liz 2.3, Liz 2.5 PRO e Liz 2.6 PRO.",
+  "provider.connect.lizZen.line2": "Com uma chave da LIZ, use Liz 2.3, Liz 2.5 PRO e Liz 2.6 PRO.",
   "provider.connect.lizZen.visit.prefix": "访问 ",
   "provider.connect.lizZen.visit.link": "liz.ai/zen",
   "provider.connect.lizZen.visit.suffix": " 获取你的 API 密钥。",
