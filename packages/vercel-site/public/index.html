@@ -121,6 +121,14 @@
         overflow: hidden;
       }
 
+      .command-label {
+        margin: 36px 0 -26px;
+        color: var(--muted);
+        font-size: 13px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
       .command code {
         display: block;
         padding: 24px 150px 24px 24px;
@@ -255,7 +263,8 @@
             CLI oficial
           </div>
           <h1>LIZ<br />AI BRASIL</h1>
-          <p class="lead">Instale a CLI oficial da LIZ AI BRASIL via npm e use no Windows, Linux e macOS.</p>
+          <p class="lead">Instale a CLI oficial da LIZ AI BRASIL. No Linux, use o instalador abaixo para evitar erro de permissao do npm global.</p>
+          <p class="command-label">Windows PowerShell/CMD</p>
           <div class="command">
             <code id="install-command">npm install -g https://liz-ai-brasil.vercel.app/npm/liz-ai-brasil.tgz</code>
             <button class="copy" type="button" data-copy="install-command">Copiar</button>
@@ -278,8 +287,8 @@
           </div>
 
           <div class="card">
-            <h2>Linux sem EACCES</h2>
-            <p>Se o npm nao tiver permissao em <code>/usr/local</code>, instale no usuario:</p>
+            <h2>Linux/macOS sem EACCES</h2>
+            <p>Use este comando no Linux para instalar no usuario e evitar <code>/usr/local</code>:</p>
             <div class="command">
               <code id="linux-command">curl -fsSL https://liz-ai-brasil.vercel.app/install.sh | bash</code>
               <button class="copy" type="button" data-copy="linux-command">Copiar</button>
