@@ -279,6 +279,7 @@ export const dict = {
   "prompt.context.removeActiveFile": "Remove active file from context",
   "prompt.context.removeFile": "Remove file from context",
   "prompt.action.attachFile": "Add files",
+  "prompt.usageLimits.label": "Remaining usage limits",
   "prompt.attachment.remove": "Remove attachment",
   "prompt.action.send": "Send",
   "prompt.action.stop": "Stop",

@@ -521,6 +521,12 @@ export const PromptInput: Component<PromptInputProps> = (props) => {
     })
   }
 
+  const openUsageLimits = () => {
+    void import("@/components/liz-usage").then((x) => {
+      dialog.show(() => <x.DialogLizUsage />)
+    })
+  }
+
   const renderEditorWithCursor = (parts: Prompt) => {
     const cursor = currentCursor()
     renderEditor(parts)
@@ -1573,6 +1579,24 @@ export const PromptInput: Component<PromptInputProps> = (props) => {
                           </ModelSelectorPopover>
                         </TooltipKeybind>
                       </Show>
+                    </div>
+                    <div
+                      data-component="prompt-usage-limits-control"
+                      style={providersShouldFadeIn() ? { animation: "fade-in 0.3s" } : undefined}
+                    >
+                      <Tooltip placement="top" gutter={4} value={language.t("prompt.usageLimits.label")}>
+                        <Button
+                          data-action="prompt-usage-limits"
+                          type="button"
+                          variant="ghost"
+                          size="normal"
+                          class="min-w-0 max-w-[220px] text-13-regular text-text-base"
+                          style={control()}
+                          onClick={openUsageLimits}
+                        >
+                          <span class="truncate">{language.t("prompt.usageLimits.label")}</span>
+                        </Button>
+                      </Tooltip>
                     </div>
                     <Show when={variants().length > 2}>
                       <div
