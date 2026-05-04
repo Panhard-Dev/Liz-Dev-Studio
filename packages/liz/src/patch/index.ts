@@ -203,9 +203,7 @@ function ensurePatchEnvelope(input: string): string {
 
   const hasFileOperation = lines.some(
     (line) =>
-      line.startsWith("*** Add File:") ||
-      line.startsWith("*** Delete File:") ||
-      line.startsWith("*** Update File:"),
+      line.startsWith("*** Add File:") || line.startsWith("*** Delete File:") || line.startsWith("*** Update File:"),
   )
   if (!hasFileOperation) return input
 

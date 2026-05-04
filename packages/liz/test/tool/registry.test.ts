@@ -162,13 +162,11 @@ describe("tool.registry", () => {
           permission: [],
           options: {},
         }
-        const ids = (
-          yield* registry.tools({
-            providerID: ProviderID.openai,
-            modelID: ModelID.make("gpt-5.2"),
-            agent,
-          })
-        ).map((tool) => tool.id)
+        const ids = (yield* registry.tools({
+          providerID: ProviderID.openai,
+          modelID: ModelID.make("gpt-5.2"),
+          agent,
+        })).map((tool) => tool.id)
 
         expect(ids).toContain("apply_patch")
         expect(ids).toContain("edit")
