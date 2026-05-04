@@ -7,6 +7,8 @@ import { CrossSpawnSpawner } from "@liz-ai-brasil/core/cross-spawn-spawner"
 import { ToolRegistry } from "@/tool/registry"
 import { provideTmpdirInstance } from "../fixture/fixture"
 import { testEffect } from "../lib/effect"
+import { ProviderID, ModelID } from "../../src/provider/schema"
+import type { Agent } from "@/agent/agent"
 
 const node = CrossSpawnSpawner.defaultLayer
 
@@ -146,6 +148,31 @@ describe("tool.registry", () => {
         const registry = yield* ToolRegistry.Service
         const ids = yield* registry.ids()
         expect(ids).toContain("cowsay")
+      }),
+    ),
+  )
+
+  it.live("keeps edit and write available alongside apply_patch for GPT models", () =>
+    provideTmpdirInstance(() =>
+      Effect.gen(function* () {
+        const registry = yield* ToolRegistry.Service
+        const agent: Agent.Info = {
+          name: "build",
+          mode: "primary",
+          permission: [],
+          options: {},
+        }
+        const ids = (
+          yield* registry.tools({
+            providerID: ProviderID.openai,
+            modelID: ModelID.make("gpt-5.2"),
+            agent,
+          })
+        ).map((tool) => tool.id)
+
+        expect(ids).toContain("apply_patch")
+        expect(ids).toContain("edit")
+        expect(ids).toContain("write")
       }),
     ),
   )

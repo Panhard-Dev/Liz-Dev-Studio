@@ -187,8 +187,33 @@ function stripHeredoc(input: string): string {
   return input
 }
 
+function stripCodeFence(input: string): string {
+  const fenceMatch = input.match(/^```(?:\w+)?\s*\n([\s\S]*?)\n```\s*$/)
+  if (fenceMatch) {
+    return fenceMatch[1]
+  }
+  return input
+}
+
+function ensurePatchEnvelope(input: string): string {
+  const lines = input.split("\n")
+  const hasBegin = lines.some((line) => line.trim() === "*** Begin Patch")
+  const hasEnd = lines.some((line) => line.trim() === "*** End Patch")
+  if (hasBegin || hasEnd) return input
+
+  const hasFileOperation = lines.some(
+    (line) =>
+      line.startsWith("*** Add File:") ||
+      line.startsWith("*** Delete File:") ||
+      line.startsWith("*** Update File:"),
+  )
+  if (!hasFileOperation) return input
+
+  return `*** Begin Patch\n${input}\n*** End Patch`
+}
+
 export function parsePatch(patchText: string): { hunks: Hunk[] } {
-  const cleaned = stripHeredoc(patchText.trim())
+  const cleaned = ensurePatchEnvelope(stripCodeFence(stripHeredoc(patchText.trim())).trim())
   const lines = cleaned.split("\n")
   const hunks: Hunk[] = []
   let i = 0
