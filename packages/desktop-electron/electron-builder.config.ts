@@ -79,6 +79,10 @@ const getBase = (): Configuration => ({
   linux: {
     icon: `resources/icons`,
     category: "Development",
+    maintainer: "LIZ AI BRASIL <hello@liz.ai>",
+    vendor: "LIZ AI BRASIL <hello@liz.ai>",
+    synopsis: "Desktop developer app for LIZ AI BRASIL.",
+    description: "Liz Dev Studio is the desktop developer app for LIZ AI BRASIL.",
     target: ["AppImage", "deb", "rpm"],
   },
 })

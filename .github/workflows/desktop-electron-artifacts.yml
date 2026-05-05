@@ -59,13 +59,9 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends rpm libarchive-tools
 
-      - name: Build renderer and main process
+      - name: Build Linux artifacts
         working-directory: packages/desktop-electron
-        run: bun run build
-
-      - name: Package Linux artifacts
-        working-directory: packages/desktop-electron
-        run: bun run package:linux
+        run: bun run build:linux
 
       - name: Upload Linux artifacts
         uses: actions/upload-artifact@v4
