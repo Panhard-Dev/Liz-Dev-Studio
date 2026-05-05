@@ -106,7 +106,7 @@ const LIZ_CHAT_COMPLETIONS_BASE_URL = "https://liz-ai-brasil-api.studiosluxgames
 export const LIZ_PLACEHOLDER_MODEL_IDS = ["liz-2.3", "liz-2.5-pro", "liz-2.6-pro"] as const
 
 export const LIZ_MODEL_API_IDS = {
-  "liz-2.3": "kilocode/z-ai/glm-4.7",
+  "liz-2.3": "kilocode/kilo-auto/free",
   "liz-2.5-pro": "codex/gpt-5.2",
   "liz-2.6-pro": "codex/gpt-5.3-codex",
 } as const

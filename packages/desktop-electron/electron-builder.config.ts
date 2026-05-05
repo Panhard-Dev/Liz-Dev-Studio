@@ -95,6 +95,7 @@ function getConfig() {
         executableName: "Liz Dev Studio",
         artifactName: "Liz Dev Studio Setup.${ext}",
         nsis: { ...base.nsis, shortcutName: "Liz Dev Studio" },
+        deb: { packageName: "liz-dev", compression: "gz" },
         rpm: { packageName: "liz-dev" },
       }
     }

@@ -70,7 +70,7 @@ function lizModels(providers: Awaited<ReturnType<typeof list>>) {
 }
 
 test("liz placeholder models keep public names and expected upstream mapping", async () => {
-  expect(ModelsDev.lizModelApiID("liz-2.3")).toBe("kilocode/z-ai/glm-4.7")
+  expect(ModelsDev.lizModelApiID("liz-2.3")).toBe("kilocode/kilo-auto/free")
   expect(ModelsDev.lizModelApiID("liz-2.5-pro")).toBe("codex/gpt-5.2")
   expect(ModelsDev.lizModelApiID("liz-2.6-pro")).toBe("codex/gpt-5.3-codex")
 
@@ -97,7 +97,7 @@ test("liz placeholder models keep public names and expected upstream mapping", a
       const model = await getModel(ProviderID.make("liz"), ModelID.make("liz-2.3"))
       expect(model.id).toBe(ModelID.make("liz-2.3"))
       expect(model.name).toBe("Liz 2.3")
-      expect(model.api.id).toBe("kilocode/z-ai/glm-4.7")
+      expect(model.api.id).toBe("kilocode/kilo-auto/free")
     },
   })
 })
